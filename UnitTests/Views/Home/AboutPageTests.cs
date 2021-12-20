@@ -191,32 +191,6 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public async Task AboutPage_GetItemsGet_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    // Act
-        //    var result = await page.GetItemsGet();
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreNotEqual("No Results", result); // Got to here, so it happened...
-        //}
-
-        //[Test]
-        //public async Task AboutPage_GetItemsPost_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    // Act
-        //    var result = await page.GetItemsPost();
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreNotEqual("No Results", result); // Got to here, so it happened...
-        //}
-
         [Test]
         public void AboutPage_GetItemsGet_Clicked_Default_Should_Pass()
         {
@@ -273,7 +247,7 @@ namespace UnitTests.Views
             WebGlobalsModel.WebSiteAPIURL = hold;
 
             // Assert
-            Assert.AreEqual("No Results", result); // Got to here, so it happened...
+            Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
         [Test]
@@ -289,7 +263,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual("No Results", result); // Got to here, so it happened...
+            Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
         [Test]
@@ -306,7 +280,7 @@ namespace UnitTests.Views
             WebGlobalsModel.WebSiteAPIURL = hold;
 
             // Assert
-            Assert.AreEqual("No Results", result); // Got to here, so it happened...
+            Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
         [Test]
@@ -322,7 +296,42 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual("No Results", result); // Got to here, so it happened...
+            Assert.AreEqual(true, result); // Got to here, so it happened...
         }
+
+        #region DisplayServerResults
+        [Test]
+        public void AboutPage_DisplayServerResults_InValid_Null_List_Should_Show_No_Results()
+        {
+            // Arrange
+            var control = (Editor)page.FindByName("ServerItemsList");
+
+            // Act
+            var result = page.DisplayServerResults(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result); // Got to here, so it happened...
+            Assert.AreEqual("No Results", control.Text); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void AboutPage_DisplayServerResults_InValid_Empty_List_Should_Show_No_Results()
+        {
+            // Arrange
+            var data = new List<ItemModel>();
+            var control = (Editor)page.FindByName("ServerItemsList");
+
+            // Act
+            var result = page.DisplayServerResults(data);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result); // Got to here, so it happened...
+            Assert.AreEqual("No Results", control.Text); // Got to here, so it happened...
+        }
+        #endregion DisplayServerResults
     }
 }

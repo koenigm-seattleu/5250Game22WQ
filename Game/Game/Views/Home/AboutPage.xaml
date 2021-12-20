@@ -128,6 +128,14 @@
                                 Clicked="GetItemsPost_Command"/>
                         </StackLayout>
 
+                        <Editor
+                            x:Name="ServerItemsList"
+                            IsVisible="false"
+                            IsEnabled="false"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="StartAndExpand"
+                            />
+
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
