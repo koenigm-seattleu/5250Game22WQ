@@ -5,6 +5,7 @@ using Game.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -150,7 +151,7 @@ namespace Game.Views
         /// <returns></returns>
         public bool DisplayServerResults(List<ItemModel> dataList)
         {
-            var result = "";
+            var result = new StringBuilder("");
             ServerItemsList.IsVisible = true;
             ServerItemsList.Text = "No Results";
 
@@ -163,13 +164,13 @@ namespace Game.Views
             {
                 // Add them line by one, use \n to force new line for output display.
                 // Build up the output string by adding formatted ItemModel Output
-                result += ItemModel.FormatOutput() + "\n";
+                result.AppendLine(ItemModel.FormatOutput());
             }
 
             // If there is results show them
             if (dataList.Count > 0)
             {
-                ServerItemsList.Text = result;
+                ServerItemsList.Text = result.ToString();
             }
 
             return true;

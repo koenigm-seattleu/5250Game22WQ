@@ -332,6 +332,49 @@ namespace UnitTests.Views
             Assert.AreEqual(true, result); // Got to here, so it happened...
             Assert.AreEqual("No Results", control.Text); // Got to here, so it happened...
         }
+
+        [Test]
+        public void AboutPage_DisplayServerResults_Valid_List_Should_Show_Results()
+        {
+            // Arrange
+            var data = new List<ItemModel>()
+            {
+                new ItemModel()
+                {
+                    Name="Test1",
+                    Description="1",
+                    Damage=1,
+                    Location=ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack,
+                    Value = 2,
+                    Range = 0
+                },
+                new ItemModel()
+                {
+                    Name="Test2",
+                    Description="2",
+                    Damage=1,
+                    Location=ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Attack,
+                    Value = 2,
+                    Range = 0                }
+            };
+
+            var control = (Editor)page.FindByName("ServerItemsList");
+
+            var expected = new StringBuilder();
+            expected.AppendLine(data[0].FormatOutput());
+            expected.AppendLine(data[1].FormatOutput());
+
+            // Act
+            var result = page.DisplayServerResults(data);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result); // Got to here, so it happened...
+            Assert.AreEqual(expected.ToString(), control.Text); // Got to here, so it happened...
+        }
         #endregion DisplayServerResults
     }
 }
