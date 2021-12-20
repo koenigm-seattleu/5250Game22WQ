@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace Game
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPageOld : ContentPage
     {
-        public MainPage()
+        public MainPageOld()
         {
             InitializeComponent();
         }
