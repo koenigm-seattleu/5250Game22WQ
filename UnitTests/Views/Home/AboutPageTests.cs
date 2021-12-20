@@ -17,6 +17,7 @@ namespace UnitTests.Views
     [TestFixture]
     public class AboutPageTests : AboutPage
     {
+        #region TestSetup
         App app;
         AboutPage page;
 
@@ -41,6 +42,9 @@ namespace UnitTests.Views
         {
             Application.Current = null;
         }
+        #endregion TestSetup
+
+        #region Elements
 
         [Test]
         public void AboutPage_Elements_Get_Set_Should_Pass()
@@ -80,7 +84,9 @@ namespace UnitTests.Views
             Assert.IsNotNull((Switch)page.FindByName("DataSourceValue"));
             Assert.IsNotNull((Switch)page.FindByName("DebugSettingsSwitch"));
         }
+        #endregion Elements
 
+        #region DatabaseSettingsSwitch
         [Test]
         public void AboutPage_DatabaseSettingsSwitch_OnToggled_Default_Should_Pass()
         {
@@ -120,7 +126,9 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
+        #endregion DatabaseSettingsSwitch
 
+        #region DataSource
         [Test]
         public void AboutPage_DataSource_Toggled_Default_Should_Pass()
         {
@@ -177,7 +185,9 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(!current, result); 
         }
+        #endregion DataSource
 
+        #region WipeDataList
         [Test]
         public void AboutPage_WipeDataList_Clicked_Default_Should_Pass()
         {
@@ -189,34 +199,6 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void AboutPage_GetItemsGet_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-            
-            // Act
-            page.GetItemsGet_Command(null,null);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true,true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void AboutPage_GetItemsPost_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            page.GetItemsPost_Command(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, true); // Got to here, so it happened...
         }
 
         [Test]
@@ -232,9 +214,25 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, true); // Got to here, so it happened...
         }
+        #endregion WipeDataList
+
+        #region GetItemsGet
+        [Test]
+        public void AboutPage_GetItemsGet_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.GetItemsGet_Command(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, true); // Got to here, so it happened...
+        }
 
         [Test]
-        public async Task AboutPage_GetItemsGet_BadURL_Should_Fail()
+        public async Task AboutPage_GetItemsGet_Invalid_BadURL_Should_Fail()
         {
             // Arrange
             var hold = WebGlobalsModel.WebSiteAPIURL;
@@ -251,7 +249,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public async Task AboutPage_GetItemsGet_Neg_Should_Fail()
+        public async Task AboutPage_GetItemsGet_Invalid_Neg_Should_Fail()
         {
             // Arrange
 
@@ -265,9 +263,25 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
+        #endregion GetItemsGet
+
+        #region GetItemsPost
+        [Test]
+        public void AboutPage_GetItemsPost_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.GetItemsPost_Command(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, true); // Got to here, so it happened...
+        }
 
         [Test]
-        public async Task AboutPage_GetItemsPost_BadURL_Should_Fail()
+        public async Task AboutPage_GetItemsPost_Invalid_BadURL_Should_Fail()
         {
             // Arrange
             var hold = WebGlobalsModel.WebSiteAPIURL;
@@ -284,7 +298,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public async Task AboutPage_GetItemsPost_Neg_Should_Fail()
+        public async Task AboutPage_GetItemsPost_Invalid_Neg_Should_Fail()
         {
             // Arrange
 
@@ -298,6 +312,7 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
+        #endregion GetItemsPost
 
         #region DisplayServerResults
         [Test]
