@@ -1,8 +1,5 @@
-﻿using System.Linq;
-
+﻿
 using NUnit.Framework;
-
-using Game.Models;
 using Game.GameRules;
 
 namespace UnitTests.GameRules
