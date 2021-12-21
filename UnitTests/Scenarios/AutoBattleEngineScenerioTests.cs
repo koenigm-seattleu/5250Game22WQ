@@ -24,7 +24,7 @@ namespace Scenario
             AutoBattle.Battle.EngineSettings.CurrentDefender = null;
             AutoBattle.Battle.EngineSettings.CurrentAttacker = null;
 
-            AutoBattle.Battle.StartBattle(true);   // Clear the Engine
+            _ = AutoBattle.Battle.StartBattle(true);   // Clear the Engine
         }
 
         [TearDown]
