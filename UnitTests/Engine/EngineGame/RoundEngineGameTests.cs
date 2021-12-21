@@ -1,10 +1,5 @@
-﻿using System.Threading.Tasks;
-using System.Linq;
-
+﻿
 using NUnit.Framework;
-
-using Game.Models;
-using Game.ViewModels;
 using Game.Engine.EngineGame;
 
 namespace UnitTests.Engine.EngineGame

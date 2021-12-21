@@ -1,13 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Linq;
-
+﻿
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-
-using Game.Models;
-using Game.Helpers;
-using Game.ViewModels;
 using Game.Engine.EngineGame;
 
 
