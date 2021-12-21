@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
 
 using Game.Models;
 using Game.Engine.EngineInterfaces;
-using Game.Engine.EngineModels;
-using Game.Engine.EngineBase;
 
 namespace Game.ViewModels
 {
