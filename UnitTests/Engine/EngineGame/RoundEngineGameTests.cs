@@ -17,7 +17,7 @@ namespace UnitTests.Engine.EngineGame
 
             Engine.Round = new RoundEngine();
             Engine.Round.Turn = new TurnEngine();
-            Engine.Round.ClearLists();
+            _ = Engine.Round.ClearLists();
 
             //Start the Engine in AutoBattle Mode
             //Engine.StartBattle(true);   
