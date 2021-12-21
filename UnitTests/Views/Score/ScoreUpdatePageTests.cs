@@ -100,7 +100,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
