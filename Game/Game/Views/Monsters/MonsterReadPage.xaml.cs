@@ -44,7 +44,7 @@ namespace Game.Views
             var FlexList = ItemBox.Children.ToList();
             foreach (var data in FlexList)
             {
-                ItemBox.Children.Remove(data);
+                _ = ItemBox.Children.Remove(data);
             }
 
             ItemBox.Children.Add(GetItemToDisplay());
@@ -144,7 +144,7 @@ namespace Game.Views
         public async void Update_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new MonsterUpdatePage(ViewModel)));
-            await Navigation.PopAsync();
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Game.Views
         public async void Delete_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new MonsterDeletePage(ViewModel)));
-            await Navigation.PopAsync();
+            _ = await Navigation.PopAsync();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Game.Views
                 DifficultyPicker.Items.Add(item);
             }
 
-            UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Game.Views
             var FlexList = ItemBox.Children.ToList();
             foreach (var data in FlexList)
             {
-                ItemBox.Children.Remove(data);
+                _ = ItemBox.Children.Remove(data);
             }
 
             ItemBox.Children.Add(GetItemToDisplay());
@@ -240,7 +240,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -290,9 +290,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public void RollDice_Clicked(object sender, EventArgs e)
         {
-            DiceAnimationHandeler();
+            _ = DiceAnimationHandeler();
 
-            RandomizeMonster();
+            _ = RandomizeMonster();
 
             return;   
         }
@@ -321,7 +321,7 @@ namespace Game.Views
 
             ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
 
-            UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
 
             return true;
         }
