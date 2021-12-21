@@ -257,10 +257,10 @@ namespace Game.Engine.EngineKoenig
             }
 
             // Set Messages to empty
-            EngineSettings.BattleMessagesModel.ClearMessages();
+            _ = EngineSettings.BattleMessagesModel.ClearMessages();
 
             // Do the Attack
-            CalculateAttackStatus(Attacker, Target);
+            _ = CalculateAttackStatus(Attacker, Target);
 
             // See if the Battle Settings Overrides the Roll
             EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
@@ -274,7 +274,7 @@ namespace Game.Engine.EngineKoenig
 
                 case HitStatusEnum.CriticalMiss:
                     // It's a Critical Miss, so Bad things may happen
-                    DetermineCriticalMissProblem(Attacker);
+                    _ = DetermineCriticalMissProblem(Attacker);
 
                     break;
 
@@ -297,10 +297,10 @@ namespace Game.Engine.EngineKoenig
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
-                    RemoveIfDead(Target);
+                    _ = RemoveIfDead(Target);
 
                     // If it is a character apply the experience earned
-                    CalculateExperience(Attacker, Target);
+                    _ = CalculateExperience(Attacker, Target);
 
                     break;
             }
@@ -326,7 +326,7 @@ namespace Game.Engine.EngineKoenig
             EngineSettings.BattleMessagesModel.TurnMessageSpecial = " and causes death. ";
 
             // Removing the 
-            EngineSettings.MapModel.RemovePlayerFromMap(Target);
+            _ = EngineSettings.MapModel.RemovePlayerFromMap(Target);
 
             // INFO: Teams, Hookup your Boss if you have one...
 
@@ -339,7 +339,7 @@ namespace Game.Engine.EngineKoenig
 
                     EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
 
-                    DropItems(Target);
+                    _ = DropItems(Target);
 
                     found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
                     found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
@@ -356,7 +356,7 @@ namespace Game.Engine.EngineKoenig
 
                     EngineSettings.BattleScore.MonsterModelDeathList.Add(Target);
 
-                    DropItems(Target);
+                    _ = DropItems(Target);
 
                     found = EngineSettings.MonsterList.Remove(EngineSettings.MonsterList.Find(m => m.Guid.Equals(Target.Guid)));
                     found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));

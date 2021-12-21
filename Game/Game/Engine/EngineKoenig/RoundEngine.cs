@@ -48,22 +48,22 @@ namespace Game.Engine.EngineKoenig
         public override bool NewRound()
         {
             // End the existing round
-            EndRound();
+            _ = EndRound();
 
             // Remove Character Buffs
-            RemoveCharacterBuffs();
+            _ = RemoveCharacterBuffs();
 
             // Populate New Monsters...
-            AddMonstersToRound();
+            _ = AddMonstersToRound();
 
             // Make the BaseEngine.PlayerList
-            MakePlayerList();
+            _ = MakePlayerList();
 
             // Set Order for the Round
-            OrderPlayerListByTurnOrder();
+            _ = OrderPlayerListByTurnOrder();
 
             // Populate BaseEngine.MapModel with Characters and Monsters
-            EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
+            _ = EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
 
             // Update Score for the RoundCount
             EngineSettings.BattleScore.RoundCount++;
@@ -126,7 +126,7 @@ namespace Game.Engine.EngineKoenig
             }
 
             // Reset Monster and Item Lists
-            ClearLists();
+            _ = ClearLists();
 
             return true;
         }
@@ -142,7 +142,7 @@ namespace Game.Engine.EngineKoenig
             // Have each character pickup items...
             foreach (var character in EngineSettings.CharacterList)
             {
-                PickupItemsFromPool(character);
+                _ = PickupItemsFromPool(character);
             }
         }
 
@@ -185,7 +185,7 @@ namespace Game.Engine.EngineKoenig
             }
 
             // Do the turn....
-            Turn.TakeTurn(EngineSettings.CurrentAttacker);
+            _ = Turn.TakeTurn(EngineSettings.CurrentAttacker);
 
             EngineSettings.RoundStateEnum = RoundEnum.NextTurn;
 
@@ -199,7 +199,7 @@ namespace Game.Engine.EngineKoenig
         public override PlayerInfoModel GetNextPlayerTurn()
         {
             // Remove the Dead
-            RemoveDeadPlayersFromList();
+            _ = RemoveDeadPlayersFromList();
 
             // Get Next Player
             var PlayerCurrent = GetNextPlayerInList();
@@ -335,13 +335,13 @@ namespace Game.Engine.EngineKoenig
             {
                 // Have the character, walk the items in the pool, and decide if any are better than current one.
 
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.Head);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.Necklass);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.PrimaryHand);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.OffHand);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
-                GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Head);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Necklass);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.PrimaryHand);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.OffHand);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
+                _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
             }
             return true;
         }
@@ -379,7 +379,7 @@ namespace Game.Engine.EngineKoenig
             var CharacterItem = character.GetItemByLocation(setLocation);
             if (CharacterItem == null)
             {
-                SwapCharacterItem(character, setLocation, myList.FirstOrDefault());
+                _ = SwapCharacterItem(character, setLocation, myList.FirstOrDefault());
                 return true;
             }
 
@@ -387,7 +387,7 @@ namespace Game.Engine.EngineKoenig
             {
                 if (PoolItem.Value > CharacterItem.Value)
                 {
-                    SwapCharacterItem(character, setLocation, PoolItem);
+                    _ = SwapCharacterItem(character, setLocation, PoolItem);
                     return true;
                 }
             }
@@ -414,7 +414,7 @@ namespace Game.Engine.EngineKoenig
             EngineSettings.BattleScore.ItemModelSelectList.Add(PoolItem);
 
             // Remove the ItemModel just put on from the pool
-            EngineSettings.ItemPool.Remove(PoolItem);
+            _ = EngineSettings.ItemPool.Remove(PoolItem);
 
             if (droppedItem != null)
             {
