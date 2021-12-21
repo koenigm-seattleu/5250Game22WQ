@@ -87,7 +87,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
@@ -101,7 +101,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.GetItemToDisplay(ItemLocationEnum.Feet);
+            _ = page.GetItemToDisplay(ItemLocationEnum.Feet);
 
             // Reset
 
@@ -115,7 +115,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.ShowPopup(new ItemModel());
+            _ = page.ShowPopup(new ItemModel());
 
             // Reset
 
@@ -162,7 +162,7 @@ namespace UnitTests.Views
         {
             // Arrange
             ItemIndexViewModel.Instance.Dataset.Clear();
-            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.PrimaryHand });
+            _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.PrimaryHand });
 
             var character = new CharacterModel();
             character.Head = ItemIndexViewModel.Instance.GetLocationItems(ItemLocationEnum.PrimaryHand).First().Id;
@@ -173,7 +173,7 @@ namespace UnitTests.Views
 
             // Reset
             ItemIndexViewModel.Instance.Dataset.Clear();
-            await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
+            _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
 
             // Assert
             Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
@@ -185,14 +185,14 @@ namespace UnitTests.Views
             // Arrange
             ItemIndexViewModel.Instance.Dataset.Clear();
             var item = new ItemModel { Location = ItemLocationEnum.PrimaryHand };
-            await ItemIndexViewModel.Instance.CreateAsync(item);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item);
 
             // Act
             var result = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
 
             // Reset
             ItemIndexViewModel.Instance.Dataset.Clear();
-            await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
+            _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
 
             // Assert
             Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...

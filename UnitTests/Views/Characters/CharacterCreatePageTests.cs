@@ -101,7 +101,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
@@ -225,7 +225,7 @@ namespace UnitTests.Views
             page.ViewModel.Data = new CharacterModel();
 
             // Act
-            page.ShowPopup(ItemLocationEnum.PrimaryHand);
+            _ = page.ShowPopup(ItemLocationEnum.PrimaryHand);
 
             // Reset
 
