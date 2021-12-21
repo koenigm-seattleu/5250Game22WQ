@@ -104,7 +104,7 @@ namespace Game.Services
                     return;
                 }
 
-                await Database.CreateTablesAsync(CreateFlags.None, typeof(T));
+                _ = await Database.CreateTablesAsync(CreateFlags.None, typeof(T));
             }
         }
 
@@ -144,7 +144,7 @@ namespace Game.Services
             {
                 try
                 {
-                    GetForceExceptionCount();
+                    _ = GetForceExceptionCount();
 
                     NeedsInitialization = true;
 
@@ -175,7 +175,7 @@ namespace Game.Services
 
             try
             {
-                GetForceExceptionCount();
+                _ = GetForceExceptionCount();
 
                 var result = await Database.InsertAsync(data);
                 return (result == 1);
@@ -203,7 +203,7 @@ namespace Game.Services
 
             try
             {
-                GetForceExceptionCount();
+                _ = GetForceExceptionCount();
 
                 var dataList = await IndexAsync();
 
@@ -239,7 +239,7 @@ namespace Game.Services
             int result = 0;
             try
             {
-                GetForceExceptionCount();
+                _ = GetForceExceptionCount();
 
                 result = await Database.UpdateAsync(data);
             }
@@ -273,7 +273,7 @@ namespace Game.Services
             int result;
             try
             {
-                GetForceExceptionCount();
+                _ = GetForceExceptionCount();
 
                 result = await Database.DeleteAsync(data);
             }
@@ -295,7 +295,7 @@ namespace Game.Services
             List<T> result;
             try
             {
-                GetForceExceptionCount();
+                _ = GetForceExceptionCount();
 
                 result = await Database.Table<T>().ToListAsync();
             }

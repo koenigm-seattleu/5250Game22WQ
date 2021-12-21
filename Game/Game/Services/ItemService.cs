@@ -50,7 +50,7 @@ namespace Game.Services
             foreach (var ItemModel in myList)
             {
                 // Call to the View Model (that is where the datasource is set, and have it then save
-                await ItemIndexViewModel.Instance.CreateUpdateAsync(ItemModel);
+                _ = await ItemIndexViewModel.Instance.CreateUpdateAsync(ItemModel);
             }
 
             // When foreach is done, call to the items view model to set needs refresh to true, so it can refetch the list...
@@ -110,7 +110,7 @@ namespace Game.Services
                 foreach (var ItemModel in myList)
                 {
                     // Call to the View Model (that is where the datasource is set, and have it then save
-                    await ItemIndexViewModel.Instance.CreateUpdateAsync(ItemModel);
+                    _ = await ItemIndexViewModel.Instance.CreateUpdateAsync(ItemModel);
                 }
 
                 // When foreach is done, call to the items view model to set needs refresh to true, so it can refetch the list...

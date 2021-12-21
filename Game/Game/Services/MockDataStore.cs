@@ -130,7 +130,7 @@ namespace Game.Services
                 return await Task.FromResult(false);
             }
 
-            datalist.Remove(oldData);
+            _ = datalist.Remove(oldData);
             datalist.Add(data);
 
             return await Task.FromResult(true);
@@ -155,7 +155,7 @@ namespace Game.Services
                 return await Task.FromResult(false);
             }
 
-            datalist.Remove(oldData);
+            _ = datalist.Remove(oldData);
 
             return await Task.FromResult(true);
         }
