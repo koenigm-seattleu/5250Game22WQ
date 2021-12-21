@@ -94,7 +94,7 @@ namespace Game.ViewModels
         }
 
         #endregion Constructor
-        
+
         #region DataOperations_CRUDi
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Game.ViewModels
         /// Load the Default Data
         /// </summary>
         /// <returns></returns>
-        public override List<ItemModel> GetDefaultData() 
+        public override List<ItemModel> GetDefaultData()
         {
             return DefaultData.LoadData(new ItemModel());
         }
@@ -217,7 +217,7 @@ namespace Game.ViewModels
 
             return data;
         }
-        
+
         /// <summary>
         /// Get all the items for a set location
         /// </summary>

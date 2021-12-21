@@ -11,7 +11,7 @@ namespace Game.Models
     public enum DifficultyEnum
     {
         // Not specified
-        Unknown = 0,    
+        Unknown = 0,
 
         // Easier than mostThe speed of the character, impacts movement, and initiative
         Easy = 10,
@@ -26,7 +26,7 @@ namespace Game.Models
         Difficult = 16,
 
         // The highest value
-        Impossible= 18,
+        Impossible = 18,
     }
 
     /// <summary>

@@ -8,10 +8,10 @@ namespace Game.Models
     /// <summary>
     /// The Conditions a round can have
     /// </summary>
-    public enum BattleModeEnum 
-    { 
+    public enum BattleModeEnum
+    {
         // Invalid State
-        Unknown = 0, 
+        Unknown = 0,
 
         // Default, just click until the end
         SimpleNext = 1,

@@ -111,7 +111,7 @@ namespace Game.Views
             var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
             if (currentCount == 0)
             {
-              BeginBattleButton.IsEnabled = false;
+                BeginBattleButton.IsEnabled = false;
             }
 
             PartyCountLabel.Text = currentCount.ToString();

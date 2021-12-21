@@ -236,7 +236,7 @@ namespace Game.GameRules
         /// </summary>
         /// <param name="MaxLevel"></param>
         /// <returns></returns>
-        public static MonsterModel GetRandomMonster(int MaxLevel, bool Items= false)
+        public static MonsterModel GetRandomMonster(int MaxLevel, bool Items = false)
         {
             // If there are no Monsters in the system, return a default one
             if (MonsterIndexViewModel.Instance.Dataset.Count == 0)
@@ -275,7 +275,7 @@ namespace Game.GameRules
 
             // Adjust the health, If the new Max Health is above the rule for the level, use the original
             var MaxHealthAdjusted = result.Difficulty.ToModifier(result.MaxHealth);
-            if (MaxHealthAdjusted  < result.Level * 10)
+            if (MaxHealthAdjusted < result.Level * 10)
             {
                 result.MaxHealth = MaxHealthAdjusted;
             }
@@ -299,7 +299,7 @@ namespace Game.GameRules
                 result.RightFinger = GetItem(ItemLocationEnum.Finger);
                 result.LeftFinger = GetItem(ItemLocationEnum.Finger);
                 result.Feet = GetItem(ItemLocationEnum.Feet);
-           }
+            }
 
             return result;
         }

@@ -13,7 +13,7 @@ namespace Game.Views
     public partial class BattleSettingsPage : ContentPage
     {
         // Empty Constructor for UTs
-       // public BattleSettingsPage(bool UnitTest) { }
+        // public BattleSettingsPage(bool UnitTest) { }
 
         /// <summary>
         /// Constructor

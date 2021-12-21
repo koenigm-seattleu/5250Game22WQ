@@ -32,7 +32,7 @@ namespace Game.Helpers
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncScore.Wait();
-                
+
 
                 var runSyncItem = Task.Factory.StartNew(new Func<Task>(async () =>
                 {

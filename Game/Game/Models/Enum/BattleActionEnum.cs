@@ -12,16 +12,16 @@ namespace Game.Models
     /// PlayerAlwaysHit can be Default, On, or Off
     /// PlayerAbility can be Default, On, Off
     /// </summary>
-    public enum BattleActionEnum 
-    { 
+    public enum BattleActionEnum
+    {
         // Default behavior
-        Default = 0, 
+        Default = 0,
 
         // Supress Behavior
-        Off = 2, 
+        Off = 2,
 
         // Force behavior
-        On = 3, 
+        On = 3,
     }
 
     /// <summary>

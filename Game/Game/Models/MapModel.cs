@@ -22,7 +22,7 @@ namespace Game.Models
         // The Map Locations
         public MapModelLocation[,] MapGridLocation;
 
-        public PlayerInfoModel EmptySquare = new PlayerInfoModel { PlayerType = PlayerTypeEnum.Unknown, ImageURI="mapcell.png" };
+        public PlayerInfoModel EmptySquare = new PlayerInfoModel { PlayerType = PlayerTypeEnum.Unknown, ImageURI = "mapcell.png" };
 
         public MapModel()
         {
@@ -136,7 +136,7 @@ namespace Game.Models
         /// <returns></returns>
         public bool RemovePlayerFromMap(PlayerInfoModel data)
         {
-            if (data== null)
+            if (data == null)
             {
                 return false;
             }
@@ -147,7 +147,7 @@ namespace Game.Models
                 {
                     if (MapGridLocation[x, y].Player.Guid.Equals(data.Guid))
                     {
-                        MapGridLocation[x, y] = new MapModelLocation { Column = x, Row = y, Player = EmptySquare};
+                        MapGridLocation[x, y] = new MapModelLocation { Column = x, Row = y, Player = EmptySquare };
                         return true;
                     }
                 }

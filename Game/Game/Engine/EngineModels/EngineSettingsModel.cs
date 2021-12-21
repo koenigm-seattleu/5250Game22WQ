@@ -8,7 +8,7 @@ namespace Game.Engine.EngineModels
     /// <summary>
     /// Holds the Data Structures for the Battle Engine
     /// </summary>
-    public  class EngineSettingsModel
+    public class EngineSettingsModel
     {
         #region Singleton
 
@@ -42,64 +42,64 @@ namespace Game.Engine.EngineModels
         public ScoreModel BattleScore { get; set; } = new ScoreModel();
 
         // Holds the Battle Messages as they happen
-         public BattleMessagesModel BattleMessagesModel { get; set; } = new BattleMessagesModel();
+        public BattleMessagesModel BattleMessagesModel { get; set; } = new BattleMessagesModel();
 
         // The Pool of items collected during the round as turns happen
-         public List<ItemModel> ItemPool { get; set; } = new List<ItemModel>();
+        public List<ItemModel> ItemPool { get; set; } = new List<ItemModel>();
 
         // List of Monsters
-         public List<PlayerInfoModel> MonsterList { get; set; } = new List<PlayerInfoModel>();
+        public List<PlayerInfoModel> MonsterList { get; set; } = new List<PlayerInfoModel>();
 
         // List of Characters
-         public List<PlayerInfoModel> CharacterList { get; set; } = new List<PlayerInfoModel>();
+        public List<PlayerInfoModel> CharacterList { get; set; } = new List<PlayerInfoModel>();
 
         // Current Player who is the attacker
-         public PlayerInfoModel CurrentAttacker { get; set; }
+        public PlayerInfoModel CurrentAttacker { get; set; }
 
         // Current Player who is the Defender
-         public PlayerInfoModel CurrentDefender { get; set; }
+        public PlayerInfoModel CurrentDefender { get; set; }
 
         // The Action 
-         public ActionEnum CurrentAction { get; set; }
+        public ActionEnum CurrentAction { get; set; }
 
         // The Action that just happened
-         public ActionEnum PreviousAction { get; set; } = ActionEnum.Unknown;
+        public ActionEnum PreviousAction { get; set; } = ActionEnum.Unknown;
 
         // When the current action is an ability, what ability was selected
-         public AbilityEnum CurrentActionAbility { get; set; }
+        public AbilityEnum CurrentActionAbility { get; set; }
 
         // When the current action is an ability, what ability was selected
-         public CordinatesModel CurrentMapLocation { get; set; }
+        public CordinatesModel CurrentMapLocation { get; set; }
 
         // When the current action is an ability, what ability was selected
-         public CordinatesModel MoveMapLocation { get; set; }
+        public CordinatesModel MoveMapLocation { get; set; }
 
         // Hold the list of players (MonsterModel, and character by guid), and order by speed
-         public List<PlayerInfoModel> PlayerList { get; set; } = new List<PlayerInfoModel>();
+        public List<PlayerInfoModel> PlayerList { get; set; } = new List<PlayerInfoModel>();
 
         // Current Round State
-         public RoundEnum RoundStateEnum { get; set; } = RoundEnum.Unknown;
+        public RoundEnum RoundStateEnum { get; set; } = RoundEnum.Unknown;
 
         // Max Number of Characters
-         public int MaxNumberPartyCharacters { get; set; } = 6;
+        public int MaxNumberPartyCharacters { get; set; } = 6;
 
         // Max Number of Monsters
-         public int MaxNumberPartyMonsters { get; set; } = 6;
+        public int MaxNumberPartyMonsters { get; set; } = 6;
 
         // Max Number of Rounds for AutoBattle
-         public int MaxRoundCount { get; set; } = 100;
+        public int MaxRoundCount { get; set; } = 100;
 
         // Max Number of Turns for AutoBattle
-         public int MaxTurnCount { get; set; } = 1000;
+        public int MaxTurnCount { get; set; } = 1000;
 
         // Hold the MapModel
-         public MapModel MapModel { get; set; } = new MapModel();
+        public MapModel MapModel { get; set; } = new MapModel();
 
         // Hold the Battle Settings
-         public BattleSettingsModel BattleSettingsModel { get; set; } = new BattleSettingsModel();
+        public BattleSettingsModel BattleSettingsModel { get; set; } = new BattleSettingsModel();
 
         // Hold the Battle State, Unknown is default
-         public BattleStateEnum BattleStateEnum { get; set; } = BattleStateEnum.Unknown;
+        public BattleStateEnum BattleStateEnum { get; set; } = BattleStateEnum.Unknown;
 
     }
 }

@@ -12,7 +12,7 @@ namespace Game.Views
     /// <summary>
     /// Create Item
     /// </summary>
-    [DesignTimeVisible(false)] 
+    [DesignTimeVisible(false)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemCreatePage : ContentPage
     {
@@ -20,7 +20,7 @@ namespace Game.Views
         public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
 
         // Empty Constructor for UTs
-        public ItemCreatePage(bool UnitTest){}
+        public ItemCreatePage(bool UnitTest) { }
 
         /// <summary>
         /// Constructor for Create makes a new model

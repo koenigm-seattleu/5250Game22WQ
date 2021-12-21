@@ -15,7 +15,7 @@ namespace Game.Models
         Default = 1,
 
         // Miss
-        Miss = 10, 
+        Miss = 10,
 
         // Critical Miss, miss and something bad happens
         CriticalMiss = 15,

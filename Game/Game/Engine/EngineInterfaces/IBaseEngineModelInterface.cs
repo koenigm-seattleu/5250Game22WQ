@@ -53,8 +53,8 @@ namespace Game.Engine.EngineInterfaces
 
         int MaxTurnCount { get; set; }
 
- 
 
-        
+
+
     }
 }

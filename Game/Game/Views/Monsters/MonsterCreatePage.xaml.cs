@@ -294,7 +294,7 @@ namespace Game.Views
 
             _ = RandomizeMonster();
 
-            return;   
+            return;
         }
 
         /// <summary>

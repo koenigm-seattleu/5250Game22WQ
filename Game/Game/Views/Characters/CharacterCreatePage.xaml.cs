@@ -61,15 +61,15 @@ namespace Game.Views
         public bool UpdatePageBindingContext()
         {
             // Temp store off the Level
-            var level = this.ViewModel.Data.Level; 
-            
+            var level = this.ViewModel.Data.Level;
+
             // Clear the Binding and reset it
             BindingContext = null;
             BindingContext = this.ViewModel;
 
             // This resets the Picker to -1 index, need to reset it back
             ViewModel.Data.Level = level;
-            LevelPicker.SelectedIndex = ViewModel.Data.Level-1;
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             ManageHealth();
 
@@ -326,7 +326,7 @@ namespace Game.Views
 
             _ = RandomizeCharacter();
 
-            return;   
+            return;
         }
 
         /// <summary>
@@ -349,12 +349,12 @@ namespace Game.Views
 
             // Randomize an Item for Location
             ViewModel.Data.Head = RandomPlayerHelper.GetItem(ItemLocationEnum.Head);
-            ViewModel.Data.Necklass= RandomPlayerHelper.GetItem(ItemLocationEnum.Necklass);
+            ViewModel.Data.Necklass = RandomPlayerHelper.GetItem(ItemLocationEnum.Necklass);
             ViewModel.Data.PrimaryHand = RandomPlayerHelper.GetItem(ItemLocationEnum.PrimaryHand);
-            ViewModel.Data.OffHand= RandomPlayerHelper.GetItem(ItemLocationEnum.OffHand);
+            ViewModel.Data.OffHand = RandomPlayerHelper.GetItem(ItemLocationEnum.OffHand);
             ViewModel.Data.RightFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-            ViewModel.Data.LeftFinger= RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-            ViewModel.Data.Feet= RandomPlayerHelper.GetItem(ItemLocationEnum.Feet);
+            ViewModel.Data.LeftFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
+            ViewModel.Data.Feet = RandomPlayerHelper.GetItem(ItemLocationEnum.Feet);
 
             ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
 

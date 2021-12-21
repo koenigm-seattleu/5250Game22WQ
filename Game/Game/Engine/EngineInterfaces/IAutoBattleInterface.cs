@@ -4,7 +4,7 @@ namespace Game.Engine.EngineInterfaces
 {
     public interface IAutoBattleInterface
     {
-        IBattleEngineInterface Battle { get;}
+        IBattleEngineInterface Battle { get; }
 
         Task<bool> RunAutoBattle();
         bool DetectInfinateLoop();

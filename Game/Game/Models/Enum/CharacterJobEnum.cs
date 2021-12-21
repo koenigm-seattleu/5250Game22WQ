@@ -7,7 +7,7 @@
     public enum CharacterJobEnum
     {
         // Not specified
-        Unknown = 0,    
+        Unknown = 0,
 
         // Fighters hit hard and have fight abilities
         Fighter = 10,

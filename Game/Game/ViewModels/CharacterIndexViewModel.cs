@@ -94,7 +94,7 @@ namespace Game.ViewModels
         }
 
         #endregion Constructor
-        
+
         #region DataOperations_CRUDi
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Game.ViewModels
         /// Load the Default Data
         /// </summary>
         /// <returns></returns>
-        public override List<CharacterModel> GetDefaultData() 
+        public override List<CharacterModel> GetDefaultData()
         {
             return DefaultData.LoadData(new CharacterModel());
         }

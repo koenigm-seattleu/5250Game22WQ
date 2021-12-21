@@ -129,7 +129,7 @@ namespace Game.Views
             PopupItemDescription.Text = data.Description;
             PopupItemLocation.Text = data.Location.ToMessage();
             PopupItemAttribute.Text = data.Attribute.ToMessage();
-            PopupItemValue.Text = " + " +data.Value.ToString();
+            PopupItemValue.Text = " + " + data.Value.ToString();
 
             //// Close the popup after 3 seconds
             //Device.StartTimer(TimeSpan.FromSeconds(3), () => { 

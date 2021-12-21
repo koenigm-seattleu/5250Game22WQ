@@ -510,7 +510,7 @@ namespace Game.ViewModels
         protected bool SetProperty<T>(ref T backingStore,
 #pragma warning restore CS0693 // Type parameter has the same name as the type parameter from outer type
             T value,
-            [CallerMemberName]string propertyName = "",
+            [CallerMemberName] string propertyName = "",
             Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))

@@ -2,7 +2,7 @@
 
 namespace Game.ViewModels
 {
-    public class GenericViewModel<T> : BaseViewModel<DefaultModel> where T: class
+    public class GenericViewModel<T> : BaseViewModel<DefaultModel> where T : class
     {
         /// <summary>
         /// The Item Model
@@ -12,7 +12,8 @@ namespace Game.ViewModels
         public T Data
         {
             get { return bindingData; }
-            set {
+            set
+            {
                 var data = bindingData;
                 _ = SetProperty(ref data, value);
                 bindingData = data;

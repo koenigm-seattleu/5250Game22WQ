@@ -25,7 +25,7 @@ namespace Game.Engine.EngineKoenig
         }
 
         // The BaseEngine
-        public new EngineSettingsModel EngineSettings { get;} = EngineSettingsModel.Instance;
+        public new EngineSettingsModel EngineSettings { get; } = EngineSettingsModel.Instance;
 
         /// <summary>
         /// Add the charcter to the character list

@@ -94,7 +94,7 @@ namespace Game.ViewModels
         }
 
         #endregion Constructor
-        
+
         #region DataOperations_CRUDi
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Game.ViewModels
         /// Load the Default Data
         /// </summary>
         /// <returns></returns>
-        public override List<ScoreModel> GetDefaultData() 
+        public override List<ScoreModel> GetDefaultData()
         {
             return DefaultData.LoadData(new ScoreModel());
         }

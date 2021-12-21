@@ -394,7 +394,7 @@ namespace Game.GameRules
                     Description = "Big and Ugly",
                     ImageURI = "troll1.png",
                 },
-                
+
                 new MonsterModel {
                     Name = "Old Troll",
                     Description = "Old and Powerfull",

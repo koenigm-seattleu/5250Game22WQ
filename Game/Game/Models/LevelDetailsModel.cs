@@ -7,16 +7,16 @@
     {
         // The Level
         public int Level;
-        
+
         // Experience points to achieve the level
         public int Experience;
 
         // Attack Bonus
         public int Attack;
-        
+
         // Defense Bonus
         public int Defense;
-        
+
         // Speed Bonus
         public int Speed;
 

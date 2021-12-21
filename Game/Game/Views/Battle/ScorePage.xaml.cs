@@ -7,19 +7,19 @@ using Xamarin.Forms.Xaml;
 
 namespace Game.Views
 {
-	/// <summary>
-	/// The Main Game Page
-	/// </summary>
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ScorePage: ContentPage
-	{
+    /// <summary>
+    /// The Main Game Page
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ScorePage : ContentPage
+    {
         // This uses the Instance so it can be shared with other Battle Pages as needed
         public BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ScorePage ()
+        public ScorePage()
         {
             InitializeComponent();
             DrawOutput();

@@ -11,7 +11,7 @@ namespace Game.Views
     /// <summary>
     /// The Read Page
     /// </summary>
-    [DesignTimeVisible(false)] 
+    [DesignTimeVisible(false)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScoreDeletePage : ContentPage
     {

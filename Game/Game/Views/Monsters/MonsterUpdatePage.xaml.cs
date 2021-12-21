@@ -217,7 +217,7 @@ namespace Game.Views
             // Check for null, SelectedItem is not set when the control is created
             if (DifficultyPicker.SelectedItem == null)
             {
-                return; 
+                return;
             }
 
             // Change the Difficulty
@@ -281,7 +281,7 @@ namespace Game.Views
         {
             SpeedValue.Text = String.Format("{0}", e.NewValue);
         }
-              
+
         /// <summary>
         /// Randomize Monster Values and Items
         /// </summary>

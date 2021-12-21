@@ -3,11 +3,11 @@ using Game.Models;
 
 namespace Game.Engine.EngineInterfaces
 {
-   public interface IBattleEngineInterface
+    public interface IBattleEngineInterface
     {
         IRoundEngineInterface Round { get; set; }
 
-        EngineSettingsModel EngineSettings { get;} 
+        EngineSettingsModel EngineSettings { get; }
 
         bool PopulateCharacterList(CharacterModel data);
 
