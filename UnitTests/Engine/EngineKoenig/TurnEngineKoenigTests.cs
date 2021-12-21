@@ -21,7 +21,7 @@ namespace UnitTests.Engine.EngineKoenig
         public void Setup()
         {
             Engine = new BattleEngine();
-            Engine.StartBattle(true);   // Start engine in auto battle mode
+            _ = Engine.StartBattle(true);   // Start engine in auto battle mode
         }
 
         [TearDown]
@@ -57,7 +57,7 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.Attack(PlayerInfo);
 
             // Reset
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(true, result);
@@ -74,13 +74,13 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.CurrentDefender = null;
             Engine.EngineSettings.CurrentAttacker = null;
 
-            Engine.StartBattle(true);   // Clear the Engine
+            _ = Engine.StartBattle(true);   // Clear the Engine
 
             // Act
             var result = Engine.Round.Turn.Attack(PlayerInfo);
 
             // Reset
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(false, result);
@@ -97,7 +97,7 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.Attack(PlayerInfo);
 
             // Reset
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(true, result);
@@ -122,7 +122,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -145,7 +145,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -172,7 +172,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -200,7 +200,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -228,7 +228,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -254,7 +254,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreNotEqual(null, result);
@@ -279,7 +279,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -302,7 +302,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -329,7 +329,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -357,7 +357,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -385,7 +385,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreEqual(null, result);
@@ -411,7 +411,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Restore the List
             Engine.EngineSettings.PlayerList = saveList;
-            Engine.StartBattle(false);   // Clear the Engine
+            _ = Engine.StartBattle(false);   // Clear the Engine
 
             // Assert
             Assert.AreNotEqual(null, result);
@@ -597,7 +597,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.PlayerList.Add(character);
             Engine.EngineSettings.PlayerList.Add(monster);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Act
             var result = Engine.Round.Turn.TakeTurn(character);
@@ -621,7 +621,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.PlayerList.Add(character);
             Engine.EngineSettings.PlayerList.Add(monster);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Set current action to unknonw
             EngineSettingsModel.Instance.CurrentAction = ActionEnum.Unknown;
@@ -1000,7 +1000,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.MonsterList.Clear();
             Engine.EngineSettings.MonsterList.Add(PlayerInfo);
-            Engine.Round.MakePlayerList();
+            _ = Engine.Round.MakePlayerList();
 
             // Act
             var result = Engine.Round.Turn.RemoveIfDead(PlayerInfo);
@@ -1026,7 +1026,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.MonsterList.Clear();
             Engine.EngineSettings.MonsterList.Add(PlayerInfo);
-            Engine.Round.MakePlayerList();
+            _ = Engine.Round.MakePlayerList();
 
             // Act
             var result = Engine.Round.Turn.RemoveIfDead(PlayerInfo);
@@ -1081,7 +1081,7 @@ namespace UnitTests.Engine.EngineKoenig
             var characterPlayer = new PlayerInfoModel(new CharacterModel { Job=CharacterJobEnum.Unknown});
 
             // remove it so it is not found
-            characterPlayer.AbilityTracker.Remove(AbilityEnum.Unknown);
+            _ = characterPlayer.AbilityTracker.Remove(AbilityEnum.Unknown);
 
             // Act
             var result = Engine.Round.Turn.UseAbility(characterPlayer);
@@ -1342,7 +1342,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
             Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1373,7 +1373,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1400,7 +1400,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1431,7 +1431,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1461,7 +1461,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1489,7 +1489,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1514,7 +1514,7 @@ namespace UnitTests.Engine.EngineKoenig
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1540,7 +1540,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
@@ -1562,7 +1562,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             // Not on map.... 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
@@ -1587,7 +1587,7 @@ namespace UnitTests.Engine.EngineKoenig
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Add player after map is made, so player is not on the map
 
