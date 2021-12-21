@@ -375,8 +375,8 @@ namespace UnitTests.Views
             var control = (Editor)page.FindByName("ServerItemsList");
 
             var expected = new StringBuilder();
-            expected.AppendLine(data[0].FormatOutput());
-            expected.AppendLine(data[1].FormatOutput());
+            _ = expected.AppendLine(data[0].FormatOutput());
+            _ = expected.AppendLine(data[1].FormatOutput());
 
             // Act
             var result = page.DisplayServerResults(data);
