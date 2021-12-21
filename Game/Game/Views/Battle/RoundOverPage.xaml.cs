@@ -43,7 +43,7 @@ namespace Game.Views
             var FlexList = CharacterListFrame.Children.ToList();
             foreach (var data in FlexList)
             {
-                CharacterListFrame.Children.Remove(data);
+                _ = CharacterListFrame.Children.Remove(data);
             }
 
             // Draw the Characters
@@ -79,7 +79,7 @@ namespace Game.Views
             var FlexList = ItemListFoundFrame.Children.ToList();
             foreach (var data in FlexList)
             {
-                ItemListFoundFrame.Children.Remove(data);
+                _ = ItemListFoundFrame.Children.Remove(data);
             }
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
@@ -97,7 +97,7 @@ namespace Game.Views
             var FlexList = ItemListSelectedFrame.Children.ToList();
             foreach (var data in FlexList)
             {
-                ItemListSelectedFrame.Children.Remove(data);
+                _ = ItemListSelectedFrame.Children.Remove(data);
             }
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
@@ -282,7 +282,7 @@ namespace Game.Views
 		public void CloseButton_Clicked(object sender, EventArgs e)
 		{
             // Reset to a new Round
-            BattleEngineViewModel.Instance.Engine.Round.NewRound();
+            _ = BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
             // Show the New Round Screen
             ShowModalNewRoundPage();
@@ -310,7 +310,7 @@ namespace Game.Views
         /// </summary>
         public async void ShowModalNewRoundPage()
         {
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
     }

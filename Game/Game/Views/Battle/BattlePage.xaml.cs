@@ -47,16 +47,16 @@ namespace Game.Views
             BindingContext = BattleEngineViewModel.Instance;
 
             // Create and Draw the Map
-            InitializeMapGrid();
+            _ = InitializeMapGrid();
 
             // Start the Battle Engine
-            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             // Populate the UI Map
             DrawMapGridInitialState();
 
             // Ask the Game engine to select who goes first
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
 
             // Add Players to Display
             DrawGameAttackerDefenderBoard();
@@ -73,7 +73,7 @@ namespace Game.Views
             var CharacterBoxList = CharacterBox.Children.ToList();
             foreach (var data in CharacterBoxList)
             {
-                CharacterBox.Children.Remove(data);
+                _ = CharacterBox.Children.Remove(data);
             }
 
             // Draw the Characters
@@ -85,7 +85,7 @@ namespace Game.Views
             var MonsterBoxList = MonsterBox.Children.ToList();
             foreach (var data in MonsterBoxList)
             {
-                MonsterBox.Children.Remove(data);
+                _ = MonsterBox.Children.Remove(data);
             }
 
             // Draw the Monsters
@@ -146,7 +146,7 @@ namespace Game.Views
         /// <returns></returns>
         public bool InitializeMapGrid()
         {
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.ClearMapGrid();
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.ClearMapGrid();
 
             return true;
         }
@@ -164,11 +164,11 @@ namespace Game.Views
         public void DrawMapGridInitialState()
         {
             // Create the Map in the Game Engine
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
-            CreateMapGridObjects();
+            _ = CreateMapGridObjects();
 
-            UpdateMapGrid();
+            _ = UpdateMapGrid();
         }
 
         /// <summary>
@@ -212,7 +212,7 @@ namespace Game.Views
                     stackObject.Children.Add(PlayerImageButton);
 
                     // Update the Image in the Datastructure
-                    MapGridObjectAddImage(PlayerImageButton, data);
+                    _ = MapGridObjectAddImage(PlayerImageButton, data);
 
                     stackObject.BackgroundColor = DetermineMapBackgroundColor(data);
                 }
@@ -291,7 +291,7 @@ namespace Game.Views
         /// <returns></returns>
         public object GetMapGridObject(string name)
         {
-            MapLocationObject.TryGetValue(name, out object data);
+            _ = MapLocationObject.TryGetValue(name, out object data);
             return data;
         }
 
@@ -323,8 +323,8 @@ namespace Game.Views
                 },
             };
 
-            MapGridObjectAddImage(PlayerImageButton, mapLocationModel);
-            MapGridObjectAddStack(PlayerStack, mapLocationModel);
+            _ = MapGridObjectAddImage(PlayerImageButton, mapLocationModel);
+            _ = MapGridObjectAddStack(PlayerStack, mapLocationModel);
 
             var MapFrame = new Frame
             {
@@ -532,7 +532,7 @@ namespace Game.Views
             DrawPlayerBoxes();
 
             // Draw the Map
-            UpdateMapGrid();
+            _ = UpdateMapGrid();
 
             // Show the Attacker and Defender
             DrawGameBoardAttackerDefenderSection();
@@ -574,7 +574,7 @@ namespace Game.Views
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
-                UpdateMapGrid();
+                _ = UpdateMapGrid();
                 DefenderImage.BackgroundColor = Color.Red;
             }
 
@@ -652,7 +652,7 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
                 // Pause
-                Task.Delay(WaitTime);
+                _ = Task.Delay(WaitTime);
 
                 Debug.WriteLine("New Round");
 
@@ -667,10 +667,10 @@ namespace Game.Views
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
                 // Wrap up
-                BattleEngineViewModel.Instance.Engine.EndBattle();
+                _ = BattleEngineViewModel.Instance.Engine.EndBattle();
 
                 // Pause
-                Task.Delay(WaitTime);
+                _ = Task.Delay(WaitTime);
 
                 Debug.WriteLine("Game Over");
 
@@ -684,7 +684,7 @@ namespace Game.Views
         /// </summary>
         public void SetAttackerAndDefender()
         {
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
@@ -692,14 +692,14 @@ namespace Game.Views
                     // User would select who to attack
 
                     // for now just auto selecting
-                    BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
                     break;
 
                 case PlayerTypeEnum.Monster:
                 default:
 
                     // Monsters turn, so auto pick a Character to Attack
-                    BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
                     break;
             }
         }
@@ -771,7 +771,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void ExitButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -894,7 +894,7 @@ namespace Game.Views
                     break;
 
                 case BattleStateEnum.NewRound:
-                    UpdateMapGrid();
+                    _ = UpdateMapGrid();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;

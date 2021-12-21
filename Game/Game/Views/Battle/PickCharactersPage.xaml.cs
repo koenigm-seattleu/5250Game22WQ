@@ -90,7 +90,7 @@ namespace Game.Views
             PartyListView.SelectedItem = null;
 
             // Remove the character from the list
-            BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
+            _ = BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
 
             UpdateNextButtonState();
         }
@@ -129,7 +129,7 @@ namespace Game.Views
             CreateEngineCharacterList();
 
             await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
-            await Navigation.PopAsync();
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>

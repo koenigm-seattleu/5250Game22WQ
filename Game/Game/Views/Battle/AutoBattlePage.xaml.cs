@@ -41,7 +41,7 @@ namespace Game.Views
 
 			BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
-			await AutoBattle.RunAutoBattle();
+            _ = await AutoBattle.RunAutoBattle();
 			
 			var BattleMessage = string.Format("Done {0} Rounds", AutoBattle.Battle.EngineSettings.BattleScore.RoundCount);
 
