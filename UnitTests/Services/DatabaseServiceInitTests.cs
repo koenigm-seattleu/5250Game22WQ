@@ -28,7 +28,7 @@ namespace UnitTests.Services
         [TearDown]
         public async Task TearDown()
         {
-            await DataStore.WipeDataListAsync();
+            _ = await DataStore.WipeDataListAsync();
         }
 
         [Test]

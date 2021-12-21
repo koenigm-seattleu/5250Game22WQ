@@ -97,7 +97,7 @@ namespace UnitTests.Services
             var RestUrl = "http://some.fake.url";
 
             var OldHttpClient = Service.GetHttpClient();
-            Service.SetHttpClient(MockHttpClient);
+            _ = Service.SetHttpClient(MockHttpClient);
 
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.GetStringContent);
 
@@ -108,7 +108,7 @@ namespace UnitTests.Services
             var resultList = ItemModelJsonHelper.ParseJson(result);
 
             // Reset
-            Service.SetHttpClient(OldHttpClient);
+            _ = Service.SetHttpClient(OldHttpClient);
             ResponseMessage.ResetResponseMessageStringContent();
 
             // Assert
@@ -125,7 +125,7 @@ namespace UnitTests.Services
             var RestUrl = "http://some.fake.url";
 
             var OldHttpClient = Service.GetHttpClient();
-            Service.SetHttpClient(MockHttpClient);
+            _ = Service.SetHttpClient(MockHttpClient);
 
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
             ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeBadRequest);
@@ -138,7 +138,7 @@ namespace UnitTests.Services
             var resultList = ItemModelJsonHelper.ParseJson(result);
 
             // Reset
-            Service.SetHttpClient(OldHttpClient);
+            _ = Service.SetHttpClient(OldHttpClient);
             ResponseMessage.ResetResponseMessageStringContent();
             ResponseMessage.ResetHttpStatusCode();
 
@@ -227,7 +227,7 @@ namespace UnitTests.Services
             var RestUrl = "http://some.fake.url";
 
             var OldHttpClient = Service.GetHttpClient();
-            Service.SetHttpClient(MockHttpClient);
+            _ = Service.SetHttpClient(MockHttpClient);
 
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.GetStringContent);
 
@@ -258,7 +258,7 @@ namespace UnitTests.Services
             var resultList = ItemModelJsonHelper.ParseJson(result);
 
             // Reset
-            Service.SetHttpClient(OldHttpClient);
+            _ = Service.SetHttpClient(OldHttpClient);
             ResponseMessage.ResetResponseMessageStringContent();
 
             // Assert
@@ -275,7 +275,7 @@ namespace UnitTests.Services
             var RestUrl = "http://some.fake.url";
 
             var OldHttpClient = Service.GetHttpClient();
-            Service.SetHttpClient(MockHttpClient);
+            _ = Service.SetHttpClient(MockHttpClient);
 
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
             ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeBadRequest);
@@ -307,7 +307,7 @@ namespace UnitTests.Services
             var resultList = ItemModelJsonHelper.ParseJson(result);
 
             // Reset
-            Service.SetHttpClient(OldHttpClient);
+            _ = Service.SetHttpClient(OldHttpClient);
             ResponseMessage.ResetResponseMessageStringContent();
             ResponseMessage.ResetHttpStatusCode();
 

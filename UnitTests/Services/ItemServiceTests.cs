@@ -10,13 +10,13 @@ namespace UnitTests.Services
         [SetUp]
         public void Setup()
         {
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
         }
 
         [TearDown]
         public async Task TearDown()
         {
-            await Game.Helpers.DataSetsHelper.WipeDataInSequence();
+            _ = await Game.Helpers.DataSetsHelper.WipeDataInSequence();
         }
 
         [Test]

@@ -21,7 +21,7 @@ namespace UnitTests.Services
         [TearDown]
         public async Task TearDown()
         {
-            await DataStore.WipeDataListAsync();
+            _ = await DataStore.WipeDataListAsync();
         }
 
         [Test]
@@ -126,7 +126,7 @@ namespace UnitTests.Services
         {
             // Arrange
             var item = new ItemModel();
-            await DataStore.CreateAsync(item);
+            _ = await DataStore.CreateAsync(item);
 
             // Act
             var result = await DataStore.ReadAsync(item.Id);
@@ -142,7 +142,7 @@ namespace UnitTests.Services
         {
             // Arrange
             var item = new ItemModel();
-            await DataStore.CreateAsync(item);
+            _ = await DataStore.CreateAsync(item);
             DataStore.datalist.Clear();
 
             // Act
@@ -159,7 +159,7 @@ namespace UnitTests.Services
         {
             // Arrange
             var item = new ItemModel();
-            await DataStore.CreateAsync(item);
+            _ = await DataStore.CreateAsync(item);
 
             // Act
             var result = await DataStore.ReadAsync(null);
@@ -175,7 +175,7 @@ namespace UnitTests.Services
         {
             // Arrange
             var item = new ItemModel();
-            await DataStore.CreateAsync(item);
+            _ = await DataStore.CreateAsync(item);
 
             // Act
             var result = await DataStore.IndexAsync();
@@ -200,8 +200,8 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
-            await DataStore.CreateAsync(item2);
+            _ = await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item2);
 
             // Act
             var result = await DataStore.DeleteAsync(item1.Id);
@@ -227,8 +227,8 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
-            await DataStore.CreateAsync(item2);
+            _ = await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item2);
 
             // Act
             var result = await DataStore.DeleteAsync("bogus");
@@ -254,8 +254,8 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
-            await DataStore.CreateAsync(item2);
+            _ = await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item2);
 
             // Act
             var result = await DataStore.DeleteAsync(null);
@@ -281,8 +281,8 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
-            await DataStore.CreateAsync(item2);
+            _ = await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item2);
 
             // Act
             item2.Name = "c";
@@ -311,8 +311,8 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
-            await DataStore.CreateAsync(item2);
+            _ = await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item2);
 
             // Act
             var result = await DataStore.UpdateAsync(null);
@@ -337,7 +337,7 @@ namespace UnitTests.Services
                 Name = "b"
             };
 
-            await DataStore.CreateAsync(item1);
+            _ = await DataStore.CreateAsync(item1);
             //await DataStore.CreateAsync(item2);   // Don't put 2 in the list
 
             // Act
