@@ -1,15 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Game;
 using Game.Views;
-using Game.ViewModels;
-using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
