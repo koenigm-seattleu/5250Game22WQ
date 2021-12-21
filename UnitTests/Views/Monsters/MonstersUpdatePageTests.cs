@@ -101,7 +101,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
@@ -261,7 +261,7 @@ namespace UnitTests.Views
             // Act
             var itemButton = item.Children.FirstOrDefault(m => m.GetType().Name.Equals("Button"));
 
-            page.ShowPopup(new ItemModel());
+            _ = page.ShowPopup(new ItemModel());
 
             // Reset
 

@@ -101,7 +101,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
@@ -223,7 +223,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.ShowPopup(new ItemModel());
+            _ = page.ShowPopup(new ItemModel());
 
             // Reset
 

@@ -87,7 +87,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            _ = OnBackButtonPressed();
 
             // Reset
 
@@ -101,7 +101,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.GetItemToDisplay();
+            _ = page.GetItemToDisplay();
 
             // Reset
 
@@ -115,7 +115,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.ShowPopup(new ItemModel());
+            _ = page.ShowPopup(new ItemModel());
 
             // Reset
 
@@ -163,7 +163,7 @@ namespace UnitTests.Views
             // Arrange
             ItemIndexViewModel.Instance.Dataset.Clear();
 
-            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
+            _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
 
             var Monster = new MonsterModel();
             Monster.Head = ItemIndexViewModel.Instance.GetLocationItems(ItemLocationEnum.Head).First().Id;
@@ -183,7 +183,7 @@ namespace UnitTests.Views
         {
             // Arrange
             ItemIndexViewModel.Instance.Dataset.Clear();
-            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
+            _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
 
             // Act
             var result = page.GetItemToDisplay();
