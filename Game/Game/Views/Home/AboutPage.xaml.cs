@@ -141,7 +141,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void GetItemsPost_Command(object sender, EventArgs e)
         {
-            await GetItemsPost();
+            _ = await GetItemsPost();
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Game.Views
             {
                 // Add them line by one, use \n to force new line for output display.
                 // Build up the output string by adding formatted ItemModel Output
-                result.AppendLine(ItemModel.FormatOutput());
+                _ = result.AppendLine(ItemModel.FormatOutput());
             }
 
             // If there is results show them
