@@ -19,7 +19,7 @@ namespace Game
             InitializeComponent();
 
             // Add each model here to warm up and load it.
-            Helpers.DataSetsHelper.WarmUp();
+            _ = Helpers.DataSetsHelper.WarmUp();
 
             // Call the Main Page to open
             MainPage = new MainPage();
