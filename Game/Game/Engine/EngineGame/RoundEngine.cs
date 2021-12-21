@@ -44,22 +44,22 @@ namespace Game.Engine.EngineGame
         public override bool NewRound()
         {
             // End the existing round
-            EndRound();
+            _ = EndRound();
 
             // Remove Character Buffs
-            RemoveCharacterBuffs();
+            _ = RemoveCharacterBuffs();
 
             // Populate New Monsters..
-            AddMonstersToRound();
+            _ = AddMonstersToRound();
 
             // Make the BaseEngine.PlayerList
-            MakePlayerList();
+            _ = MakePlayerList();
 
             // Set Order for the Round
-            OrderPlayerListByTurnOrder();
+            _ = OrderPlayerListByTurnOrder();
 
             // Populate BaseEngine.MapModel with Characters and Monsters
-            EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
+            _ = EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
 
             // Update Score for the RoundCount
             EngineSettings.BattleScore.RoundCount++;
@@ -103,7 +103,7 @@ namespace Game.Engine.EngineGame
             }
 
             // Reset Monster and Item Lists
-            ClearLists();
+            _ = ClearLists();
 
             return true;
         }
