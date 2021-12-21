@@ -279,7 +279,7 @@ namespace Game.Engine.EngineBase
             }
 
             // Do Attack
-            TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
 
             return true;
         }
@@ -377,10 +377,10 @@ namespace Game.Engine.EngineBase
             }
 
             // Set Messages to empty
-            EngineSettings.BattleMessagesModel.ClearMessages();
+            _ = EngineSettings.BattleMessagesModel.ClearMessages();
 
             // Do the Attack
-            CalculateAttackStatus(Attacker, Target);
+            _ = CalculateAttackStatus(Attacker, Target);
 
             // See if the Battle Settings Overrides the Roll
             EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
@@ -394,7 +394,7 @@ namespace Game.Engine.EngineBase
 
                 case HitStatusEnum.CriticalMiss:
                     // It's a Critical Miss, so Bad things may happen
-                    DetermineCriticalMissProblem(Attacker);
+                    _ = DetermineCriticalMissProblem(Attacker);
 
                     break;
 
@@ -417,10 +417,10 @@ namespace Game.Engine.EngineBase
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
-                    RemoveIfDead(Target);
+                    _ = RemoveIfDead(Target);
 
                     // If it is a character apply the experience earned
-                    CalculateExperience(Attacker, Target);
+                    _ = CalculateExperience(Attacker, Target);
 
                     break;
             }
@@ -484,7 +484,7 @@ namespace Game.Engine.EngineBase
         /// <param name="Target"></param>
         public virtual void ApplyDamage(PlayerInfoModel Target)
         {
-            Target.TakeDamage(EngineSettings.BattleMessagesModel.DamageAmount);
+            _ = Target.TakeDamage(EngineSettings.BattleMessagesModel.DamageAmount);
             EngineSettings.BattleMessagesModel.CurrentHealth = Target.GetCurrentHealthTotal;
         }
 
@@ -556,7 +556,7 @@ namespace Game.Engine.EngineBase
             // Check for alive
             if (Target.Alive == false)
             {
-                TargetDied(Target);
+                _ = TargetDied(Target);
                 return true;
             }
 
@@ -579,7 +579,7 @@ namespace Game.Engine.EngineBase
             EngineSettings.BattleMessagesModel.TurnMessageSpecial = " and causes death. ";
 
             // Removing the 
-            EngineSettings.MapModel.RemovePlayerFromMap(Target);
+            _ = EngineSettings.MapModel.RemovePlayerFromMap(Target);
 
             // INFO: Teams, Hookup your Boss if you have one...
 
@@ -592,7 +592,7 @@ namespace Game.Engine.EngineBase
 
                     EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
 
-                    DropItems(Target);
+                    _ = DropItems(Target);
 
                     found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
                     found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
@@ -609,7 +609,7 @@ namespace Game.Engine.EngineBase
 
                     EngineSettings.BattleScore.MonsterModelDeathList.Add(Target);
 
-                    DropItems(Target);
+                    _ = DropItems(Target);
 
                     found = EngineSettings.MonsterList.Remove(EngineSettings.MonsterList.Find(m => m.Guid.Equals(Target.Guid)));
                     found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));

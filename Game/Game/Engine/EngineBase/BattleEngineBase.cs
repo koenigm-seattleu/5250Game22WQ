@@ -54,7 +54,7 @@ namespace Game.Engine.EngineBase
 
             BattleRunning = true;
 
-            Round.NewRound();
+            _ = Round.NewRound();
 
             return true;
         }
@@ -67,7 +67,7 @@ namespace Game.Engine.EngineBase
         {
             BattleRunning = false;
 
-            EngineSettings.BattleScore.CalculateScore();
+            _ = EngineSettings.BattleScore.CalculateScore();
 
             return true;
         }
