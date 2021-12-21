@@ -59,7 +59,7 @@ namespace Game.Models
         /// <param name="data"></param>
         public ItemModel(ItemModel data)
         {
-            Update(data);
+            _ = Update(data);
         }
 
         /// <summary>

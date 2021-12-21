@@ -539,7 +539,7 @@ namespace Game.Models
                 CurrentHealth = 0;
 
                 // Death...
-                CauseDeath();
+                _ = CauseDeath();
             }
 
             return true;
@@ -705,7 +705,7 @@ namespace Game.Models
                 return Level;
             }
 
-            AddExperience(LevelTableHelper.LevelDetailsList[Value].Experience + 1);
+            _ = AddExperience(LevelTableHelper.LevelDetailsList[Value].Experience + 1);
 
             return Level;
         }

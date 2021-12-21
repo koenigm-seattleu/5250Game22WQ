@@ -93,7 +93,7 @@ namespace Game.Models
         public ScoreModel(ScoreModel data)
         {
             // Id = data.Id;
-            Update(data);
+            _ = Update(data);
         }
 
         /// <summary>

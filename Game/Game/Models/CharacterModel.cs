@@ -35,7 +35,7 @@ namespace Game.Models
         /// <param name="data"></param>
         public CharacterModel(CharacterModel data)
         {
-            Update(data);
+            _ = Update(data);
         }
 
         /// <summary>

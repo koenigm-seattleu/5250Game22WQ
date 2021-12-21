@@ -37,7 +37,7 @@ namespace Game.Models
         /// <param name="data"></param>
         public MonsterModel(MonsterModel data)
         {
-            Update(data);
+            _ = Update(data);
         }
 
         /// <summary>

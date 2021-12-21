@@ -29,7 +29,7 @@ namespace Game.Models
             // Create the Map
             MapGridLocation = new MapModelLocation[MapXAxiesCount, MapYAxiesCount];
 
-            ClearMapGrid();
+            _ = ClearMapGrid();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Game.Models
         /// <returns></returns>
         public bool PopulateMapModel(List<PlayerInfoModel> PlayerList)
         {
-            ClearMapGrid();
+            _ = ClearMapGrid();
 
             int x = 0;
             int y = 0;

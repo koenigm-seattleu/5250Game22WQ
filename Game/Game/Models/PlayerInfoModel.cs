@@ -319,22 +319,22 @@ namespace Game.Models
             {
                 case AbilityEnum.Heal:
                 case AbilityEnum.Bandage:
-                    BuffHealth();
+                    _ = BuffHealth();
                     break;
 
                 case AbilityEnum.Toughness:
                 case AbilityEnum.Barrier:
-                    BuffDefense();
+                    _ = BuffDefense();
                     break;
 
                 case AbilityEnum.Curse:
                 case AbilityEnum.Focus:
-                    BuffAttack();
+                    _ = BuffAttack();
                     break;
 
                 case AbilityEnum.Quick:
                 case AbilityEnum.Nimble:
-                    BuffSpeed();
+                    _ = BuffSpeed();
                     break;
             }
 
