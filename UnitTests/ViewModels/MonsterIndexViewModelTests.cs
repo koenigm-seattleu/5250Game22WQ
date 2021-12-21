@@ -23,7 +23,7 @@ namespace UnitTests.ViewModels
             MockForms.Init();
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             ViewModel = MonsterIndexViewModel.Instance;
         }
@@ -93,11 +93,11 @@ namespace UnitTests.ViewModels
 
             // Add items into the list Z ordered
             var dataTest = new MonsterModel { Name = "test" };
-            await ViewModel.CreateAsync(dataTest);
+            _ = await ViewModel.CreateAsync(dataTest);
 
-            await ViewModel.CreateAsync(new MonsterModel { Name = "z" });
-            await ViewModel.CreateAsync(new MonsterModel { Name = "m" });
-            await ViewModel.CreateAsync(new MonsterModel { Name = "a" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "z" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "m" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "a" });
 
             // Act
             var result = ViewModel.CheckIfExists(dataTest);
@@ -117,9 +117,9 @@ namespace UnitTests.ViewModels
             var dataTest = new MonsterModel { Name = "test" };
             // Don't add it to the list await ViewModel.CreateAsync(dataTest);
 
-            await ViewModel.CreateAsync(new MonsterModel { Name = "z" });
-            await ViewModel.CreateAsync(new MonsterModel { Name = "m" });
-            await ViewModel.CreateAsync(new MonsterModel { Name = "a" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "z" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "m" });
+            _ = await ViewModel.CreateAsync(new MonsterModel { Name = "a" });
 
             // Act
             var result = ViewModel.CheckIfExists(dataTest);
@@ -134,7 +134,7 @@ namespace UnitTests.ViewModels
         public async Task MonsterIndexViewModel_Message_Delete_Valid_Should_Pass()
         {
             // Arrange
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
 
             // Get the item to delete
             var first = ViewModel.Dataset.FirstOrDefault();
@@ -157,7 +157,7 @@ namespace UnitTests.ViewModels
         public async Task MonsterIndexViewModel_Delete_Valid_Should_Pass()
         {
             // Arrange
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
             var first = ViewModel.Dataset.FirstOrDefault();
 
             // Act
@@ -230,7 +230,7 @@ namespace UnitTests.ViewModels
         public async Task MonsterIndexViewModel_Message_Update_Valid_Should_Pass()
         {
             // Arrange
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
 
             // Get the item to delete
             var first = ViewModel.Dataset.FirstOrDefault();
@@ -265,7 +265,7 @@ namespace UnitTests.ViewModels
             var result = ViewModel.GetCurrentDataSource();
 
             // Reset
-            await ViewModel.SetDataSource(0);
+            _ = await ViewModel.SetDataSource(0);
 
             // Assert
             Assert.AreEqual(0, result); // Count of 0 for the load was skipped
@@ -281,7 +281,7 @@ namespace UnitTests.ViewModels
 
             ViewModel.Dataset.Clear();
 
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
 
             // Act
             MessagingCenter.Send(myPage, "WipeDataList", true);
@@ -297,7 +297,7 @@ namespace UnitTests.ViewModels
         public async Task MonsterIndexViewModel_Update_Valid_Should_Pass()
         {
             // Arrange
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
 
             // Find the First ID
             var first = ViewModel.Dataset.FirstOrDefault();
@@ -401,7 +401,7 @@ namespace UnitTests.ViewModels
         public async Task MonsterIndexViewModel_ExecuteLoadDataCommand_InValid_Exception_Should_Fail()
         {
             // Arrange
-            await ViewModel.CreateAsync(new MonsterModel());
+            _ = await ViewModel.CreateAsync(new MonsterModel());
             var oldDataset = ViewModel.Dataset;
 
             // Null dataset will throw
@@ -495,7 +495,7 @@ namespace UnitTests.ViewModels
                 Name = "New Item"
             };
 
-            await ViewModel.CreateUpdateAsync(data);
+            _ = await ViewModel.CreateUpdateAsync(data);
 
             data.Name = "Updated";
 

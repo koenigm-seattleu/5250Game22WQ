@@ -57,7 +57,7 @@ namespace UnitTests.ViewModels
             var result = new BaseViewModel<ItemModel>();
 
             var isBusy = false;
-            SetProperty<bool>(ref isBusy, true);
+            _ = SetProperty<bool>(ref isBusy, true);
 
             // Reset
 
@@ -74,7 +74,7 @@ namespace UnitTests.ViewModels
             var result = new BaseViewModel<ItemModel>();
 
             var isBusy = false;
-            SetProperty<bool>(ref isBusy, false);
+            _ = SetProperty<bool>(ref isBusy, false);
 
             // Reset
 
@@ -95,7 +95,7 @@ namespace UnitTests.ViewModels
 
             // Act
 
-            SetProperty<bool>(ref isBusy, false, "bogus", showMethod);
+            _ = SetProperty<bool>(ref isBusy, false, "bogus", showMethod);
 
             // Reset
 
@@ -116,7 +116,7 @@ namespace UnitTests.ViewModels
 
             // Act
 
-            SetProperty<bool>(ref isBusy, false, "bogus", showMethod);
+            _ = SetProperty<bool>(ref isBusy, false, "bogus", showMethod);
 
             // Reset
 
@@ -268,13 +268,13 @@ namespace UnitTests.ViewModels
             var dataTest = new ItemModel { Name = "test" };
             ViewModel.Dataset = new ObservableCollection<ItemModel>();
 
-            await ViewModel.SetDataSource(0);
+            _ = await ViewModel.SetDataSource(0);
 
-            await ViewModel.CreateAsync(dataTest);
+            _ = await ViewModel.CreateAsync(dataTest);
 
-            await ViewModel.CreateAsync(new ItemModel { Name = "z" });
-            await ViewModel.CreateAsync(new ItemModel { Name = "m" });
-            await ViewModel.CreateAsync(new ItemModel { Name = "a" });
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "z" });
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "m" });
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "a" });
 
             // Act
             var result = ViewModel.CheckIfExists(dataTest);
