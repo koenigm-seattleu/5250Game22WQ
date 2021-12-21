@@ -9,9 +9,9 @@ namespace Game.Helpers
     {
         static public bool WarmUp()
         {
-            ScoreIndexViewModel.Instance.GetCurrentDataSource();
-            ItemIndexViewModel.Instance.GetCurrentDataSource();
-            CharacterIndexViewModel.Instance.GetCurrentDataSource();
+            _ = ScoreIndexViewModel.Instance.GetCurrentDataSource();
+            _ = ItemIndexViewModel.Instance.GetCurrentDataSource();
+            _ = CharacterIndexViewModel.Instance.GetCurrentDataSource();
 
             return true;
         }
@@ -28,7 +28,7 @@ namespace Game.Helpers
             {
                 var runSyncScore = Task.Factory.StartNew(new Func<Task>(async () =>
                 {
-                    await ScoreIndexViewModel.Instance.DataStoreWipeDataListAsync();
+                    _ = await ScoreIndexViewModel.Instance.DataStoreWipeDataListAsync();
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncScore.Wait();
@@ -36,21 +36,21 @@ namespace Game.Helpers
 
                 var runSyncItem = Task.Factory.StartNew(new Func<Task>(async () =>
                 {
-                    await ItemIndexViewModel.Instance.DataStoreWipeDataListAsync();
+                    _ = await ItemIndexViewModel.Instance.DataStoreWipeDataListAsync();
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncItem.Wait();
 
                 var runSyncCharacter = Task.Factory.StartNew(new Func<Task>(async () =>
                 {
-                    await CharacterIndexViewModel.Instance.DataStoreWipeDataListAsync();
+                    _ = await CharacterIndexViewModel.Instance.DataStoreWipeDataListAsync();
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncCharacter.Wait();
 
                 var runSyncMonster = Task.Factory.StartNew(new Func<Task>(async () =>
                 {
-                    await MonsterIndexViewModel.Instance.DataStoreWipeDataListAsync();
+                    _ = await MonsterIndexViewModel.Instance.DataStoreWipeDataListAsync();
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncMonster.Wait();
