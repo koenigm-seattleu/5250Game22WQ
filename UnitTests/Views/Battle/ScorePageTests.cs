@@ -69,7 +69,7 @@ namespace UnitTests.Views
             var data = new PlayerInfoModel(new CharacterModel());
 
             // Act
-            page.CreateCharacterDisplayBox(data);
+            _ = page.CreateCharacterDisplayBox(data);
 
             // Reset
 
@@ -83,7 +83,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.CreateCharacterDisplayBox(null);
+            _ = page.CreateCharacterDisplayBox(null);
 
             // Reset
 
@@ -98,7 +98,7 @@ namespace UnitTests.Views
             var data = new PlayerInfoModel(new MonsterModel());
 
             // Act
-            page.CreateMonsterDisplayBox(data);
+            _ = page.CreateMonsterDisplayBox(data);
 
             // Reset
 
@@ -112,7 +112,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.CreateMonsterDisplayBox(null);
+            _ = page.CreateMonsterDisplayBox(null);
 
             // Reset
 
@@ -127,7 +127,7 @@ namespace UnitTests.Views
             var data = new ItemModel();
 
             // Act
-            page.CreateItemDisplayBox(data);
+            _ = page.CreateItemDisplayBox(data);
 
             // Reset
 
@@ -141,7 +141,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.CreateItemDisplayBox(null);
+            _ = page.CreateItemDisplayBox(null);
 
             // Reset
 

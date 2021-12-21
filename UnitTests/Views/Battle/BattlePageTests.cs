@@ -33,14 +33,14 @@ namespace UnitTests.Views
             page = new BattlePage();
 
             // Put seed data into the system for all tests
-            BattleEngineViewModel.Instance.Engine.Round.ClearLists();
+            _ = BattleEngineViewModel.Instance.Engine.Round.ClearLists();
 
             //Start the Engine in AutoBattle Mode
-            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
             BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
-            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            _ = BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
         }
 
         [TearDown]
@@ -208,8 +208,8 @@ namespace UnitTests.Views
         public void BattlePage_DrawGameBoardAttackerDefender_CurrentAttacker_Null_CurrentDefender_Null_Should_Pass()
         {
             // Arrange
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
 
             // Act
             page.DrawGameAttackerDefenderBoard();
@@ -227,8 +227,8 @@ namespace UnitTests.Views
 
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(PlayerInfo);
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(PlayerInfo);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
 
             // Act
             page.DrawGameAttackerDefenderBoard();
@@ -246,8 +246,8 @@ namespace UnitTests.Views
 
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(PlayerInfo);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(PlayerInfo);
 
             // Act
             page.DrawGameAttackerDefenderBoard();
@@ -263,8 +263,8 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(new PlayerInfoModel(new CharacterModel()));
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender( new PlayerInfoModel(new CharacterModel { Alive=false }));
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(new PlayerInfoModel(new CharacterModel()));
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(new CharacterModel { Alive = false }));
 
             // Act
             page.DrawGameAttackerDefenderBoard();
@@ -280,8 +280,8 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(new PlayerInfoModel(new CharacterModel()));
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(new CharacterModel { Alive = false }));
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(new PlayerInfoModel(new CharacterModel()));
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(new CharacterModel { Alive = false }));
 
             var oldItem = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand;
 
@@ -307,7 +307,7 @@ namespace UnitTests.Views
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
 
-            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            _ = BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
 
             // Has no monster, so should show next round.
 
@@ -331,7 +331,7 @@ namespace UnitTests.Views
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
 
-            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            _ = BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
 
             // Has no Character, so should show end game
 
@@ -388,9 +388,9 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
 
             // Act
             page.SetAttackerAndDefender();
@@ -448,7 +448,7 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
@@ -506,7 +506,7 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
@@ -594,8 +594,8 @@ namespace UnitTests.Views
         {
             // Get the current valute
             var name = "MapR0C0ImageButton";
-            page.MapLocationObject.TryGetValue(name, out object data);
-            page.MapLocationObject.Remove(name);
+            _ = page.MapLocationObject.TryGetValue(name, out object data);
+            _ = page.MapLocationObject.Remove(name);
 
             // Act
             var result = page.UpdateMapGrid();
@@ -612,13 +612,13 @@ namespace UnitTests.Views
         {
             // Get the current valute
             var nameStack = "MapR0C0Stack";
-            page.MapLocationObject.TryGetValue(nameStack, out object dataStack);
-            page.MapLocationObject.Remove(nameStack);
+            _ = page.MapLocationObject.TryGetValue(nameStack, out object dataStack);
+            _ = page.MapLocationObject.Remove(nameStack);
 
             var nameImage= "MapR0C0ImageButton";
-            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
-            page.MapLocationObject.Remove(nameImage);
+            _ = page.MapLocationObject.Remove(nameImage);
 
             var dataImageBogus = new ImageButton { AutomationId = "bogus" };
             page.MapLocationObject.Add(nameImage, dataImageBogus);
@@ -627,7 +627,7 @@ namespace UnitTests.Views
             var result = page.UpdateMapGrid();
 
             // Reset
-            page.MapLocationObject.Remove(nameImage);
+            _ = page.MapLocationObject.Remove(nameImage);
             page.MapLocationObject.Add(nameImage, dataImage);
             page.MapLocationObject.Add(nameStack, dataStack);
 
@@ -646,14 +646,14 @@ namespace UnitTests.Views
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Make UI Map
-            page.CreateMapGridObjects();
-            page.UpdateMapGrid();
+            _ = page.CreateMapGridObjects();
+            _ = page.UpdateMapGrid();
 
             // Move Character in Engine
             var result = BattleEngineViewModel.Instance.Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
@@ -661,7 +661,7 @@ namespace UnitTests.Views
             // Act
 
             // Call for UpateMap
-            page.UpdateMapGrid();
+            _ = page.UpdateMapGrid();
 
             // Reset
 
@@ -940,13 +940,13 @@ namespace UnitTests.Views
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
             // Make UI Map
-            page.CreateMapGridObjects();
+            _ = page.CreateMapGridObjects();
 
             var nameImage = "MapR0C0ImageButton";
-            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
             // Act
 
@@ -969,13 +969,13 @@ namespace UnitTests.Views
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
             // Make UI Map
-            page.CreateMapGridObjects();
+            _ = page.CreateMapGridObjects();
 
             var nameImage = "MapR5C0ImageButton";
-            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
             // Act
 
@@ -998,13 +998,13 @@ namespace UnitTests.Views
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
             // Make UI Map
             page.DrawMapGridInitialState();
 
             var nameImage = "MapR3C3ImageButton";
-            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
             // Act
 

@@ -94,7 +94,7 @@ namespace UnitTests.Views
         {
             // Arrange
             // Act
-            page.ShowPopup(new ItemModel());
+            _ = page.ShowPopup(new ItemModel());
 
             // Reset
 
@@ -107,7 +107,7 @@ namespace UnitTests.Views
         {
             // Arrange
             // Act
-            page.CreatePlayerDisplayBox(null);
+            _ = page.CreatePlayerDisplayBox(null);
 
             // Reset
 
@@ -120,7 +120,7 @@ namespace UnitTests.Views
         {
             // Arrange
             // Act
-            page.GetItemToDisplay(null);
+            _ = page.GetItemToDisplay(null);
 
             // Reset
 
@@ -133,7 +133,7 @@ namespace UnitTests.Views
         {
             // Arrange
             // Act
-            page.GetItemToDisplay(new ItemModel { Id = "" });
+            _ = page.GetItemToDisplay(new ItemModel { Id = "" });
 
             // Reset
 
@@ -146,10 +146,10 @@ namespace UnitTests.Views
         {
             // Arrange
             var data = new ItemModel { Name = "Mike" };
-            await ItemIndexViewModel.Instance.CreateAsync(data);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(data);
 
             // Act
-            page.GetItemToDisplay(data);
+            _ = page.GetItemToDisplay(data);
 
             // Reset
 
