@@ -45,7 +45,7 @@ namespace Game.Views
                 LevelPicker.Items.Add(i.ToString());
             }
 
-            UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Game.Views
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
 
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Game.Views
             // need to make sure that cancel from a save, actually cancels.
             // Make a copy of the object and work from that and then have that passed in to update
 
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Game.Views
                 return;
             }
 
-            ViewModel.Data.AddItem(PopupLocationEnum, data.Id);
+            _ = ViewModel.Data.AddItem(PopupLocationEnum, data.Id);
 
             AddItemsToDisplay();
 
@@ -248,7 +248,7 @@ namespace Game.Views
             var FlexList = ItemBox.Children.ToList();
             foreach (var data in FlexList)
             {
-                ItemBox.Children.Remove(data);
+                _ = ItemBox.Children.Remove(data);
             }
 
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
@@ -320,9 +320,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public void RollDice_Clicked(object sender, EventArgs e)
         {
-            DiceAnimationHandeler();
+            _ = DiceAnimationHandeler();
 
-            RandomizeCharacter();
+            _ = RandomizeCharacter();
 
             return;
         }
@@ -355,7 +355,7 @@ namespace Game.Views
 
             ViewModel.Data.ImageURI = RandomPlayerHelper.GetCharacterImage();
 
-            UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
 
             return true;
         }
