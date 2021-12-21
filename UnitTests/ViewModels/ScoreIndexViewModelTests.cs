@@ -2,7 +2,6 @@
 using Game.ViewModels;
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
-using Game.Services;
 using System.Threading.Tasks;
 using Game.Models;
 using System.Collections.Generic;
