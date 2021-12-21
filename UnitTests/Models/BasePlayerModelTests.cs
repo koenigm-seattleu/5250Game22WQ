@@ -101,7 +101,7 @@ namespace UnitTests.Models
             result.Necklass = "necklass";
             result.PrimaryHand = "primaryhand";
             result.OffHand = "offhand";
-            result.RightFinger ="rightfinger";
+            result.RightFinger = "rightfinger";
             result.LeftFinger = "leftfinger";
 
             // Reset
@@ -388,7 +388,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -448,7 +448,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -463,7 +463,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -579,7 +579,7 @@ namespace UnitTests.Models
 
         [Test]
         public async Task BasePlayerModel_AddItem_Default_Replace_Should_Pass()
-        { 
+        {
             // Arrange
             var data = new BasePlayerModel<CharacterModel>();
 
@@ -818,7 +818,7 @@ namespace UnitTests.Models
 
             // Reset
             Game.Helpers.DiceHelper.DisableForcedRolls();
-            
+
 
             // Assert
             Assert.AreEqual(1, result);
@@ -851,7 +851,7 @@ namespace UnitTests.Models
 
             // Reset
             DiceHelper.DisableForcedRolls();
-            
+
 
             // Assert
             Assert.AreEqual("1D 1", result);
@@ -952,7 +952,7 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>
             {
                 Level = 1,
-                ExperienceTotal = NeededExperience+1
+                ExperienceTotal = NeededExperience + 1
             };
 
             // Act
@@ -1013,7 +1013,7 @@ namespace UnitTests.Models
             };
 
             // Act
-            var result = data.LevelUpToValue(LevelTableHelper.MaxLevel+1);
+            var result = data.LevelUpToValue(LevelTableHelper.MaxLevel + 1);
 
             // Reset
 

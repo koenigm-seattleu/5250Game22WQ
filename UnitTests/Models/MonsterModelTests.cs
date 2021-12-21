@@ -184,7 +184,7 @@ namespace UnitTests.Models
             result.Necklass = "necklass";
             result.PrimaryHand = "primaryhand";
             result.OffHand = "offhand";
-            result.RightFinger ="rightfinger";
+            result.RightFinger = "rightfinger";
             result.LeftFinger = "leftfinger";
 
             // Reset
@@ -361,7 +361,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -421,7 +421,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -436,7 +436,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -592,7 +592,7 @@ namespace UnitTests.Models
             _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Attribute = AttributeEnum.Attack, Value = 50000, Id = "RightFinger" });
             _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Attribute = AttributeEnum.Attack, Value = 600000, Id = "LeftFinger" });
             _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Attribute = AttributeEnum.Attack, Value = 7000000, Id = "feet" });
-            
+
             var data = new MonsterModel();
 
             // Add the first item
@@ -763,7 +763,7 @@ namespace UnitTests.Models
 
             // Reset
             Game.Helpers.DiceHelper.DisableForcedRolls();
- 
+
             // Assert
             Assert.AreEqual(2, result);
         }

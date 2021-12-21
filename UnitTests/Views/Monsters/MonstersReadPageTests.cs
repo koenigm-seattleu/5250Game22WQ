@@ -19,7 +19,7 @@ namespace UnitTests.Views
         MonsterReadPage page;
 
         public MonsterReadPageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {

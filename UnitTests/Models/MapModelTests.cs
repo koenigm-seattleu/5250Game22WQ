@@ -144,7 +144,7 @@ namespace UnitTests.Models
             var MapLocationData = map.MapGridLocation[0, 0];
 
             // Act
-            var result = map.MovePlayerOnMap(MapLocationData,new MapModelLocation { Column = -1, Row = 0 });
+            var result = map.MovePlayerOnMap(MapLocationData, new MapModelLocation { Column = -1, Row = 0 });
 
             // Reset
 
@@ -287,7 +287,7 @@ namespace UnitTests.Models
 
             var map = new MapModel();
 
-            map.MapGridLocation = new MapModelLocation[0,0];
+            map.MapGridLocation = new MapModelLocation[0, 0];
 
             // Act
             var result = map.GetEmptyLocations();
@@ -390,7 +390,7 @@ namespace UnitTests.Models
             _ = map.PopulateMapModel(PlayerList);
 
             // Act
-            var result = map.IsEmptySquare(0,0);
+            var result = map.IsEmptySquare(0, 0);
 
             // Reset
 
@@ -457,7 +457,7 @@ namespace UnitTests.Models
             _ = map.PopulateMapModel(PlayerList);
 
             // Act
-            var result = map.IsEmptySquare(0,1);
+            var result = map.IsEmptySquare(0, 1);
 
             // Reset
 
@@ -472,7 +472,7 @@ namespace UnitTests.Models
             var map = new MapModel();
 
             // Act
-            var result = map.Distance(0, 1, 1,1);
+            var result = map.Distance(0, 1, 1, 1);
 
             // Reset
 
@@ -714,7 +714,7 @@ namespace UnitTests.Models
             _ = map.PopulateMapModel(PlayerList);
 
             // Act
-            var result = map.ReturnClosestEmptyLocation(map.MapGridLocation[0,0]);
+            var result = map.ReturnClosestEmptyLocation(map.MapGridLocation[0, 0]);
 
             // Reset
 

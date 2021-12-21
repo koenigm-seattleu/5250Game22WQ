@@ -17,7 +17,7 @@ namespace UnitTests.Views
         CharacterDeletePage page;
 
         public CharacterDeletePageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {

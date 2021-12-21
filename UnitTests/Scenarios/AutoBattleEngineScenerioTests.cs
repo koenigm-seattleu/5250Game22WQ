@@ -46,7 +46,7 @@ namespace Scenario
             Assert.IsNotNull(result);
         }
 
-       [Test]
+        [Test]
         public async Task AutoBattleEngine_RunAutoBattle_Monsters_1_Should_Pass()
         {
             //Arrange
@@ -133,7 +133,7 @@ namespace Scenario
             //Assert
             Assert.AreEqual(true, result);
             Assert.AreEqual(true, AutoBattle.Battle.EngineSettings.BattleScore.CharacterAtDeathList.Contains("Mike Level Example"));
-           // Assert.AreEqual(StartLevel+1, Engine.EngineSettings.BattleScore.CharacterModelDeathList.Where(m=>m.Guid.Equals(Character.Guid)).First().Level);
+            // Assert.AreEqual(StartLevel+1, Engine.EngineSettings.BattleScore.CharacterModelDeathList.Where(m=>m.Guid.Equals(Character.Guid)).First().Level);
         }
 
         [Test]
@@ -215,7 +215,7 @@ namespace Scenario
             var CharacterPlayer = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = 100, 
+                                Speed = 100,
                                 Level = 20,
                                 MaxHealth = 200,
                                 CurrentHealth = 200,

@@ -17,7 +17,7 @@ namespace UnitTests.Views
         MonsterDeletePage page;
 
         public MonsterDeletePageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {

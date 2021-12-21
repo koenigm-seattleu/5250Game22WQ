@@ -145,7 +145,7 @@ namespace UnitTests.ViewModels
 
             // Act
             OnPropertyChanged();
-            
+
             // Reset
 
             // Assert

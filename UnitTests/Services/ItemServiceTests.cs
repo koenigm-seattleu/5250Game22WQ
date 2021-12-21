@@ -67,7 +67,7 @@ namespace UnitTests.Services
         //{
         //    // Arrange
         //    var number = 1;
-            
+
         //    var level = 6;  // Max Value of 6
         //    var attribute = AttributeEnum.Unknown;  // Any Attribute
         //    var location = ItemLocationEnum.Unknown;    // Any Location

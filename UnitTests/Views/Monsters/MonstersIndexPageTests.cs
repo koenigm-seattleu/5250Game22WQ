@@ -17,7 +17,7 @@ namespace UnitTests.Views
         MonsterIndexPage page;
 
         public MonsterIndexPageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {
@@ -126,7 +126,7 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-            Assert.IsNotNull(ViewModel); 
+            Assert.IsNotNull(ViewModel);
         }
 
         [Test]

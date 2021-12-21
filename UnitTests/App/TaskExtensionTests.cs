@@ -23,7 +23,7 @@ namespace UnitTests.Views
             // Initilize Xamarin Forms
             MockForms.Init();
 
-           IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
+            IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
 
             // Act
             // Add each model here to warm up and load it.
@@ -117,7 +117,7 @@ namespace UnitTests.Views
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
     public class TestDatabaseService<T> : IDataStore<T> where T : new()
     {
-        static bool _error=false;
+        static bool _error = false;
 
         public TestDatabaseService(bool condition, Action<Exception> onException = null)
         {

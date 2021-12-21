@@ -22,7 +22,7 @@ namespace Scenario
             _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum= HitStatusEnum.Default;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
@@ -66,7 +66,7 @@ namespace Scenario
             // Act
 
             // Assert
-           
+
 
             // Act
             var result = EngineViewModel;

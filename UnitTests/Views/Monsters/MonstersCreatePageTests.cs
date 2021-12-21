@@ -18,7 +18,7 @@ namespace UnitTests.Views
         MonsterCreatePage page;
 
         public MonsterCreatePageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {
@@ -130,7 +130,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void MonsterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
         {
@@ -181,7 +181,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.RollDice_Clicked(null,null);
+            page.RollDice_Clicked(null, null);
 
             // Reset
 

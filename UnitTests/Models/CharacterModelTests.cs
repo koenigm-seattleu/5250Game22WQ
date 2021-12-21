@@ -191,7 +191,7 @@ namespace UnitTests.Models
             result.Necklass = "necklass";
             result.PrimaryHand = "primaryhand";
             result.OffHand = "offhand";
-            result.RightFinger ="rightfinger";
+            result.RightFinger = "rightfinger";
             result.LeftFinger = "leftfinger";
             result.Job = CharacterJobEnum.Unknown;
 
@@ -459,7 +459,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -519,7 +519,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -534,7 +534,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(null,result);
+            Assert.AreEqual(null, result);
         }
 
         [Test]
@@ -707,7 +707,7 @@ namespace UnitTests.Models
             var result = data.GetItemBonus(AttributeEnum.Attack);
 
             // Reset
-            
+
 
             // Assert
             Assert.AreEqual(7654321, result);
@@ -951,7 +951,7 @@ namespace UnitTests.Models
 
             // Reset
             Game.Helpers.DiceHelper.DisableForcedRolls();
- 
+
             // Assert
             Assert.AreEqual("1 + 1D 1", result);
         }

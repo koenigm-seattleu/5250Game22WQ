@@ -18,7 +18,7 @@ namespace UnitTests.Views
         MonsterUpdatePage page;
 
         public MonsterUpdatePageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {
@@ -130,7 +130,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void MonsterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
         {

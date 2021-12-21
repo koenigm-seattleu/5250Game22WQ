@@ -109,7 +109,7 @@ namespace UnitTests.ViewModels
         }
 
         [Test]
-        public void ItemIndexViewModel_CheckIfItemExists_Invalid_Null_Should_Fail ()
+        public void ItemIndexViewModel_CheckIfItemExists_Invalid_Null_Should_Fail()
         {
             // Arrange
 

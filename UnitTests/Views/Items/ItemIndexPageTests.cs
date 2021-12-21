@@ -17,7 +17,7 @@ namespace UnitTests.Views
         ItemIndexPage page;
 
         public ItemIndexPageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {

@@ -17,7 +17,7 @@ namespace UnitTests.Views
         ItemUpdatePage page;
 
         public ItemUpdatePageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {
@@ -129,7 +129,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
         {

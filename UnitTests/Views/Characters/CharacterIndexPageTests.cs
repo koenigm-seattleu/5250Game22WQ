@@ -17,7 +17,7 @@ namespace UnitTests.Views
         CharacterIndexPage page;
 
         public CharacterIndexPageTests() : base(true) { }
-        
+
         [SetUp]
         public void Setup()
         {

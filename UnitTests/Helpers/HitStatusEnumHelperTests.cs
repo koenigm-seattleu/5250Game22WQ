@@ -19,7 +19,7 @@ namespace UnitTests.Helpers
             var result = HitStatusEnumHelper.GetListAll;
 
             // Assert
-            Assert.AreEqual(6,result.Count());
+            Assert.AreEqual(6, result.Count());
 
             // Assert
         }

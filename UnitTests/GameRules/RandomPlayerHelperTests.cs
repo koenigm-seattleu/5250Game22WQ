@@ -26,7 +26,7 @@ namespace UnitTests.Helpers
             DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(2-1, result);
+            Assert.AreEqual(2 - 1, result);
         }
 
         [Test]
@@ -339,7 +339,7 @@ namespace UnitTests.Helpers
             _ = await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
 
             // Act
-            var result = RandomPlayerHelper.GetRandomMonster(1,true);
+            var result = RandomPlayerHelper.GetRandomMonster(1, true);
 
             // Reset
 

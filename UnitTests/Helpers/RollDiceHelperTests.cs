@@ -18,7 +18,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.IsTrue(result<7);
+            Assert.IsTrue(result < 7);
             Assert.IsTrue(result > 0);
         }
 
@@ -79,7 +79,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0,result);
+            Assert.AreEqual(0, result);
         }
 
         [Test]

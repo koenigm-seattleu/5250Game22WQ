@@ -82,7 +82,7 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Assert
-            Assert.AreEqual(countBefore+1, result.DatabaseCharacterList.Count());
+            Assert.AreEqual(countBefore + 1, result.DatabaseCharacterList.Count());
             Assert.AreEqual(1, result.PartyCharacterList.Count());
         }
 

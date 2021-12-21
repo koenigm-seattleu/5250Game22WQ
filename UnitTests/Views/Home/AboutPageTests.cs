@@ -161,7 +161,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual(!current,result); 
+            Assert.AreEqual(!current, result);
         }
 
         [Test]
@@ -180,7 +180,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual(!current, result); 
+            Assert.AreEqual(!current, result);
         }
         #endregion DataSource
 
