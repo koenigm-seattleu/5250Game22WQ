@@ -92,7 +92,7 @@ namespace UnitTests.Views
             StackLayout frame = (StackLayout)page.FindByName("DatabaseSettingsFrame");
             var current = frame.IsVisible;
 
-            ToggledEventArgs args = new ToggledEventArgs(current);
+            var args = new ToggledEventArgs(current);
 
 
             // Act
@@ -112,7 +112,7 @@ namespace UnitTests.Views
             StackLayout frame = (StackLayout)page.FindByName("DebugSettingsFrame");
             var current = frame.IsVisible;
 
-            ToggledEventArgs args = new ToggledEventArgs(current);
+            var args = new ToggledEventArgs(current);
 
 
             // Act
@@ -134,7 +134,7 @@ namespace UnitTests.Views
             var control = (Switch)page.FindByName("DataSourceValue");
             var current = control.IsToggled;
 
-            ToggledEventArgs args = new ToggledEventArgs(current);
+            var args = new ToggledEventArgs(current);
 
             // Act
             page.DataSource_Toggled(null, args);
