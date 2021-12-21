@@ -60,34 +60,34 @@ namespace Game.ViewModels
             // Register the Create Message
             MessagingCenter.Subscribe<ScoreCreatePage, ScoreModel>(this, "Create", async (obj, data) =>
             {
-                await CreateAsync(data as ScoreModel);
+                _ = await CreateAsync(data as ScoreModel);
             });
 
             // Register the Update Message
             MessagingCenter.Subscribe<ScoreUpdatePage, ScoreModel>(this, "Update", async (obj, data) =>
             {
                 // Have the Score update itself
-                data.Update(data);
+                _ = data.Update(data);
 
-                await UpdateAsync(data as ScoreModel);
+                _ = await UpdateAsync(data as ScoreModel);
             });
 
             // Register the Delete Message
             MessagingCenter.Subscribe<ScoreDeletePage, ScoreModel>(this, "Delete", async (obj, data) =>
             {
-                await DeleteAsync(data as ScoreModel);
+                _ = await DeleteAsync(data as ScoreModel);
             });
 
             // Register the Set Data Source Message
             MessagingCenter.Subscribe<AboutPage, int>(this, "SetDataSource", async (obj, data) =>
             {
-                await SetDataSource(data);
+                _ = await SetDataSource(data);
             });
 
             // Register the Wipe Data List Message
             MessagingCenter.Subscribe<AboutPage, bool>(this, "WipeDataList", async (obj, data) =>
             {
-                await WipeDataListAsync();
+                _ = await WipeDataListAsync();
             });
 
             #endregion Messages

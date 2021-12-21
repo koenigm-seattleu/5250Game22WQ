@@ -60,34 +60,34 @@ namespace Game.ViewModels
             // Register the Create Message
             MessagingCenter.Subscribe<CharacterCreatePage, CharacterModel>(this, "Create", async (obj, data) =>
             {
-                await CreateAsync(data as CharacterModel);
+                _ = await CreateAsync(data as CharacterModel);
             });
 
             // Register the Update Message
             MessagingCenter.Subscribe<CharacterUpdatePage, CharacterModel>(this, "Update", async (obj, data) =>
             {
                 // Have the Character update itself
-                data.Update(data);
+                _ = data.Update(data);
 
-                await UpdateAsync(data as CharacterModel);
+                _ = await UpdateAsync(data as CharacterModel);
             });
 
             // Register the Delete Message
             MessagingCenter.Subscribe<CharacterDeletePage, CharacterModel>(this, "Delete", async (obj, data) =>
             {
-                await DeleteAsync(data as CharacterModel);
+                _ = await DeleteAsync(data as CharacterModel);
             });
 
             // Register the Set Data Source Message
             MessagingCenter.Subscribe<AboutPage, int>(this, "SetDataSource", async (obj, data) =>
             {
-                await SetDataSource(data);
+                _ = await SetDataSource(data);
             });
 
             // Register the Wipe Data List Message
             MessagingCenter.Subscribe<AboutPage, bool>(this, "WipeDataList", async (obj, data) =>
             {
-                await WipeDataListAsync();
+                _ = await WipeDataListAsync();
             });
 
             #endregion Messages

@@ -50,7 +50,7 @@ namespace Game.ViewModels
         public bool IsBusy
         {
             get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            set { _ = SetProperty(ref isBusy, value); }
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Game.ViewModels
         public string Title
         {
             get { return title; }
-            set { SetProperty(ref title, value); }
+            set { _ = SetProperty(ref title, value); }
         }
 
         #endregion Attributes
@@ -85,7 +85,7 @@ namespace Game.ViewModels
             Dataset = new ObservableCollection<T>();
             LoadDatasetCommand = new Command(async () => await ExecuteLoadDataCommand());
 
-            await SetDataSource(CurrentDataSource);   // Set to Mock to start with
+            _ = await SetDataSource(CurrentDataSource);   // Set to Mock to start with
         }
 
         #endregion Constructor
@@ -109,7 +109,7 @@ namespace Game.ViewModels
                 CurrentDataSource = 0;
             }
 
-            await LoadDefaultDataAsync();
+            _ = await LoadDefaultDataAsync();
 
             // Set Flag for Refresh
             SetNeedsRefresh(true);
@@ -149,7 +149,7 @@ namespace Game.ViewModels
             // Take all the items and add them if they don't already exist
             foreach (var data in GetDefaultData())
             {
-                await CreateUpdateAsync(data);
+                _ = await CreateUpdateAsync(data);
             }
 
             return true;
@@ -305,7 +305,7 @@ namespace Game.ViewModels
         {
             Dataset.Clear();
 
-            await DataStore.WipeDataListAsync();
+            _ = await DataStore.WipeDataListAsync();
 
             // Load the Sample Data
             var result = await LoadDefaultDataAsync();
@@ -407,7 +407,7 @@ namespace Game.ViewModels
             }
 
             // remove the record from the current data set in the viewmodel
-            Dataset.Remove(data);
+            _ = Dataset.Remove(data);
 
             // Have the record deleted from the data source
             var result = await DataStore.DeleteAsync(((BaseModel<T>)(object)record).Id);

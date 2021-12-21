@@ -14,7 +14,7 @@ namespace Game.ViewModels
             get { return bindingData; }
             set {
                 var data = bindingData;
-                SetProperty(ref data, value);
+                _ = SetProperty(ref data, value);
                 bindingData = data;
             }
         }
