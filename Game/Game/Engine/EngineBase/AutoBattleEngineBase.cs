@@ -52,10 +52,10 @@ namespace Game.Engine.EngineBase
 
             // Prepare for Battle
 
-            CreateCharacterParty();
+            _ = CreateCharacterParty();
 
             // Start Battle in AutoBattle mode
-            Battle.StartBattle(true);
+            _ = Battle.StartBattle(true);
 
             // Fight Loop. Continue until Game is Over...
             do
@@ -64,7 +64,7 @@ namespace Game.Engine.EngineBase
                 if (DetectInfinateLoop())
                 {
                     Debug.WriteLine("Aborting, More than Max Rounds");
-                    Battle.EndBattle();
+                    _ = Battle.EndBattle();
                     return false;
                 }
 
@@ -76,7 +76,7 @@ namespace Game.Engine.EngineBase
 
                 if (RoundCondition == RoundEnum.NewRound)
                 {
-                    Battle.Round.NewRound();
+                    _ = Battle.Round.NewRound();
                     Debug.WriteLine("New Round");
                 }
 
@@ -85,7 +85,7 @@ namespace Game.Engine.EngineBase
             Debug.WriteLine("Game Over");
 
             // Wrap up
-            Battle.EndBattle();
+            _ = Battle.EndBattle();
 
             return true;
         }
@@ -132,13 +132,13 @@ namespace Game.Engine.EngineBase
 
                 // Start off with max health if adding a character in
                 data.CurrentHealth = data.GetMaxHealthTotal;
-                Battle.PopulateCharacterList(data);
+                _ = Battle.PopulateCharacterList(data);
             }
 
             //If there are not enough will add random ones
             for (int i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
             {
-                Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
+                _ = Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
             }
 
             return true;
