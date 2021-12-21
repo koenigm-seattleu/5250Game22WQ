@@ -1,9 +1,6 @@
 ﻿using NUnit.Framework;
 
 using Game.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 
 namespace UnitTests.Models
 {
