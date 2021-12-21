@@ -2,18 +2,16 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using Game.Engine.EngineKoenig;
 using Game.Models;
 using Game.ViewModels;
 using Game.Engine.EngineInterfaces;
 
 namespace Game.Views
 {
-	/// <summary>
-	/// The Main Game Page
-	/// </summary>
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    /// <summary>
+    /// The Main Game Page
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AutoBattlePage : ContentPage
 	{
 		// Hold the Engine, so it can be swapped out for unit testing

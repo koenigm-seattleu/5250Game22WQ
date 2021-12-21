@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,10 +8,10 @@ using Game.ViewModels;
 
 namespace Game.Views
 {
-	/// <summary>
-	/// The Main Game Page
-	/// </summary>
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    /// <summary>
+    /// The Main Game Page
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewRoundPage: ContentPage
 	{
 		// This uses the Instance so it can be shared with other Battle Pages as needed
