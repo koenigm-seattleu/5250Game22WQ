@@ -238,7 +238,7 @@ namespace UnitTests.Helpers
         {
             // Arrange
             CharacterIndexViewModel.Instance.Dataset.Clear();
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
 
             // Arrange
             DiceHelper.EnableForcedRolls();
@@ -259,9 +259,9 @@ namespace UnitTests.Helpers
         {
             // Arrange
             CharacterIndexViewModel.Instance.Dataset.Clear();
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
 
             DiceHelper.EnableForcedRolls();
             DiceHelper.SetForcedRollValue(2);
@@ -281,9 +281,9 @@ namespace UnitTests.Helpers
         {
             // Arrange
             CharacterIndexViewModel.Instance.Dataset.Clear();
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
 
             DiceHelper.EnableForcedRolls();
             DiceHelper.SetForcedRollValue(2);
@@ -334,9 +334,9 @@ namespace UnitTests.Helpers
         {
             // Arrange
             MonsterIndexViewModel.Instance.Dataset.Clear();
-            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
-            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
-            await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
+            _ = await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "1" });
+            _ = await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "2" });
+            _ = await MonsterIndexViewModel.Instance.CreateAsync(new MonsterModel { UniqueItem = "3" });
 
             // Act
             var result = RandomPlayerHelper.GetRandomMonster(1,true);
