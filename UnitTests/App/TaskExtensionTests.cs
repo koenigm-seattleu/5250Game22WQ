@@ -27,7 +27,7 @@ namespace UnitTests.Views
 
             // Act
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             // Reset
 
@@ -56,7 +56,7 @@ namespace UnitTests.Views
 
             // Act
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             // Reset
 
@@ -68,49 +68,49 @@ namespace UnitTests.Views
         public void TestDatabaseService_WipeDataListAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(() => DataSource_SQL.WipeDataListAsync());
+            _ = Assert.ThrowsAsync<NotImplementedException>(() => DataSource_SQL.WipeDataListAsync());
         }
 
         [Test]
         public void TestDatabaseService_CreateAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.CreateAsync(null));
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.CreateAsync(null));
         }
 
         [Test]
         public void TestDatabaseService_ReadAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.ReadAsync(null));
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.ReadAsync(null));
         }
 
         [Test]
         public void TestDatabaseService_UpdateAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.UpdateAsync(null));
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.UpdateAsync(null));
         }
 
         [Test]
         public void TestDatabaseService_DeleteAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () =>  await DataSource_SQL.DeleteAsync(null));
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.DeleteAsync(null));
         }
 
         [Test]
         public void TestDatabaseService_IndexAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.IndexAsync());
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.IndexAsync());
         }
 
         [Test]
         public void TestDatabaseService_GetNeedsInitializationAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
-            Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.GetNeedsInitializationAsync());
+            _ = Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.GetNeedsInitializationAsync());
         }
     }
 
