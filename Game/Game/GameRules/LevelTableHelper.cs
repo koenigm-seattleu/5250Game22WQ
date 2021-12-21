@@ -20,7 +20,7 @@ namespace Game.GameRules
         /// </summary>
         static LevelTableHelper()
         {
-            ClearAndLoadDataTable();
+            _ = ClearAndLoadDataTable();
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Game.GameRules
         public static bool ClearAndLoadDataTable()
         {
             LevelDetailsList.Clear();
-            LoadLevelData();
+            _ = LoadLevelData();
 
             return true;
         }

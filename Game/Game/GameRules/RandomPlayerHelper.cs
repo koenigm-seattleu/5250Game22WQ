@@ -223,7 +223,7 @@ namespace Game.GameRules
             result.MaxHealth = DiceHelper.RollDice(MaxLevel, 10);
 
             // Level up to the new level
-            result.LevelUpToValue(result.Level);
+            _ = result.LevelUpToValue(result.Level);
 
             // Enter Battle at full health
             result.CurrentHealth = result.MaxHealth;
@@ -279,9 +279,9 @@ namespace Game.GameRules
             {
                 result.MaxHealth = MaxHealthAdjusted;
             }
-            
+
             // Level up to the new level
-            result.LevelUpToValue(result.Level);
+            _ = result.LevelUpToValue(result.Level);
 
             // Set ExperienceRemaining so Monsters can both use this method
             result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[result.Level + 1].Experience;
