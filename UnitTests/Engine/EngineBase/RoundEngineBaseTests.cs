@@ -22,10 +22,10 @@ namespace UnitTests.Engine.EngineBase
             Engine.Round = new RoundEngineBase();
             Engine.Round.Turn = new TurnEngineBase();
 
-            Engine.Round.ClearLists();
+            _ = Engine.Round.ClearLists();
 
             //Start the Engine in AutoBattle Mode
-            Engine.StartBattle(true);
+            _ = Engine.StartBattle(true);
         }
 
         [TearDown]
@@ -326,13 +326,13 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Feet };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Feet };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             Engine.EngineSettings.ItemPool.Add(item1);
             Engine.EngineSettings.ItemPool.Add(item2);
@@ -377,19 +377,19 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Head };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Head };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             Engine.EngineSettings.ItemPool.Add(item1);
             Engine.EngineSettings.ItemPool.Add(item2);
 
             // Put the Item on the Character
-            Character.AddItem(ItemLocationEnum.Head, item1.Id);
+            _ = Character.AddItem(ItemLocationEnum.Head, item1.Id);
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -427,19 +427,19 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Head };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Head };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             Engine.EngineSettings.ItemPool.Add(item1);
             Engine.EngineSettings.ItemPool.Add(item2);
 
             // Put the Item on the Character
-            Character.AddItem(ItemLocationEnum.Head, item2.Id);
+            _ = Character.AddItem(ItemLocationEnum.Head, item2.Id);
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -477,19 +477,19 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Head };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Head };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             //Engine.EngineSettings.ItemPool.Add(item1);
             //Engine.EngineSettings.ItemPool.Add(item2);
 
             // Put the Item on the Character
-            Character.AddItem(ItemLocationEnum.Head, item2.Id);
+            _ = Character.AddItem(ItemLocationEnum.Head, item2.Id);
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -526,19 +526,19 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Finger };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Finger };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             Engine.EngineSettings.ItemPool.Add(item1);
             Engine.EngineSettings.ItemPool.Add(item2);
 
             // Put the Item on the Character
-            Character.AddItem(ItemLocationEnum.RightFinger, item1.Id);
+            _ = Character.AddItem(ItemLocationEnum.RightFinger, item1.Id);
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -576,19 +576,19 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var item1 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 1, Location = ItemLocationEnum.Finger };
             var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Value = 20, Location = ItemLocationEnum.Finger };
 
-            await ItemIndexViewModel.Instance.CreateAsync(item1);
-            await ItemIndexViewModel.Instance.CreateAsync(item2);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
 
             Engine.EngineSettings.ItemPool.Add(item1);
             Engine.EngineSettings.ItemPool.Add(item2);
 
             // Put the Item on the Character
-            Character.AddItem(ItemLocationEnum.LeftFinger, item1.Id);
+            _ = Character.AddItem(ItemLocationEnum.LeftFinger, item1.Id);
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -628,7 +628,7 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var CharacterPlayer = new PlayerInfoModel(Character);
             Engine.EngineSettings.CharacterList.Clear();
@@ -667,7 +667,7 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
             Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(Character));
@@ -703,7 +703,7 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -738,7 +738,7 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -775,7 +775,7 @@ namespace UnitTests.Engine.EngineBase
             };
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -848,7 +848,7 @@ namespace UnitTests.Engine.EngineBase
                                     });
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -926,7 +926,7 @@ namespace UnitTests.Engine.EngineBase
                                     });
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -1004,7 +1004,7 @@ namespace UnitTests.Engine.EngineBase
                                     });
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 
@@ -1034,7 +1034,7 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var CharacterPlayerSue = new PlayerInfoModel(
                                         new CharacterModel
@@ -1088,7 +1088,7 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             var CharacterPlayerMike = new PlayerInfoModel(
                                        new CharacterModel
@@ -1135,7 +1135,7 @@ namespace UnitTests.Engine.EngineBase
                                     });
 
             // Add each model here to warm up and load it.
-            Game.Helpers.DataSetsHelper.WarmUp();
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
             Engine.EngineSettings.CharacterList.Clear();
 

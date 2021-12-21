@@ -30,7 +30,7 @@ namespace UnitTests.Engine.EngineBase
             AutoBattleEngine.Battle.EngineSettings.CurrentDefender = null;
             AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = null;
 
-            AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
+            _ = AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
         }
 
         [TearDown]
@@ -212,13 +212,13 @@ namespace UnitTests.Engine.EngineBase
 
             CharacterIndexViewModel.Instance.Dataset.Clear();
 
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
-            await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
 
             //Act
             var result = AutoBattleEngine.CreateCharacterParty();
