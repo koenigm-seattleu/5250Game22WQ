@@ -16,10 +16,10 @@ namespace Scenario
         public void Setup()
         {
             // Put seed data into the system for all tests
-            BattleEngineViewModel.Instance.Engine.Round.ClearLists();
+            _ = BattleEngineViewModel.Instance.Engine.Round.ClearLists();
 
             //Start the Engine in AutoBattle Mode
-            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum= HitStatusEnum.Default;
