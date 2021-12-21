@@ -78,7 +78,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.ClearSelection();
@@ -109,7 +109,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.ClearMapGrid();
@@ -139,7 +139,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             var MapLocationData = map.MapGridLocation[0, 0];
 
@@ -171,7 +171,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             var MapLocationData = map.MapGridLocation[0, 0];
 
@@ -203,7 +203,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             var MapLocationData = map.MapGridLocation[0, 0];
 
@@ -235,7 +235,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             var MapLocationData = map.MapGridLocation[0, 0];
 
@@ -267,7 +267,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             var MapLocationData = map.MapGridLocation[0, 0];
 
@@ -319,7 +319,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.GetEmptyLocations();
@@ -353,7 +353,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.GetEmptyLocations();
@@ -387,7 +387,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.IsEmptySquare(0,0);
@@ -421,7 +421,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.IsEmptySquare(0, 2);
@@ -454,7 +454,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.IsEmptySquare(0,1);
@@ -532,7 +532,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
             var start = map.GetPlayerAtLocation(0, 0);
             var end = map.GetPlayerAtLocation(2, 2);
 
@@ -567,7 +567,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
             var start = map.GetPlayerAtLocation(0, 0);
             var end = map.GetPlayerAtLocation(2, 2);
 
@@ -602,7 +602,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
             var start = map.GetPlayerAtLocation(0, 0);
             var end = map.GetPlayerAtLocation(1, 0); // Person next to them....
 
@@ -637,7 +637,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
             var start = map.GetPlayerAtLocation(0, 0);
             var end = map.GetPlayerAtLocation(1, 0); // Person next to them....
 
@@ -674,7 +674,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
             var start = map.GetPlayerAtLocation(0, 0);
             var end = map.GetPlayerAtLocation(1, 0); // Person next to them....
 
@@ -711,7 +711,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.ReturnClosestEmptyLocation(map.MapGridLocation[0,0]);
@@ -743,7 +743,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.ReturnClosestEmptyLocation(map.MapGridLocation[0, 0]);
@@ -774,7 +774,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.GetLocationForPlayer(null);
@@ -805,7 +805,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.GetLocationForPlayer(CharacterPlayer);
@@ -837,7 +837,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.RemovePlayerFromMap(CharacterPlayer);
@@ -868,7 +868,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
             // Act
             var result = map.RemovePlayerFromMap(null);
@@ -899,7 +899,7 @@ namespace UnitTests.Models
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
 
-            map.PopulateMapModel(PlayerList);
+            _ = map.PopulateMapModel(PlayerList);
 
 
             var Character2 = new CharacterModel();
