@@ -54,7 +54,7 @@ namespace Game.Views
             }
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
