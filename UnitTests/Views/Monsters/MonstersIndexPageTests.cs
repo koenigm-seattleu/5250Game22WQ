@@ -1,11 +1,11 @@
 ﻿using NUnit.Framework;
 
+using Xamarin.Forms;
+using Xamarin.Forms.Mocks;
+
 using Game;
 using Game.Views;
 using Game.Models;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Mocks;
 using Game.ViewModels;
 
 namespace UnitTests.Views
