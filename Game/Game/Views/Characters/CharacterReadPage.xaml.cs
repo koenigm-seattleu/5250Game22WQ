@@ -103,8 +103,8 @@ namespace Game.Views
             // Put the Image Button and Text inside a layout
             var ItemStack = new StackLayout
             {
-                Padding = 3,
-                Style = (Style)Application.Current.Resources["ItemImageBox"],
+                Margin = 3,
+                Style = (Style)Application.Current.Resources["ItemImageLabelBox"],
                 HorizontalOptions = LayoutOptions.Center,
                 Children = {
                     ItemButton,

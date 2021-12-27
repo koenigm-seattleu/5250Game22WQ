@@ -176,7 +176,7 @@
 
 
                     <FlexLayout 
-                        Padding="5"
+                        Margin="5"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround"

@@ -328,6 +328,15 @@
                 <Setter Property="Spacing" Value="1" />
             </Style>
 
+
+            <Style TargetType="StackLayout"
+                x:Key="ItemImageLabelBox"
+                BasedOn="{StaticResource CardImageTextBox}">
+                <Setter Property="MinimumHeightRequest" Value="80" />
+                <Setter Property="MinimumWidthRequest" Value="60" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+            
             <Style TargetType="StackLayout"
                 x:Key="PlayerInfoBox"
                 BasedOn="{StaticResource CardImageTextBox}">
