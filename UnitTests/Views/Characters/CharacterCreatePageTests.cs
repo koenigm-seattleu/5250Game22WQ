@@ -117,8 +117,8 @@ namespace UnitTests.Views
             var ViewModel = new GenericViewModel<CharacterModel>(data);
 
             page = new CharacterCreatePage(ViewModel);
-            double oldAttack = 0.0;
-            double newAttack = 1.0;
+            var oldAttack = 0.0;
+            var newAttack = 1.0;
 
             var args = new ValueChangedEventArgs(oldAttack, newAttack);
 
@@ -139,8 +139,8 @@ namespace UnitTests.Views
             var ViewModel = new GenericViewModel<CharacterModel>(data);
 
             page = new CharacterCreatePage(ViewModel);
-            double oldSpeed = 0.0;
-            double newSpeed = 1.0;
+            var oldSpeed = 0.0;
+            var newSpeed = 1.0;
 
             var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
 
@@ -161,8 +161,8 @@ namespace UnitTests.Views
             var ViewModel = new GenericViewModel<CharacterModel>(data);
 
             page = new CharacterCreatePage(ViewModel);
-            double oldDefense = 0.0;
-            double newDefense = 1.0;
+            var oldDefense = 0.0;
+            var newDefense = 1.0;
 
             var args = new ValueChangedEventArgs(oldDefense, newDefense);
 
