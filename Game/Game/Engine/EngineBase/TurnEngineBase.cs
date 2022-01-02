@@ -82,12 +82,6 @@ namespace Game.Engine.EngineBase
                 case ActionEnum.Move:
                     result = MoveAsTurn(Attacker);
                     break;
-
-                case ActionEnum.Unknown:
-                    break;
-
-                default:
-                    break;
             }
 
             EngineSettings.BattleScore.TurnCount++;
