@@ -138,7 +138,7 @@ namespace Game.Services
         /// </summary>
         public async Task<bool> WipeDataListAsync()
         {
-            bool result = false;
+            var result = false;
 
             lock (WipeLock)
             {
@@ -236,7 +236,7 @@ namespace Game.Services
                 return false;
             }
 
-            int result = 0;
+            var result = 0;
             try
             {
                 _ = GetForceExceptionCount();
