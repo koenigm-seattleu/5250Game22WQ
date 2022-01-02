@@ -71,10 +71,6 @@ namespace Game.Engine.EngineBase
 
             switch (EngineSettings.CurrentAction)
             {
-                //case ActionEnum.Unknown:
-                //    // Action already happened
-                //    break;
-
                 case ActionEnum.Attack:
                     result = Attack(Attacker);
                     break;
@@ -85,6 +81,12 @@ namespace Game.Engine.EngineBase
 
                 case ActionEnum.Move:
                     result = MoveAsTurn(Attacker);
+                    break;
+
+                case ActionEnum.Unknown:
+                    break;
+
+                default:
                     break;
             }
 
