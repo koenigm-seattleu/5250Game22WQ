@@ -63,7 +63,7 @@ namespace UnitTests.Helpers
         {
             var myConverter = new IntEnumConverter();
 
-            int myObject = 40;
+            var myObject = 40;
             var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
             var Expected = "Feet";
 
@@ -111,7 +111,7 @@ namespace UnitTests.Helpers
         {
             var myConverter = new StringEnumConverter();
 
-            int myObject = 40;
+            var myObject = 40;
             var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
             var Expected = "Feet";
 
