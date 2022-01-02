@@ -108,7 +108,7 @@ namespace Game.Services
                 return default(T);
             }
 
-            T oldData = datalist.Where((T arg) => ((BaseModel<T>)(object)arg).Id.Equals(id)).FirstOrDefault();
+            var oldData = datalist.Where((T arg) => ((BaseModel<T>)(object)arg).Id.Equals(id)).FirstOrDefault();
             return oldData;
         }
 
@@ -124,7 +124,7 @@ namespace Game.Services
                 return await Task.FromResult(false);
             }
 
-            T oldData = await ReadAsync(((BaseModel<T>)(object)data).Id);
+            var oldData = await ReadAsync(((BaseModel<T>)(object)data).Id);
             if (oldData == null)
             {
                 return await Task.FromResult(false);
@@ -149,7 +149,7 @@ namespace Game.Services
                 return await Task.FromResult(false);
             }
 
-            T oldData = await ReadAsync(id);
+            var oldData = await ReadAsync(id);
             if (oldData == null)
             {
                 return await Task.FromResult(false);
