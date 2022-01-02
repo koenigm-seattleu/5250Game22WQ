@@ -90,7 +90,7 @@ namespace Game.Engine.EngineKoenig
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            int TargetLevel = 1;
+            var TargetLevel = 1;
 
             if (EngineSettings.CharacterList.Count() > 0)
             {
