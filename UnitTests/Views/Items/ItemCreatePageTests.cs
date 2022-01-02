@@ -112,8 +112,8 @@ namespace UnitTests.Views
             // Arrange
 
             page = new ItemCreatePage();
-            double oldValue = 0.0;
-            double newValue = 1.0;
+            var oldValue = 0.0;
+            var newValue = 1.0;
 
             var args = new ValueChangedEventArgs(oldValue, newValue);
 
@@ -132,8 +132,8 @@ namespace UnitTests.Views
             // Arrange
 
             page = new ItemCreatePage();
-            double oldRange = 0.0;
-            double newRange = 1.0;
+            var oldRange = 0.0;
+            var newRange = 1.0;
 
             var args = new ValueChangedEventArgs(oldRange, newRange);
 
@@ -151,8 +151,8 @@ namespace UnitTests.Views
         {
             // Arrange
             page = new ItemCreatePage();
-            double oldDamage = 0.0;
-            double newDamage = 1.0;
+            var oldDamage = 0.0;
+            var newDamage = 1.0;
 
             var args = new ValueChangedEventArgs(oldDamage, newDamage);
 
