@@ -373,7 +373,7 @@ namespace Game.Views
         public bool DiceAnimationHandeler()
         {
             // Animate the Rolling of the Dice
-            ImageButton image = RollDice;
+            var image = RollDice;
             uint duration = 1000;
 
             var parentAnimation = new Animation();
