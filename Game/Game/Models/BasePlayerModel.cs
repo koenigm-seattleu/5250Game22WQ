@@ -57,12 +57,14 @@ namespace Game.Models
         /// <summary>
         /// Clear all the Buffs
         /// </summary>
-        public void ClearBuffs()
+        public bool ClearBuffs()
         {
             BuffHealthValue = 0;
             BuffAttackValue = 0;
             BuffDefenseValue = 0;
             BuffSpeedValue = 0;
+
+            return true;
         }
 
         /// <summary>
