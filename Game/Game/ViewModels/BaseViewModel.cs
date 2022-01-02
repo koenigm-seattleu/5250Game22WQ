@@ -259,20 +259,24 @@ namespace Game.ViewModels
         /// Sets the need to refresh 
         /// </summary>
         /// <param name="value"></param>
-        public void SetNeedsRefresh(bool value)
+        public bool SetNeedsRefresh(bool value)
         {
             _needsRefresh = value;
+
+            return _needsRefresh;
         }
 
         /// <summary>
         /// Force data to refresh
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "<Pending>")]
-        public void ForceDataRefresh()
+        public bool ForceDataRefresh()
         {
             // Reset
             var canExecute = LoadDatasetCommand.CanExecute(null);
             LoadDatasetCommand.Execute(null);
+
+            return true;
         }
 
         #endregion Refresh
