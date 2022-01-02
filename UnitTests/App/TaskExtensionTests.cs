@@ -48,7 +48,7 @@ namespace UnitTests.Views
 
             //Action<Exception> myact = (ex => { throw ex; });
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
-            Action<Exception> myact = (ex => { int a = 1; });
+            Action<Exception> myact = (ex => { var a = 1; });
 #pragma warning restore CS0219 // Variable is assigned but its value is never used
 
             // Call with Error=true
