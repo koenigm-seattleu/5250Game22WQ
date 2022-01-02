@@ -182,7 +182,7 @@ namespace Game.Views
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
                 // Use the ImageButton from the dictionary because that represents the player object
-                object MapObject = GetMapGridObject(GetDictionaryImageButtonName(data));
+                var MapObject = GetMapGridObject(GetDictionaryImageButtonName(data));
                 if (MapObject == null)
                 {
                     return false;
@@ -291,7 +291,7 @@ namespace Game.Views
         /// <returns></returns>
         public object GetMapGridObject(string name)
         {
-            _ = MapLocationObject.TryGetValue(name, out object data);
+            _ = MapLocationObject.TryGetValue(name, out var data);
             return data;
         }
 
