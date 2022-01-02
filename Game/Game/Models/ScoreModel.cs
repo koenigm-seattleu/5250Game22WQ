@@ -134,7 +134,7 @@ namespace Game.Models
         /// <returns></returns>
         public int CalculateScore()
         {
-            int result = ExperienceGainedTotal;
+            var result = ExperienceGainedTotal;
 
             return result;
         }
