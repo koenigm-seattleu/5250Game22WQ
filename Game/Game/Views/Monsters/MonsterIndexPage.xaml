@@ -42,24 +42,10 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                        Source="{Binding ImageURI}"
-                                        Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"/>
-
                                 <Label Grid.Column="1" Grid.Row="0"
                                        Text="{Binding Name}" 
                                        Style="{StaticResource ListStyle}"/>
 
-                                <Label Grid.Column="1" Grid.Row="1"
-                                       Text="{Binding Description}" 
-                                       Style="{StaticResource ListStyle}"
-                                       FontSize="Micro"/>
-
-                                <Label Grid.Column="1" Grid.Row="2"
-                                    Text="{Binding Path=Difficulty, StringFormat='Difficulty {0:G}'}" 
-                                    Style="{StaticResource ListStyle}"
-                                       FontSize="Micro"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
