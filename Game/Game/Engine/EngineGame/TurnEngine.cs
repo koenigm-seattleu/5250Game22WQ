@@ -58,7 +58,7 @@ namespace Game.Engine.EngineGame
 
             // Reset the Action to unknown for next time
 
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -83,8 +83,7 @@ namespace Game.Engine.EngineGame
             // Check to see if ability is avaiable
 
             // See if Desired Target is within Range, and if so attack away
-
-            throw new System.NotImplementedException();
+            return ActionEnum.Unknown;
         }
 
         /// <summary>
@@ -121,8 +120,7 @@ namespace Game.Engine.EngineGame
                 // Get the Open Locations
 
                 // Format a message to show
-
-                throw new System.NotImplementedException();
+                return false;
             }
 
             return true;
@@ -143,7 +141,7 @@ namespace Game.Engine.EngineGame
 
             // Don't try
 
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -151,7 +149,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -172,8 +170,7 @@ namespace Game.Engine.EngineGame
             // Manage autobattle
 
             // Do Attack
-
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -181,7 +178,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -193,7 +190,7 @@ namespace Game.Engine.EngineGame
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -206,8 +203,7 @@ namespace Game.Engine.EngineGame
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            throw new System.NotImplementedException();
-
+            return null;
         }
 
         /// <summary>
@@ -238,8 +234,7 @@ namespace Game.Engine.EngineGame
             // If it is a character apply the experience earned
 
             // Battle Message 
-
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -248,7 +243,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return HitStatusEnum.Unknown;
         }
 
         /// <summary>
@@ -258,7 +253,7 @@ namespace Game.Engine.EngineGame
         {
             // Based on the Hit Status, establish a message
 
-            throw new System.NotImplementedException();
+            return HitStatusEnum.Unknown;
         }
 
         /// <summary>
@@ -274,7 +269,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return HitStatusEnum.Unknown;
         }
 
         /// <summary>
@@ -283,7 +278,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool CalculateExperience(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -291,7 +286,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveIfDead(PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -316,7 +311,7 @@ namespace Game.Engine.EngineGame
 
             // Add the MonsterModel to the killed list
 
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -331,7 +326,7 @@ namespace Game.Engine.EngineGame
 
             // Add to ScoreModel
 
-            throw new System.NotImplementedException();
+            return 0;
         }
 
         /// <summary>
@@ -341,7 +336,7 @@ namespace Game.Engine.EngineGame
         /// <param name="DefenseScore"></param>
         public override HitStatusEnum RollToHitTarget(int AttackScore, int DefenseScore)
         {
-            throw new System.NotImplementedException();
+            return HitStatusEnum.Unknown;
         }
 
         /// <summary>
@@ -356,7 +351,7 @@ namespace Game.Engine.EngineGame
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
 
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -364,7 +359,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
     }
 }
