@@ -119,7 +119,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Warm it up
-            ItemIndexViewModel ViewModel = ItemIndexViewModel.Instance;
+            var ViewModel = ItemIndexViewModel.Instance;
 
             // Act
             OnAppearing();
@@ -136,7 +136,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Add each model here to warm up and load it.
-            ItemIndexViewModel ViewModel = ItemIndexViewModel.Instance;
+            var ViewModel = ItemIndexViewModel.Instance;
             ViewModel.Dataset.Clear();
 
             // Act
