@@ -594,7 +594,7 @@ namespace UnitTests.Views
         {
             // Get the current valute
             var name = "MapR0C0ImageButton";
-            _ = page.MapLocationObject.TryGetValue(name, out object data);
+            _ = page.MapLocationObject.TryGetValue(name, out var data);
             _ = page.MapLocationObject.Remove(name);
 
             // Act
@@ -612,11 +612,11 @@ namespace UnitTests.Views
         {
             // Get the current valute
             var nameStack = "MapR0C0Stack";
-            _ = page.MapLocationObject.TryGetValue(nameStack, out object dataStack);
+            _ = page.MapLocationObject.TryGetValue(nameStack, out var dataStack);
             _ = page.MapLocationObject.Remove(nameStack);
 
             var nameImage = "MapR0C0ImageButton";
-            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out var dataImage);
 
             _ = page.MapLocationObject.Remove(nameImage);
 
@@ -946,7 +946,7 @@ namespace UnitTests.Views
             _ = page.CreateMapGridObjects();
 
             var nameImage = "MapR0C0ImageButton";
-            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out var dataImage);
 
             // Act
 
@@ -975,7 +975,7 @@ namespace UnitTests.Views
             _ = page.CreateMapGridObjects();
 
             var nameImage = "MapR5C0ImageButton";
-            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out var dataImage);
 
             // Act
 
@@ -1004,7 +1004,7 @@ namespace UnitTests.Views
             page.DrawMapGridInitialState();
 
             var nameImage = "MapR3C3ImageButton";
-            _ = page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            _ = page.MapLocationObject.TryGetValue(nameImage, out var dataImage);
 
             // Act
 
