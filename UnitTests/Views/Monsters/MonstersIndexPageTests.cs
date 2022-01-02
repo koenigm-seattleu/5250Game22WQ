@@ -117,7 +117,7 @@ namespace UnitTests.Views
         public void MonsterIndexPage_OnAppearing_Valid_Should_Pass()
         {
             // Arrange
-            MonsterIndexViewModel ViewModel = MonsterIndexViewModel.Instance;
+            var ViewModel = MonsterIndexViewModel.Instance;
 
             // Act
             OnAppearing();
@@ -134,7 +134,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            MonsterIndexViewModel ViewModel = MonsterIndexViewModel.Instance;
+            var ViewModel = MonsterIndexViewModel.Instance;
             ViewModel.Dataset.Clear();
 
             // Act
