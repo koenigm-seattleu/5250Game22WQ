@@ -4,7 +4,6 @@ using System.Linq;
 using NUnit.Framework;
 
 using Game.Engine.EngineGame;
-using Game.Helpers;
 using Game.Models;
 using Game.ViewModels;
 
