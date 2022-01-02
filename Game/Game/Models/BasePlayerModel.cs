@@ -624,9 +624,9 @@ namespace Game.Models
                 return 0;
             }
 
-            int remainingHealth = Math.Max(CurrentHealth - damage, 0); // Go to 0 is OK...
-            double rawPercent = (double)remainingHealth / (double)CurrentHealth;
-            double deltaPercent = 1 - rawPercent;
+            var remainingHealth = Math.Max(CurrentHealth - damage, 0); // Go to 0 is OK...
+            var rawPercent = (double)remainingHealth / (double)CurrentHealth;
+            var deltaPercent = 1 - rawPercent;
             var pointsAllocate = (int)Math.Floor(ExperienceRemaining * deltaPercent);
 
             // Catch rounding of low values, and force to 1.
