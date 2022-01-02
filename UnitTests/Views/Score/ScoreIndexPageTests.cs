@@ -118,7 +118,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            ScoreIndexViewModel ViewModel = ScoreIndexViewModel.Instance;
+            var ViewModel = ScoreIndexViewModel.Instance;
 
             // Act
             OnAppearing();
@@ -135,7 +135,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            ScoreIndexViewModel ViewModel = ScoreIndexViewModel.Instance;
+            var ViewModel = ScoreIndexViewModel.Instance;
             ViewModel.Dataset.Clear();
 
             // Act
