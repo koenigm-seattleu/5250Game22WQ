@@ -99,7 +99,7 @@ namespace Game.Engine.EngineBase
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            int TargetLevel = 1;
+            var TargetLevel = 1;
 
             if (EngineSettings.CharacterList.Count() > 0)
             {
@@ -131,7 +131,7 @@ namespace Game.Engine.EngineBase
             // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
             if (EngineSettings.BattleScore.AutoBattle)
             {
-                PickupItemsForAllCharacters();
+                _ = PickupItemsForAllCharacters();
             }
 
             // Reset Monster and Item Lists
@@ -224,7 +224,7 @@ namespace Game.Engine.EngineBase
         /// <returns></returns>
         public virtual List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            EngineSettings.PlayerList = EngineSettings.PlayerList.Where(m => m.Alive == true).ToList();
+            EngineSettings.PlayerList = EngineSettings.PlayerList.Where(m => m.Alive).ToList();
             return EngineSettings.PlayerList;
         }
 
@@ -488,12 +488,12 @@ namespace Game.Engine.EngineBase
         {
             foreach (var data in EngineSettings.PlayerList)
             {
-                data.ClearBuffs();
+                _ = data.ClearBuffs();
             }
 
             foreach (var data in EngineSettings.CharacterList)
             {
-                data.ClearBuffs();
+                _ = data.ClearBuffs();
             }
             return true;
         }
