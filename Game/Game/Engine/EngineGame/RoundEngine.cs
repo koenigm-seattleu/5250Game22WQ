@@ -85,8 +85,7 @@ namespace Game.Engine.EngineGame
         public override int AddMonstersToRound()
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
-
-            throw new System.NotImplementedException();
+            return 0;
         }
 
         /// <summary>
@@ -138,7 +137,7 @@ namespace Game.Engine.EngineGame
 
             // Do the turn..
 
-            throw new System.NotImplementedException();
+            return RoundEnum.Unknown;
         }
 
         /// <summary>
@@ -150,7 +149,7 @@ namespace Game.Engine.EngineGame
 
             // Get Next Player
 
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -158,7 +157,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -168,7 +167,7 @@ namespace Game.Engine.EngineGame
         {
             // TODO Teams: Implement the order
 
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -184,7 +183,7 @@ namespace Game.Engine.EngineGame
 
             // Add the Monsters
 
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -205,8 +204,7 @@ namespace Game.Engine.EngineGame
             // If at the end of the list, return the first element
 
             // Return the next element
-
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -219,7 +217,7 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -229,7 +227,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         /// <summary>
@@ -239,7 +237,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         /// <summary>
@@ -247,7 +245,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveCharacterBuffs()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
     }
 }
