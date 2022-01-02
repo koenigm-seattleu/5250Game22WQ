@@ -117,7 +117,7 @@ namespace UnitTests.Views
         public void CharacterIndexPage_OnAppearing_Valid_Should_Pass()
         {
             // Arrange
-            CharacterIndexViewModel ViewModel = CharacterIndexViewModel.Instance;
+            var ViewModel = CharacterIndexViewModel.Instance;
 
             // Act
             OnAppearing();
@@ -133,7 +133,7 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            CharacterIndexViewModel ViewModel = CharacterIndexViewModel.Instance;
+            var ViewModel = CharacterIndexViewModel.Instance;
             ViewModel.Dataset.Clear();
 
             // Act
