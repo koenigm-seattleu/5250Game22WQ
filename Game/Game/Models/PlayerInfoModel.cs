@@ -266,7 +266,7 @@ namespace Game.Models
                     continue;
                 }
 
-                var result = AbilityTracker.TryGetValue(data, out int remaining);
+                var result = AbilityTracker.TryGetValue(data, out var remaining);
                 if (remaining > 0)
                 {
                     // Got one so can prepare it to be used
@@ -279,7 +279,7 @@ namespace Game.Models
 
         public bool IsAbilityAvailable(AbilityEnum ability)
         {
-            var avaible = AbilityTracker.TryGetValue(ability, out int remaining);
+            var avaible = AbilityTracker.TryGetValue(ability, out var remaining);
             if (avaible == false)
             {
                 // does not exist
@@ -302,7 +302,7 @@ namespace Game.Models
         /// <returns></returns>
         public bool UseAbility(AbilityEnum ability)
         {
-            var avaible = AbilityTracker.TryGetValue(ability, out int remaining);
+            var avaible = AbilityTracker.TryGetValue(ability, out var remaining);
             if (avaible == false)
             {
                 // does not exist
