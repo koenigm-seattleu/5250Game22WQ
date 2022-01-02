@@ -1,14 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
-using Game.GameRules;
 
 namespace Game.Views
 {
