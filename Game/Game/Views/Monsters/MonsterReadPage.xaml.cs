@@ -5,7 +5,6 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
-using System.Linq;
 
 namespace Game.Views
 {
