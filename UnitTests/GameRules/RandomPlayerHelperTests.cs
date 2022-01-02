@@ -132,6 +132,20 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void RandomPlayerHelper_GetItem_InValid_No_Item_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
         public void RandomPlayerHelper_GetItem_2_Should_Return_2()
         {
             // Arrange
