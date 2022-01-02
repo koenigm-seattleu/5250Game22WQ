@@ -60,8 +60,8 @@ namespace Game.Models
         {
             _ = ClearMapGrid();
 
-            int x = 0;
-            int y = 0;
+            var x = 0;
+            var y = 0;
             foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character))
             {
                 MapGridLocation[x, y].Player = data;
@@ -260,7 +260,7 @@ namespace Game.Models
         {
             MapModelLocation Result = null;
 
-            int LowestDistance = int.MaxValue;
+            var LowestDistance = int.MaxValue;
 
             foreach (var data in GetEmptyLocations())
             {
