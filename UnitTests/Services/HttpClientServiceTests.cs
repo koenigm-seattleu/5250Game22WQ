@@ -153,12 +153,12 @@ namespace UnitTests.Services
             // Arrange
             var RestUrl = "";
 
-            int number = 0;
-            int level = 0;
-            AttributeEnum attribute = AttributeEnum.Attack;
-            ItemLocationEnum location = ItemLocationEnum.Feet;
-            int category = 0;
-            bool random = false;
+            var number = 0;
+            var level = 0;
+            var attribute = AttributeEnum.Attack;
+            var location = ItemLocationEnum.Feet;
+            var category = 0;
+            var random = false;
 
             var dict = new Dictionary<string, string>
             {
@@ -188,12 +188,12 @@ namespace UnitTests.Services
             // Arrange
             var RestUrl = "bogus";
 
-            int number = 0;
-            int level = 0;
-            AttributeEnum attribute = AttributeEnum.Attack;
-            ItemLocationEnum location = ItemLocationEnum.Feet;
-            int category = 0;
-            bool random = false;
+            var number = 0;
+            var level = 0;
+            var attribute = AttributeEnum.Attack;
+            var location = ItemLocationEnum.Feet;
+            var category = 0;
+            var random = false;
 
             var dict = new Dictionary<string, string>
             {
@@ -231,12 +231,12 @@ namespace UnitTests.Services
 
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.GetStringContent);
 
-            int number = 0;
-            int level = 0;
-            AttributeEnum attribute = AttributeEnum.Attack;
-            ItemLocationEnum location = ItemLocationEnum.Feet;
-            int category = 0;
-            bool random = false;
+            var number = 0;
+            var level = 0;
+            var attribute = AttributeEnum.Attack;
+            var location = ItemLocationEnum.Feet;
+            var category = 0;
+            var random = false;
 
             var dict = new Dictionary<string, string>
             {
@@ -280,12 +280,12 @@ namespace UnitTests.Services
             ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
             ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeBadRequest);
 
-            int number = 0;
-            int level = 0;
-            AttributeEnum attribute = AttributeEnum.Attack;
-            ItemLocationEnum location = ItemLocationEnum.Feet;
-            int category = 0;
-            bool random = false;
+            var number = 0;
+            var level = 0;
+            var attribute = AttributeEnum.Attack;
+            var location = ItemLocationEnum.Feet;
+            var category = 0;
+            var random = false;
 
             var dict = new Dictionary<string, string>
             {
