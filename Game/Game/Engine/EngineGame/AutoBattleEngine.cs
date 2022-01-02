@@ -44,17 +44,17 @@ namespace Game.Engine.EngineGame
 
         public override bool CreateCharacterParty()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override bool DetectInfinateLoop()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override Task<bool> RunAutoBattle()
         {
-            throw new System.NotImplementedException();
+            return Task.FromResult(false);
         }
     }
 }
