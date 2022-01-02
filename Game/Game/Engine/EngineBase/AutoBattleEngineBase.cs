@@ -105,12 +105,7 @@ namespace Game.Engine.EngineBase
                 return true;
             }
 
-            if (Battle.EngineSettings.BattleScore.TurnCount > Battle.EngineSettings.MaxTurnCount)
-            {
-                return true;
-            }
-
-            return false;
+            return Battle.EngineSettings.BattleScore.TurnCount > Battle.EngineSettings.MaxTurnCount;
         }
 
         /// <summary>
@@ -136,7 +131,7 @@ namespace Game.Engine.EngineBase
             }
 
             //If there are not enough will add random ones
-            for (int i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
+            for (var i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
             {
                 _ = Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
             }
