@@ -280,5 +280,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(ActionEnum.Unknown, result);
         }
         #endregion DetermineActionChoice
+
+        #region TurnAsAttack
+        [Test]
+        public void RoundEngine_TurnAsAttack_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(new PlayerInfoModel(), new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion TurnAsAttack
     }
 }
