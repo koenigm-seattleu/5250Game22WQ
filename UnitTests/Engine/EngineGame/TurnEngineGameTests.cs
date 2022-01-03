@@ -248,5 +248,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion ChooseToUseAbility
+
+        #region SelectMonsterToAttack
+        [Test]
+        public void RoundEngine_SelectMonsterToAttack_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.SelectMonsterToAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion SelectMonsterToAttack
     }
 }
