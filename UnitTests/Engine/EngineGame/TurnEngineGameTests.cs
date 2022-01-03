@@ -120,5 +120,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion AttackChoice
+
+        #region SelectCharacterToAttack
+        [Test]
+        public void RoundEngine_SelectCharacterToAttack_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.SelectCharacterToAttack();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion SelectCharacterToAttack
     }
 }
