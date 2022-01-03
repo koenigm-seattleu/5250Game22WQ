@@ -72,5 +72,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion MoveAsTurn
+
+        #region ApplyDamage
+        [Test]
+        public void RoundEngine_ApplyDamage_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.ApplyDamage(new PlayerInfoModel(new MonsterModel()));
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+        #endregion ApplyDamage
     }
 }
