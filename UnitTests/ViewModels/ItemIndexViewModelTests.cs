@@ -450,7 +450,7 @@ namespace UnitTests.ViewModels
 
             // Reset
             ViewModel.IsBusy = false;
-            ViewModel.ForceDataRefresh();
+            _ = ViewModel.ForceDataRefresh();
 
             // Assert
             Assert.AreEqual(0, count); // Count of 0 for the load was skipped
