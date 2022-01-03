@@ -112,7 +112,7 @@ namespace Game.ViewModels
             _ = await LoadDefaultDataAsync();
 
             // Set Flag for Refresh
-            SetNeedsRefresh(true);
+            _ = SetNeedsRefresh(true);
 
             return await Task.FromResult(true);
         }
@@ -344,7 +344,7 @@ namespace Game.ViewModels
             Dataset.Add(data);
             var result = await DataStore.CreateAsync(data);
 
-            SetNeedsRefresh(true);
+            _ = SetNeedsRefresh(true);
 
             return result;
         }
@@ -384,7 +384,7 @@ namespace Game.ViewModels
             // Save the change to the Data Store
             var result = await DataStore.UpdateAsync(data);
 
-            SetNeedsRefresh(true);
+            _ = SetNeedsRefresh(true);
 
             return result;
         }
@@ -416,7 +416,7 @@ namespace Game.ViewModels
             // Have the record deleted from the data source
             var result = await DataStore.DeleteAsync(((BaseModel<T>)(object)record).Id);
 
-            SetNeedsRefresh(true);
+            _ = SetNeedsRefresh(true);
 
             return result;
         }
@@ -493,7 +493,7 @@ namespace Game.ViewModels
             }
 
             Dataset.Add(data);
-            SetNeedsRefresh(true);
+            _ = SetNeedsRefresh(true);
             return true;
         }
 
