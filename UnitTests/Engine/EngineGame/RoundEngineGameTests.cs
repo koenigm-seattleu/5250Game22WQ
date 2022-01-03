@@ -322,8 +322,10 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void RoundEngine_SwapCharacterItem_Valid_Default_Should_Pass()
         {
+            // Arrange 
+
             // Act
-            var result = Engine.Round.SwapCharacterItem(null,ItemLocationEnum.Head,null);
+            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Head, null);
 
             // Reset
 
@@ -336,6 +338,8 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void RoundEngine_GetItemFromPoolIfBetter_Valid_Default_Should_Pass()
         {
+            // Arrange 
+
             // Act
             var result = Engine.Round.GetItemFromPoolIfBetter(null, ItemLocationEnum.Head);
 
@@ -345,5 +349,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion GetItemFromPoolIfBetter
+
+        #region RemoveDeadPlayersFromList
+        [Test]
+        public void RoundEngine_RemoveDeadPlayersFromList_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.RemoveDeadPlayersFromList();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion RemoveDeadPlayersFromList
     }
 }
