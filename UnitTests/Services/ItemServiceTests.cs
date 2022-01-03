@@ -1,6 +1,10 @@
-﻿using NUnit.Framework;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+
+using NUnit.Framework;
+
 using Game.Services;
+
+using UnitTests.TestHelpers;
 
 namespace UnitTests.Services
 {
@@ -10,6 +14,8 @@ namespace UnitTests.Services
         [SetUp]
         public void Setup()
         {
+            _ = TestBaseHelper.SetHttpClientToMock();
+
             _ = Game.Helpers.DataSetsHelper.WarmUp();
         }
 
@@ -17,6 +23,7 @@ namespace UnitTests.Services
         public async Task TearDown()
         {
             _ = await Game.Helpers.DataSetsHelper.WipeDataInSequence();
+            _ = TestBaseHelper.SetHttpClientToReal();
         }
 
         [Test]
