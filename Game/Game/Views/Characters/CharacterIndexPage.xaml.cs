@@ -77,7 +77,7 @@ namespace Game.Views
             // If no data, then set it for needing refresh
             if (ViewModel.Dataset.Count == 0)
             {
-                ViewModel.SetNeedsRefresh(true);
+                _ = ViewModel.SetNeedsRefresh(true);
             }
 
             // If the needs Refresh flag is set update it
