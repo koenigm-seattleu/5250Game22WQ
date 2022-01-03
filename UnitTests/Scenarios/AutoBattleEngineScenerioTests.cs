@@ -244,14 +244,14 @@ namespace Scenario
             AutoBattle.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
 
             // Controll Rolls,  Hit is always a 3
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(3);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
 
             //Act
             var result = await AutoBattle.RunAutoBattle();
 
             //Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             //Assert
             Assert.AreEqual(false, result);
@@ -307,14 +307,14 @@ namespace Scenario
             AutoBattle.Battle.EngineSettings.MaxNumberPartyMonsters = 6;
 
             // Controll Rolls,  Always Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             //Act
             var result = await AutoBattle.RunAutoBattle();
 
             //Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             //Assert
             Assert.AreEqual(false, result);
