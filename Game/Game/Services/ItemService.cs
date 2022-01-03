@@ -54,7 +54,7 @@ namespace Game.Services
             }
 
             // When foreach is done, call to the items view model to set needs refresh to true, so it can refetch the list...
-            ItemIndexViewModel.Instance.SetNeedsRefresh(true);
+            _ = ItemIndexViewModel.Instance.SetNeedsRefresh(true);
 
             return myList;
         }
@@ -114,7 +114,7 @@ namespace Game.Services
                 }
 
                 // When foreach is done, call to the items view model to set needs refresh to true, so it can refetch the list...
-                ItemIndexViewModel.Instance.SetNeedsRefresh(true);
+                _ = ItemIndexViewModel.Instance.SetNeedsRefresh(true);
             }
 
             return myList;
