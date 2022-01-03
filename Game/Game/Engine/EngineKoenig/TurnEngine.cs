@@ -292,7 +292,7 @@ namespace Game.Engine.EngineKoenig
                     }
 
                     // Apply the Damage
-                    ApplyDamage(Target);
+                    _ = ApplyDamage(Target);
 
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
