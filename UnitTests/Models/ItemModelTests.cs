@@ -151,14 +151,14 @@ namespace UnitTests.Models
             // Arrange
             var data = new ItemModel();
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = data.ScaleLevel(1);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert 
             Assert.AreEqual(1, result);
