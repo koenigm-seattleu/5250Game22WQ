@@ -103,7 +103,22 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(false, result);
         }
-        
         #endregion Attack
+
+        #region AttackChoice
+        [Test]
+        public void RoundEngine_AttackChoice_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.AttackChoice(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion AttackChoice
     }
 }
