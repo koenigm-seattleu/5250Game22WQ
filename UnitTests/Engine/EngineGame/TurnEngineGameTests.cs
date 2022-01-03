@@ -232,5 +232,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion RemoveIfDead
+
+        #region ChooseToUseAbility
+        [Test]
+        public void RoundEngine_ChooseToUseAbility_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion ChooseToUseAbility
     }
 }
