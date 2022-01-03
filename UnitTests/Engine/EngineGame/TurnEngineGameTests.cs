@@ -328,5 +328,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion TakeTurn
+
+        #region RollToHitTarget
+        [Test]
+        public void RoundEngine_RollToHitTarget_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.RollToHitTarget(1,1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Unknown, result);
+        }
+        #endregion RollToHitTarget
     }
 }
