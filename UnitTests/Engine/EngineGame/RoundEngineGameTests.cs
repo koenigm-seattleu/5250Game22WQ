@@ -365,5 +365,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion RemoveDeadPlayersFromList
+
+        #region PickupItemsFromPool
+        [Test]
+        public void RoundEngine_PickupItemsFromPool_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.PickupItemsFromPool(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion PickupItemsFromPool
     }
 }
