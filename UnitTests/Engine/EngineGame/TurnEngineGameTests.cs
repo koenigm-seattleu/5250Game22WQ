@@ -216,5 +216,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(HitStatusEnum.Unknown, result);
         }
         #endregion CalculateAttackStatus
+
+        #region RemoveIfDead
+        [Test]
+        public void RoundEngine_RemoveIfDead_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.RemoveIfDead(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion RemoveIfDead
     }
 }
