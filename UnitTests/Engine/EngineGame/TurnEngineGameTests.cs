@@ -200,5 +200,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion CalculateExperience
+
+        #region CalculateAttackStatus
+        [Test]
+        public void RoundEngine_CalculateAttackStatus_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.CalculateAttackStatus(new PlayerInfoModel(), new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Unknown, result);
+        }
+        #endregion CalculateAttackStatus
     }
 }
