@@ -136,5 +136,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion SelectCharacterToAttack
+
+        #region UseAbility
+        [Test]
+        public void RoundEngine_UseAbility_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion UseAbility
     }
 }
