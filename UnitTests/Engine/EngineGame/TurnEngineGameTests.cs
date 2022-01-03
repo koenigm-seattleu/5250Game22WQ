@@ -264,5 +264,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion SelectMonsterToAttack
+
+        #region DetermineActionChoice
+        [Test]
+        public void RoundEngine_DetermineActionChoice_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Unknown, result);
+        }
+        #endregion DetermineActionChoice
     }
 }
