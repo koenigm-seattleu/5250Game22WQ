@@ -381,5 +381,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion PickupItemsFromPool
+
+        #region GetNextPlayerTurn
+        [Test]
+        public void RoundEngine_GetNextPlayerTurn_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.GetNextPlayerTurn();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion GetNextPlayerTurn
     }
 }
