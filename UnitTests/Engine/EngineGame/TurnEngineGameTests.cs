@@ -312,5 +312,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion TargetDied
+
+        #region TakeTurn
+        [Test]
+        public void RoundEngine_TakeTurn_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion TakeTurn
     }
 }
