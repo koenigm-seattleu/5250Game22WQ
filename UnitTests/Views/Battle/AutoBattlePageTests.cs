@@ -53,11 +53,11 @@ namespace UnitTests.Views
         {
             // Arrange
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(3);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(3);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
 
             var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
@@ -72,7 +72,7 @@ namespace UnitTests.Views
             page.AutobattleButton_Clicked(null, null);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
