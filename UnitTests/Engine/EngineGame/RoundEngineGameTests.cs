@@ -331,5 +331,19 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion SwapCharacterItem
+
+        #region GetItemFromPoolIfBetter
+        [Test]
+        public void RoundEngine_GetItemFromPoolIfBetter_Valid_Default_Should_Pass()
+        {
+            // Act
+            var result = Engine.Round.GetItemFromPoolIfBetter(null, ItemLocationEnum.Head);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion GetItemFromPoolIfBetter
     }
 }
