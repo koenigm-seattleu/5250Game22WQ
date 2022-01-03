@@ -122,7 +122,7 @@ namespace Game.Engine.EngineKoenig
             // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
             if (EngineSettings.BattleScore.AutoBattle)
             {
-                PickupItemsForAllCharacters();
+                _ = PickupItemsForAllCharacters();
             }
 
             // Reset Monster and Item Lists
@@ -435,12 +435,12 @@ namespace Game.Engine.EngineKoenig
         {
             foreach (var data in EngineSettings.PlayerList)
             {
-                data.ClearBuffs();
+                _ = data.ClearBuffs();
             }
 
             foreach (var data in EngineSettings.CharacterList)
             {
-                data.ClearBuffs();
+                _ = data.ClearBuffs();
             }
             return true;
         }
