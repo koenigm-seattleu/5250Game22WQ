@@ -376,5 +376,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion DetermineCriticalMissProblem
+
+        #region DropItems
+        [Test]
+        public void RoundEngine_DropItems_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.DropItems(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+        #endregion DropItems
     }
 }
