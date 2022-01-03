@@ -1,6 +1,8 @@
 ﻿
 using NUnit.Framework;
+
 using Game.Engine.EngineGame;
+using Game.Models;
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -41,5 +43,34 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion Constructor
 
+        #region MoveAsTurn
+        [Test]
+        public void RoundEngine_MoveAsTurn_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.MoveAsTurn(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundEngine_MoveAsTurn_Valid_Monster_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.MoveAsTurn(new PlayerInfoModel(new MonsterModel()));
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion MoveAsTurn
     }
 }
