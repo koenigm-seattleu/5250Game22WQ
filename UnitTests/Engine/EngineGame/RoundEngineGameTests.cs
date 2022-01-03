@@ -317,5 +317,19 @@ namespace UnitTests.Engine.EngineGame
         //    Assert.AreEqual(false, result.Any());
         //}
         #endregion PlayerList
+
+        #region SwapCharacterItem
+        [Test]
+        public void RoundEngine_SwapCharacterItem_Valid_Default_Should_Pass()
+        {
+            // Act
+            var result = Engine.Round.SwapCharacterItem(null,ItemLocationEnum.Head,null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion SwapCharacterItem
     }
 }
