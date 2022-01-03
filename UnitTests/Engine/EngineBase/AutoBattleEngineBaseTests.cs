@@ -80,8 +80,8 @@ namespace UnitTests.Engine.EngineBase
         {
             //Arrange
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(3);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
 
             var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
@@ -96,7 +96,7 @@ namespace UnitTests.Engine.EngineBase
             var result = await AutoBattleEngine.RunAutoBattle();
 
             //Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             //Assert
             Assert.AreEqual(true, result);
