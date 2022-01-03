@@ -296,5 +296,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
         #endregion TurnAsAttack
+
+        #region TargetDied
+        [Test]
+        public void RoundEngine_TargetDied_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.TargetDied(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion TargetDied
     }
 }
