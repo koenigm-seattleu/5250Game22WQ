@@ -344,5 +344,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(HitStatusEnum.Unknown, result);
         }
         #endregion RollToHitTarget
+
+        #region GetRandomMonsterItemDrops
+        [Test]
+        public void RoundEngine_GetRandomMonsterItemDrops_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+        #endregion GetRandomMonsterItemDrops
     }
 }
