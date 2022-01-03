@@ -360,5 +360,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(null, result);
         }
         #endregion GetRandomMonsterItemDrops
+
+        #region DetermineCriticalMissProblem
+        [Test]
+        public void RoundEngine_DetermineCriticalMissProblem_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.DetermineCriticalMissProblem(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion DetermineCriticalMissProblem
     }
 }
