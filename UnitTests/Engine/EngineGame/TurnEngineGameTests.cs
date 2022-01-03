@@ -168,5 +168,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(HitStatusEnum.Unknown, result);
         }
         #endregion BattleSettingsOverrideHitStatusEnum
+
+        #region BattleSettingsOverride
+        [Test]
+        public void RoundEngine_BattleSettingsOverride_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverride(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Unknown, result);
+        }
+        #endregion BattleSettingsOverride
     }
 }
