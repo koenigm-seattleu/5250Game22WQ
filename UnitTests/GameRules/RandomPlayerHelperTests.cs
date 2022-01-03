@@ -16,14 +16,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetAbilityValue_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetAbilityValue();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(2 - 1, result);
@@ -33,14 +33,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetLevel_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetLevel();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(2, result);
@@ -50,14 +50,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetHealth_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetHealth(1);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(2, result);
@@ -67,14 +67,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetMonsterName_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetMonsterName();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("Deg", result);
@@ -84,14 +84,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetMonsterDescription_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetMonsterDescription();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("the Elf hater", result);
@@ -101,14 +101,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetCharacterDescription_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetCharacterDescription();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("the awesome", result);
@@ -118,14 +118,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetCharacterName_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetCharacterName();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("Doug", result);
@@ -149,14 +149,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetItem_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetItem(Game.Models.ItemLocationEnum.Feet);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreNotEqual(null, result);
@@ -166,14 +166,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetMonsterDifficultyValue_Should_Pass()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetMonsterDifficultyValue();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(DifficultyEnum.Average, result);
@@ -183,14 +183,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetMonsterImage_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetMonsterImage();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("troll2.png", result);
@@ -200,14 +200,14 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetCharacterImage_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetCharacterImage();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual("elf2.png", result);
@@ -217,8 +217,8 @@ namespace UnitTests.Helpers
         public void RandomPlayerHelper_GetMonsterUniqueItem_2_Should_Return_2()
         {
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             var expected = ItemIndexViewModel.Instance.Dataset.ElementAt(1).Id;
 
@@ -226,7 +226,7 @@ namespace UnitTests.Helpers
             var result = RandomPlayerHelper.GetMonsterUniqueItem();
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -255,14 +255,14 @@ namespace UnitTests.Helpers
             _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "1" });
 
             // Arrange
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = RandomPlayerHelper.GetRandomCharacter(1);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result.UniqueItem.Equals("1"));
@@ -277,14 +277,14 @@ namespace UnitTests.Helpers
             _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
             _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetRandomCharacter(1);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result.UniqueItem.Equals("2"));
@@ -299,14 +299,14 @@ namespace UnitTests.Helpers
             _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "2" });
             _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { UniqueItem = "3" });
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = RandomPlayerHelper.GetRandomCharacter(1);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(result.MaxHealth, result.CurrentHealth);
