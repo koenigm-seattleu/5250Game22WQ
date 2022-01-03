@@ -88,5 +88,22 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
         #endregion ApplyDamage
+
+        #region Attack
+        [Test]
+        public void RoundEngine_Attack_Valid_Default_Should_Pass()
+        {
+            // Arrange 
+
+            // Act
+            var result = Engine.Round.Turn.Attack(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        
+        #endregion Attack
     }
 }
