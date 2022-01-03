@@ -429,14 +429,14 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 10;
             var DefenseScore = 0;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(3); // Always roll a 3.
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3); // Always roll a 3.
 
             // Act
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(HitStatusEnum.Hit, result);
@@ -449,14 +449,14 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 1;
             var DefenseScore = 100;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(HitStatusEnum.Miss, result);
@@ -469,14 +469,14 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 1;
             var DefenseScore = 100;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(HitStatusEnum.Miss, result);
@@ -489,14 +489,14 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 1;
             var DefenseScore = 100;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(HitStatusEnum.Hit, result);
@@ -509,8 +509,8 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 1;
             var DefenseScore = 100;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             var oldSeting = EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalMiss;
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalMiss = true;
@@ -519,7 +519,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalMiss = oldSeting;
 
             // Assert
@@ -533,8 +533,8 @@ namespace UnitTests.Engine.EngineBase
             var AttackScore = 1;
             var DefenseScore = 100;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             var oldSeting = EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit;
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = true;
@@ -543,7 +543,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = oldSeting;
 
             // Assert
@@ -651,14 +651,14 @@ namespace UnitTests.Engine.EngineBase
 
             var PlayerInfo = new PlayerInfoModel(player);
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(0);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(0);
 
             // Act
             var result = Engine.Round.Turn.DropItems(PlayerInfo);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(0, result);
@@ -676,14 +676,14 @@ namespace UnitTests.Engine.EngineBase
 
             var PlayerInfo = new PlayerInfoModel(player);
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(0);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(0);
 
             // Act
             var result = Engine.Round.Turn.DropItems(PlayerInfo);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(2, result);
@@ -697,16 +697,16 @@ namespace UnitTests.Engine.EngineBase
 
             var PlayerInfo = new PlayerInfoModel(player);
 
-            DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.EnableForcedRolls();
 
             // Drop is 0-Number, so 2 will yield 1
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.SetForcedRollValue(2);
 
             // Act
             var result = Engine.Round.Turn.DropItems(PlayerInfo);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(1, result);
@@ -807,14 +807,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -833,14 +833,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -860,14 +860,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -886,14 +886,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -912,14 +912,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -938,8 +938,8 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit;
             Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
@@ -948,7 +948,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
             Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = oldSetting;
 
             // Assert
@@ -968,8 +968,8 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(1);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             var oldSetting = Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss;
             Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = true;
@@ -978,7 +978,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
             Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = oldSetting;
 
             // Assert
@@ -1058,14 +1058,14 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Forece a Miss
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -1272,14 +1272,14 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(6);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(6);
 
             // Act
             var result = Engine.Round.Turn.DetermineCriticalMissProblem(MonsterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -1407,13 +1407,13 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(9);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(9);
             // Act
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(false, result);
@@ -1438,13 +1438,13 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
             // Act
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(false, result);
@@ -1468,13 +1468,13 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
             // Act
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(true, result);
