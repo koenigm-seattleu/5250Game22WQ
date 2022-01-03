@@ -193,13 +193,13 @@ namespace UnitTests.ViewModels
             var originalState = ViewModel.GetNeedsRefresh();
 
             // Act
-            ViewModel.SetNeedsRefresh(true);
+            _ = ViewModel.SetNeedsRefresh(true);
             var newState = ViewModel.GetNeedsRefresh();
 
             // Reset
 
             // Turn it back to the original state
-            ViewModel.SetNeedsRefresh(originalState);
+            _ = ViewModel.SetNeedsRefresh(originalState);
 
             // Assert
             Assert.AreEqual(true, newState);
@@ -211,7 +211,7 @@ namespace UnitTests.ViewModels
             // Arrange
             var originalState = ViewModel.GetNeedsRefresh();
 
-            ViewModel.SetNeedsRefresh(true);
+            _ = ViewModel.SetNeedsRefresh(true);
 
             // Act
             var result = ViewModel.NeedsRefresh();
@@ -219,7 +219,7 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Turn it back to the original state
-            ViewModel.SetNeedsRefresh(originalState);
+            _ = ViewModel.SetNeedsRefresh(originalState);
 
             // Assert
             Assert.AreEqual(true, result);
@@ -231,7 +231,7 @@ namespace UnitTests.ViewModels
             // Arrange
             var originalState = ViewModel.GetNeedsRefresh();
 
-            ViewModel.SetNeedsRefresh(false);
+            _ = ViewModel.SetNeedsRefresh(false);
 
             // Act
             var result = ViewModel.NeedsRefresh();
@@ -239,7 +239,7 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Turn it back to the original state
-            ViewModel.SetNeedsRefresh(originalState);
+            _ = ViewModel.SetNeedsRefresh(originalState);
 
             // Assert
             Assert.AreEqual(false, result);
