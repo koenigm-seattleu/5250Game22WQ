@@ -229,11 +229,11 @@ namespace UnitTests.ViewModels
             // Make a Delete Page
             var myPage = new Game.Views.ItemCreatePage(true);
 
-            var countBefore = ViewModel.Dataset.Count();
+            var countBefore = ViewModel.Dataset.Count;
 
             // Act
             MessagingCenter.Send(myPage, "Create", data);
-            var countAfter = ViewModel.Dataset.Count();
+            var countAfter = ViewModel.Dataset.Count;
 
             // Reset
 
@@ -299,7 +299,7 @@ namespace UnitTests.ViewModels
 
             // Act
             MessagingCenter.Send(myPage, "WipeDataList", true);
-            var countAfter = ViewModel.Dataset.Count();
+            var countAfter = ViewModel.Dataset.Count;
 
             // Reset
 
@@ -408,7 +408,7 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Assert
-            Assert.AreEqual(true, ViewModel.Dataset.Count() > 0); // Check that there are rows of data
+            Assert.AreEqual(true, ViewModel.Dataset.Count > 0); // Check that there are rows of data
         }
 
         [Test]
@@ -430,7 +430,7 @@ namespace UnitTests.ViewModels
             ViewModel.Dataset = oldDataset;
 
             // Assert
-            Assert.AreEqual(true, ViewModel.Dataset.Count() > 0); // Check that there are rows of data
+            Assert.AreEqual(true, ViewModel.Dataset.Count > 0); // Check that there are rows of data
         }
 
         [Test]
@@ -446,7 +446,7 @@ namespace UnitTests.ViewModels
 
             // Act
             ViewModel.LoadDatasetCommand.Execute(null);
-            var count = ViewModel.Dataset.Count();  // Remember how many records exist
+            var count = ViewModel.Dataset.Count;  // Remember how many records exist
 
             // Reset
             ViewModel.IsBusy = false;
