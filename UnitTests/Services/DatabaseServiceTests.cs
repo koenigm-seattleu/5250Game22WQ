@@ -264,7 +264,7 @@ namespace UnitTests.Services
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual(1, result.Count);
         }
 
         [Test]
