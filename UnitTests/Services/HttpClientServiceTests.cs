@@ -112,7 +112,7 @@ namespace UnitTests.Services
             ResponseMessage.ResetResponseMessageStringContent();
 
             // Assert
-            Assert.AreEqual(2, resultList.Count());
+            Assert.AreEqual(2, resultList.Count);
         }
 
         [Test]
@@ -262,7 +262,7 @@ namespace UnitTests.Services
             ResponseMessage.ResetResponseMessageStringContent();
 
             // Assert
-            Assert.AreEqual(2, resultList.Count());
+            Assert.AreEqual(2, resultList.Count);
         }
 
         [Test]
@@ -432,7 +432,7 @@ namespace UnitTests.Services
             // Reset
 
             // Assert
-            Assert.AreEqual(4, resultList.Count());
+            Assert.AreEqual(4, resultList.Count);
         }
 
         [Test]
