@@ -45,7 +45,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(3, result.Count());
+            Assert.AreEqual(3, result.Count);
         }
 
         [Test]
@@ -61,7 +61,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.Count());
+            Assert.AreEqual(0, result.Count);
         }
 
         [Test]
@@ -77,7 +77,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.Count());
+            Assert.AreEqual(0, result.Count);
         }
 
         [Test]
@@ -109,7 +109,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.Count());
+            Assert.AreEqual(0, result.Count);
         }
 
         [Test]
@@ -125,7 +125,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.Count());
+            Assert.AreEqual(0, result.Count);
         }
 
         [Test]
@@ -141,7 +141,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.Count());
+            Assert.AreEqual(0, result.Count);
         }
 
         [Test]
