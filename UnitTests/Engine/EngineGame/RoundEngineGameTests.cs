@@ -18,10 +18,12 @@ namespace UnitTests.Engine.EngineGame
         [SetUp]
         public void Setup()
         {
-            Engine = new BattleEngine();
+            Engine = new();
 
-            Engine.Round = new RoundEngine();
-            Engine.Round.Turn = new TurnEngine();
+            Engine.Round = new RoundEngine
+            {
+                Turn = new TurnEngine()
+            };
             _ = Engine.Round.ClearLists();
 
             //Start the Engine in AutoBattle Mode
