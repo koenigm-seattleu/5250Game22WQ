@@ -19,7 +19,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetFullList;
 
             // Assert
-            Assert.AreEqual(10, result.Count());
+            Assert.AreEqual(10, result.Count);
 
             // Assert
         }
@@ -33,7 +33,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListFighter;
 
             // Assert
-            Assert.AreEqual(4, result.Count());
+            Assert.AreEqual(4, result.Count);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListCleric;
 
             // Assert
-            Assert.AreEqual(5, result.Count());
+            Assert.AreEqual(5, result.Count);
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListOthers;
 
             // Assert
-            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual(1, result.Count);
         }
 
         [Test]
