@@ -166,7 +166,7 @@ namespace UnitTests.Engine.EngineGame
             //Reset
 
             //Assert
-            Assert.AreEqual(0, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
+            Assert.AreEqual(0, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count);
         }
 
         [Test]
@@ -183,7 +183,7 @@ namespace UnitTests.Engine.EngineGame
             //Reset
 
             //Assert
-            Assert.AreEqual(0, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count());
+            Assert.AreEqual(0, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count);
         }
         #endregion CreateCharacterParty   
 
