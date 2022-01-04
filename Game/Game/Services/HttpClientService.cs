@@ -24,7 +24,7 @@ namespace Game.Services
         private HttpClient _httpClientInstance;
 
         // client
-        private HttpClient _httpClient
+        private HttpClient HttpClient
         {
             get
             {
@@ -185,7 +185,7 @@ namespace Game.Services
 
             try
             {
-                response = await _httpClient.PostAsync(RestUrl, HeaderContent);
+                response = await HttpClient.PostAsync(RestUrl, HeaderContent);
                 if (!response.IsSuccessStatusCode)
                 {
                     return null;
@@ -219,7 +219,7 @@ namespace Game.Services
 
             try
             {
-                response = await _httpClient.GetAsync(RestUrl);
+                response = await HttpClient.GetAsync(RestUrl);
                 if (response.IsSuccessStatusCode)
                 {
                     var data = await JsonParseResult(response);
