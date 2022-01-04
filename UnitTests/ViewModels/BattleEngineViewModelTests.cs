@@ -72,7 +72,7 @@ namespace UnitTests.ViewModels
             // Arrange
             var result = ViewModel;
 
-            var countBefore = result.DatabaseCharacterList.Count();
+            var countBefore = result.DatabaseCharacterList.Count;
 
             // Act
             result.DatabaseCharacterList.Add(new CharacterModel());
@@ -82,8 +82,8 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Assert
-            Assert.AreEqual(countBefore + 1, result.DatabaseCharacterList.Count());
-            Assert.AreEqual(1, result.PartyCharacterList.Count());
+            Assert.AreEqual(countBefore + 1, result.DatabaseCharacterList.Count);
+            Assert.AreEqual(1, result.PartyCharacterList.Count);
         }
 
         [Test]
@@ -92,7 +92,7 @@ namespace UnitTests.ViewModels
             // Arrange
             var result = ViewModel;
 
-            var countBefore = result.DatabaseCharacterList.Count();
+            var countBefore = result.DatabaseCharacterList.Count;
 
             // Act
             result.DatabaseCharacterList = new ObservableCollection<CharacterModel>();
@@ -102,8 +102,8 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result.DatabaseCharacterList.Count());
-            Assert.AreEqual(0, result.PartyCharacterList.Count());
+            Assert.AreEqual(0, result.DatabaseCharacterList.Count);
+            Assert.AreEqual(0, result.PartyCharacterList.Count);
         }
     }
 }
