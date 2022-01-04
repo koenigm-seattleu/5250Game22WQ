@@ -87,7 +87,7 @@ namespace UnitTests.TestHelpers
         public static StringContent DefaultStringContent = new("Content as string");
 
         // Return string is null
-        public static StringContent NullStringContent = null;
+        public static StringContent NullStringContent;
 
         // Empty, trying to get byte
         public static StringContent EmptyStringContent = new(string.Empty);
