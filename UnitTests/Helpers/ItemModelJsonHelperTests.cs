@@ -46,7 +46,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(4, result.Count());
+            Assert.AreEqual(4, result.Count);
         }
 
         [Test]
