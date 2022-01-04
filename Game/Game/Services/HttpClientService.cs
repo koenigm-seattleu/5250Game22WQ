@@ -92,7 +92,7 @@ namespace Game.Services
                 return null;
             }
 
-            if (response.Content == null)
+            if (response.Content.Headers.ContentLength == 0)
             {
                 return null;
             }
