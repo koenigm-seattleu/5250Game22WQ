@@ -14,6 +14,7 @@ namespace Game.Views
     /// </summary>
     [DesignTimeVisible(false)] 
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [System.Obsolete]
     public partial class MainPage : MasterDetailPage
     {
         // Collection of Navigation Pages
