@@ -117,7 +117,7 @@ namespace UnitTests.Views
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
     public class TestDatabaseService<T> : IDataStore<T> where T : new()
     {
-        static bool _error = false;
+        static bool _error;
 
         public TestDatabaseService(bool condition, Action<Exception> onException = null)
         {
