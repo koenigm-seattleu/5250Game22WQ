@@ -183,7 +183,7 @@ namespace UnitTests.Services
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result.Count());
+            Assert.AreEqual(1, result.Count);
         }
 
         [Test]
@@ -210,7 +210,7 @@ namespace UnitTests.Services
 
             // Assert
             Assert.AreEqual(true, result);
-            Assert.AreEqual(1, DataStore.datalist.Count());
+            Assert.AreEqual(1, DataStore.datalist.Count);
         }
 
         [Test]
@@ -237,7 +237,7 @@ namespace UnitTests.Services
 
             // Assert
             Assert.AreEqual(false, result);
-            Assert.AreEqual(2, DataStore.datalist.Count());
+            Assert.AreEqual(2, DataStore.datalist.Count);
         }
 
         [Test]
@@ -264,7 +264,7 @@ namespace UnitTests.Services
 
             // Assert
             Assert.AreEqual(false, result);
-            Assert.AreEqual(2, DataStore.datalist.Count());
+            Assert.AreEqual(2, DataStore.datalist.Count);
         }
 
         [Test]
