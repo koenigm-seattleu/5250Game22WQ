@@ -154,7 +154,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual(7, itemBox.Children.Count()); // Got to here, so it happened...
+            Assert.AreEqual(7, itemBox.Children.Count); // Got to here, so it happened...
         }
 
         [Test]
@@ -176,7 +176,7 @@ namespace UnitTests.Views
             _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
 
             // Assert
-            Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
+            Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace UnitTests.Views
             _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
 
             // Assert
-            Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
+            Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
         }
 
         [Test]
