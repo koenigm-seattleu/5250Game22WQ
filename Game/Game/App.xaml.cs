@@ -14,6 +14,7 @@ namespace Game
         /// <summary>
         /// Default App Constructor
         /// </summary>
+        [System.Obsolete]
         public App()
         {
             InitializeComponent();
