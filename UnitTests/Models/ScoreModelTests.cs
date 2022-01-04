@@ -76,9 +76,9 @@ namespace UnitTests.Models
             Assert.AreEqual(string.Empty, result.MonstersKilledList);
             Assert.AreEqual(string.Empty, result.ItemsDroppedList);
 
-            Assert.AreEqual(0, result.ItemModelDropList.Count());
-            Assert.AreEqual(0, result.MonsterModelDeathList.Count());
-            Assert.AreEqual(0, result.CharacterModelDeathList.Count());
+            Assert.AreEqual(0, result.ItemModelDropList.Count);
+            Assert.AreEqual(0, result.MonsterModelDeathList.Count);
+            Assert.AreEqual(0, result.CharacterModelDeathList.Count);
         }
 
         [Test]
