@@ -1,13 +1,17 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+using NUnit.Framework;
+
 using Game;
 using Game.Views;
+using Game.Models;
+
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
-using Game.Models;
+
+using UnitTests.TestHelpers;
 
 namespace UnitTests.Views
 {
@@ -235,11 +239,17 @@ namespace UnitTests.Views
             var hold = WebGlobalsModel.WebSiteAPIURL;
             WebGlobalsModel.WebSiteAPIURL = "https://bogusurl";
 
+            _ = TestBaseHelper.SetHttpClientToMock();
+            ResponseMessage.SetResponseMessageStringContent(JsonSampleData.StringContent_Example_API_Pass);
+            ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
+            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
+
             // Act
             var result = await page.GetItemsGet();
 
             // Reset
             WebGlobalsModel.WebSiteAPIURL = hold;
+            _ = TestBaseHelper.SetHttpClientToReal();
 
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
@@ -249,6 +259,10 @@ namespace UnitTests.Views
         public async Task AboutPage_GetItemsGet_Invalid_Neg_Should_Fail()
         {
             // Arrange
+            _ = TestBaseHelper.SetHttpClientToMock();
+            ResponseMessage.SetResponseMessageStringContent(JsonSampleData.StringContent_Example_API_Pass);
+            ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
+            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
 
             page.SetServerItemValue("-100");
 
@@ -256,6 +270,7 @@ namespace UnitTests.Views
             var result = await page.GetItemsGet();
 
             // Reset
+            _ = TestBaseHelper.SetHttpClientToReal();
 
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
@@ -284,11 +299,17 @@ namespace UnitTests.Views
             var hold = WebGlobalsModel.WebSiteAPIURL;
             WebGlobalsModel.WebSiteAPIURL = "https://bogusurl";
 
+            _ = TestBaseHelper.SetHttpClientToMock();
+            ResponseMessage.SetResponseMessageStringContent(JsonSampleData.StringContent_Example_API_Pass);
+            ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
+            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
+
             // Act
             var result = await page.GetItemsPost();
 
             // Reset
             WebGlobalsModel.WebSiteAPIURL = hold;
+            _ = TestBaseHelper.SetHttpClientToReal();
 
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
@@ -298,6 +319,10 @@ namespace UnitTests.Views
         public async Task AboutPage_GetItemsPost_Invalid_Neg_Should_Fail()
         {
             // Arrange
+            _ = TestBaseHelper.SetHttpClientToMock();
+            ResponseMessage.SetResponseMessageStringContent(JsonSampleData.StringContent_Example_API_Pass);
+            ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
+            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
 
             page.SetServerItemValue("-100");
 
@@ -305,6 +330,7 @@ namespace UnitTests.Views
             var result = await page.GetItemsPost();
 
             // Reset
+            _ = TestBaseHelper.SetHttpClientToReal();
 
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
