@@ -59,7 +59,7 @@ namespace UnitTests.TestHelpers
         {
             _ = HttpClientService.Instance.SetHttpClient(RealHttpClient);
             ResponseMessage.ResetResponseMessageStringContent();
-            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
+            ResponseMessage.ResetHttpStatusCode();
             return true;
         }
     }
