@@ -22,6 +22,9 @@
                 <Label Text="Mike Koenig" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="II-Chan Rocks" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+
+                <Image Source="iichan_award.jpg"></Image>
+                
             </StackLayout>
 
             <!--Database Settings Frame-->
