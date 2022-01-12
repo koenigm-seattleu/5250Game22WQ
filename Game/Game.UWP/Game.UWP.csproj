@@ -156,6 +156,7 @@
     <Content Include="icon_edit.png" />
     <Content Include="icon_new.png" />
     <Content Include="icon_save.png" />
+    <Content Include="iichan_award.jpg" />
     <Content Include="item.png" />
     <Content Include="items.png" />
     <Content Include="knight.png" />
