@@ -98,7 +98,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void ListLarge_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new CharacterIndexLargePage());
+            await Navigation.PushAsync(new CharacterIndexLargePage());
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void ListFlex_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new CharacterIndexFlexPage());
+            await Navigation.PushAsync(new CharacterIndexFlexPage());
         }
         #endregion ShowAlternatives
     }
