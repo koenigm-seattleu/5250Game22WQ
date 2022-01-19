@@ -88,5 +88,18 @@ namespace Game.Views
 
             BindingContext = ViewModel;
         }
+
+
+        #region ShowAlternatives
+        /// <summary>
+        /// Swap to the Large List
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void ListLarge_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CharacterIndexLargePage());
+        }
+        #endregion ShowAlternatives
     }
 }

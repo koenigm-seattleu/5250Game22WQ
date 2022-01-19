@@ -10,6 +10,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="icon_add.png"/>
+        <ToolbarItem Text="Large" Clicked="ListLarge_Clicked" />
+        <ToolbarItem Text="Flex" Clicked="ListLarge_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -47,11 +49,11 @@
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"/>
 
-                                <Label Grid.Column="1" Grid.Row="0"
+                                <Label Grid.Column="1" Grid.Row="1"
                                        Text="{Binding Name}" 
                                        Style="{StaticResource ListStyle}"/>
 
-                                <StackLayout Grid.Column="1" Grid.Row="1"
+                                <StackLayout Grid.Column="1" Grid.Row="2"
                                     Orientation="Horizontal">
                                     
                                     <Label 
@@ -63,7 +65,7 @@
                                 
                                 </StackLayout>
 
-                                <Label Grid.Column="1" Grid.Row="2"
+                                <Label Grid.Column="1" Grid.Row="3"
                                        Text="{Binding Description}" 
                                        Style="{StaticResource ListStyle}"
                                        FontSize="Micro"/>
