@@ -1,9 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Linq;
+using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
+using Game.Models;
 
 namespace Game.Views
 {
@@ -32,5 +35,14 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+        public async void FlexCharacter_Clicked(object sender, EventArgs args)
+        {
+            var button = sender as ImageButton;
+            var id = button.CommandParameter as String ;
+            var data = ViewModel.Dataset.FirstOrDefault(m => m.Id.Equals(id));
+
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
+
+        }
     }
 }
