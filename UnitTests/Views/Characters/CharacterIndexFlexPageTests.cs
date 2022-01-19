@@ -1,8 +1,11 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+
+using NUnit.Framework;
 
 using Game;
 using Game.Views;
 using Game.Models;
+using Game.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
@@ -48,6 +51,23 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void CharacterIndexFlexPage_FlexCharacter_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+            var data = CharacterIndexViewModel.Instance.Dataset.First();
+
+            ImageButton button = new ImageButton { CommandParameter = data.Id };
+
+            // Act
+            page.FlexCharacter_Clicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);    // Got to here, so it happened...
         }
     }
 }
