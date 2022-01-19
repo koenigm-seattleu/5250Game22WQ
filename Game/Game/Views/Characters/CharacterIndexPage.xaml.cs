@@ -100,6 +100,16 @@ namespace Game.Views
         {
             await Navigation.PushModalAsync(new CharacterIndexLargePage());
         }
+
+        /// <summary>
+        /// Flex Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void ListFlex_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CharacterIndexFlexPage());
+        }
         #endregion ShowAlternatives
     }
 }

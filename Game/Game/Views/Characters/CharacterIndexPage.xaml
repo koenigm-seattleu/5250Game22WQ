@@ -11,7 +11,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="icon_add.png"/>
         <ToolbarItem Text="Large" Clicked="ListLarge_Clicked" />
-        <ToolbarItem Text="Flex" Clicked="ListLarge_Clicked" />
+        <ToolbarItem Text="Flex" Clicked="ListFlex_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
