@@ -427,6 +427,16 @@ namespace Game.Views
         /// <returns></returns>
         public bool RandomizeCharacter()
         {
+            var levelIndex = LevelPicker.SelectedIndex;
+
+            // Need to change the Level picker to allow for the MaxHealth to be triggered
+            LevelPicker.SelectedIndex = 0;
+            LevelPicker.SelectedIndex = levelIndex;
+
+            ViewModel.Data.Level = levelIndex + 1;
+
+            ManageHealth();
+
             // Randomize Name
             ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
             ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
