@@ -110,6 +110,16 @@ namespace Game.Views
         {
             await Navigation.PushAsync(new CharacterIndexFlexPage());
         }
+
+        /// <summary>
+        /// Collection View
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void ListCollection_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CharacterIndexCollectionPage());
+        }
         #endregion ShowAlternatives
     }
 }
