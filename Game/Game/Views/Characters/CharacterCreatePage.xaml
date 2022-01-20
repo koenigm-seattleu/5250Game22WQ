@@ -36,8 +36,21 @@
 
                         <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout 
+                                Style="{StaticResource HorizontalStack}"
+                                HorizontalOptions="CenterAndExpand">
+                            
+                            <Button 
+                                Text="&lt;"
+                                Clicked="LeftArrow_Clicked"
+                                />
+                            
                             <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+
+                            <Button 
+                                Text="&gt;"
+                                Clicked="RightArrow_Clicked"
+                                />
 
                             <ImageButton 
                                 x:Name="RollDice"

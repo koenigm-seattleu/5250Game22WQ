@@ -8,14 +8,15 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
+using Game.GameRules;
 
 namespace UnitTests.Views
 {
     [TestFixture]
     public class CharacterCreatePageTests : CharacterCreatePage
     {
-        App app;
-        CharacterCreatePage page;
+        private App app;
+        private CharacterCreatePage page;
 
         public CharacterCreatePageTests() : base(true) { }
 
@@ -29,7 +30,7 @@ namespace UnitTests.Views
             app = new App();
             Application.Current = app;
 
-            page = new CharacterCreatePage(new GenericViewModel<CharacterModel>(new CharacterModel()));
+            page = new CharacterCreatePage(new GenericViewModel<CharacterModel>(new CharacterModel() { ImageURI = "elf1.png" }));
         }
 
         [TearDown]
@@ -280,6 +281,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
+
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
@@ -299,6 +301,102 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_LeftArrow_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.LeftArrow_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_RightArrow_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.RightArrow_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_ChangeImageByIncrement_Valid_Increment_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel = new GenericViewModel<CharacterModel>() { Data = new CharacterModel() { ImageURI = "elf3.png" } };
+
+            var indexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(page.ViewModel.Data.ImageURI);
+
+            // Act
+            var result = page.ChangeImageByIncrement(1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, indexCurrent == result - 1);
+        }
+
+        [Test]
+        public void CharacterCreatePage_ChangeImageByIncrement_Valid_Decrement_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel = new GenericViewModel<CharacterModel>() { Data = new CharacterModel() { ImageURI = "elf3.png" } };
+
+            var indexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(page.ViewModel.Data.ImageURI);
+
+            // Act
+            var result = page.ChangeImageByIncrement(-1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, indexCurrent == result + 1);
+        }
+
+        [Test]
+        public void CharacterCreatePage_ChangeImageByIncrement_Invalid_Decrement_Zero_Should_Pass()
+        {
+            // Arrange
+
+            // set to the first in the list, zero
+            page.ViewModel = new GenericViewModel<CharacterModel>() { Data = new CharacterModel() { ImageURI = "elf1.png" } };
+
+            // Act
+            var result = page.ChangeImageByIncrement(-1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void CharacterCreatePage_ChangeImageByIncrement_Invalid_Increment_Overflow_Should_Pass()
+        {
+            // Arrange
+
+            // set to the last in the list
+            page.ViewModel = new GenericViewModel<CharacterModel>() { Data = new CharacterModel() { ImageURI = "elf7.png" } };
+
+            // Act
+            var result = page.ChangeImageByIncrement(1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(6, result);
         }
     }
 }

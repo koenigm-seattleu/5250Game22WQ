@@ -26,7 +26,6 @@ namespace Game.Views
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
 
-
         // Empty Constructor for UTs
         public CharacterCreatePage(bool UnitTest) { }
 
@@ -38,9 +37,9 @@ namespace Game.Views
             InitializeComponent();
 
             data.Data = new CharacterModel();
-            this.ViewModel = data;
+            ViewModel = data;
 
-            this.ViewModel.Title = "Create";
+            ViewModel.Title = "Create";
 
             // Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
@@ -48,8 +47,8 @@ namespace Game.Views
                 LevelPicker.Items.Add(i.ToString());
             }
 
-            this.ViewModel.Data.Level = 1;
-            // LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+            ViewModel.Data.Level = 1;
+            ManageHealth();
 
             _ = UpdatePageBindingContext();
         }
@@ -61,17 +60,17 @@ namespace Game.Views
         public bool UpdatePageBindingContext()
         {
             // Temp store off the Level
-            var level = this.ViewModel.Data.Level;
+            var level = ViewModel.Data.Level;
+            var health = ViewModel.Data.MaxHealth;
 
             // Clear the Binding and reset it
             BindingContext = null;
-            BindingContext = this.ViewModel;
+            BindingContext = ViewModel;
 
             // This resets the Picker to -1 index, need to reset it back
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
-
-            ManageHealth();
+            ViewModel.Data.MaxHealth = health;
 
             AddItemsToDisplay();
 
@@ -86,6 +85,17 @@ namespace Game.Views
         /// <param name="args"></param>
         public void Level_Changed(object sender, EventArgs args)
         {
+            // Only change if different
+            if (LevelPicker.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            if (ViewModel.Data.Level == LevelPicker.SelectedIndex + 1)
+            {
+                return;
+            }
+
             // Change the Level
             ViewModel.Data.Level = LevelPicker.SelectedIndex + 1;
 
@@ -132,13 +142,66 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Shift Image to the Left
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void LeftArrow_Clicked(object sender, EventArgs e)
+        {
+            ChangeImageByIncrement(-1);
+        }
+
+        /// <summary>
+        /// Shift Image to the Right
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RightArrow_Clicked(object sender, EventArgs e)
+        {
+            ChangeImageByIncrement(1);
+        }
+
+        /// <summary>
+        /// Move the Image left or Right
+        /// </summary>
+        /// <param name="increment"></param>
+        public int ChangeImageByIncrement(int increment)
+        {
+            // Find the Index for the current Image
+            var indexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(ViewModel.Data.ImageURI);
+
+            // Current count
+            var count = RandomPlayerHelper.CharacterImageList.Count;
+
+            // Amount to move
+            var indexNew = indexCurrent + increment;
+
+            if (indexNew >= count)
+            {
+                indexNew = count - 1;
+            }
+
+            if (indexNew <= 0)
+            {
+                indexNew = 0;
+            }
+
+            // Increment or Decrement to change the to a different image
+            ViewModel.Data.ImageURI = RandomPlayerHelper.CharacterImageList.ElementAt(indexNew);
+
+            _ = UpdatePageBindingContext();
+
+            return indexNew;
+        }
+
+        /// <summary>
         /// Catch the change to the Stepper for Attack
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
+            AttackValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
@@ -148,7 +211,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseValue.Text = String.Format("{0}", e.NewValue);
+            DefenseValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
@@ -158,9 +221,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
+            SpeedValue.Text = string.Format("{0}", e.NewValue);
         }
-
 
         /// <summary>
         /// The row selected from the list
