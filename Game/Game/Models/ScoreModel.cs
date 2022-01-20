@@ -93,7 +93,7 @@ namespace Game.Models
         public ScoreModel(ScoreModel data)
         {
             // Id = data.Id;
-            _ = Update(data);
+            Update(data);
         }
 
         /// <summary>
@@ -134,7 +134,10 @@ namespace Game.Models
         /// <returns></returns>
         public int CalculateScore()
         {
-            var result = ExperienceGainedTotal;
+            // Change as needed to calculate score
+
+            ScoreTotal = ExperienceGainedTotal;
+            int result = ExperienceGainedTotal;
 
             return result;
         }
