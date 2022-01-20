@@ -21,6 +21,9 @@
     <Compile Update="Views\Characters\CharacterIndexFlexPage.xaml.cs">
       <DependentUpon>CharacterIndexFlexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Characters\CharacterIndexCollectionPage.xaml.cs">
+      <DependentUpon>CharacterIndexCollectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Characters\CharacterIndexLargePage.xaml.cs">
       <DependentUpon>CharacterIndexLargePage.xaml</DependentUpon>
     </Compile>
