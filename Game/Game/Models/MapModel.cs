@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Game.Models;
 
 namespace Game.Models
 {
@@ -22,14 +24,18 @@ namespace Game.Models
         // The Map Locations
         public MapModelLocation[,] MapGridLocation;
 
-        public PlayerInfoModel EmptySquare = new PlayerInfoModel { PlayerType = PlayerTypeEnum.Unknown, ImageURI = "mapcell.png" };
+        // An empty square
+        public PlayerInfoModel EmptySquare = new PlayerInfoModel { PlayerType = PlayerTypeEnum.Unknown, ImageURI= "mapcell.png" };
 
+        /// <summary>
+        /// Default constructor for MapModel.
+        /// </summary>
         public MapModel()
         {
             // Create the Map
             MapGridLocation = new MapModelLocation[MapXAxiesCount, MapYAxiesCount];
 
-            _ = ClearMapGrid();
+            ClearMapGrid();
         }
 
         /// <summary>
@@ -58,10 +64,10 @@ namespace Game.Models
         /// <returns></returns>
         public bool PopulateMapModel(List<PlayerInfoModel> PlayerList)
         {
-            _ = ClearMapGrid();
+            ClearMapGrid();
 
-            var x = 0;
-            var y = 0;
+            int x = 0;
+            int y = 0;
             foreach (var data in PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character))
             {
                 MapGridLocation[x, y].Player = data;
@@ -136,7 +142,7 @@ namespace Game.Models
         /// <returns></returns>
         public bool RemovePlayerFromMap(PlayerInfoModel data)
         {
-            if (data == null)
+            if (data== null)
             {
                 return false;
             }
@@ -147,7 +153,7 @@ namespace Game.Models
                 {
                     if (MapGridLocation[x, y].Player.Guid.Equals(data.Guid))
                     {
-                        MapGridLocation[x, y] = new MapModelLocation { Column = x, Row = y, Player = EmptySquare };
+                        MapGridLocation[x, y] = new MapModelLocation { Column = x, Row = y, Player = EmptySquare};
                         return true;
                     }
                 }
@@ -260,7 +266,7 @@ namespace Game.Models
         {
             MapModelLocation Result = null;
 
-            var LowestDistance = int.MaxValue;
+            int LowestDistance = int.MaxValue;
 
             foreach (var data in GetEmptyLocations())
             {
