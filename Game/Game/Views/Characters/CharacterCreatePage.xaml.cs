@@ -26,6 +26,9 @@ namespace Game.Views
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
 
+        // Current count of the Images in the Character Image List
+        public int ImageListCount = RandomPlayerHelper.CharacterImageList.Count;
+
         // Empty Constructor for UTs
         public CharacterCreatePage(bool UnitTest) { }
 
@@ -71,6 +74,8 @@ namespace Game.Views
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
             ViewModel.Data.MaxHealth = health;
+
+            _ = EnableImageArrowButtons();
 
             AddItemsToDisplay();
 
@@ -142,13 +147,38 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Enable True of False the Image Arrows
+        /// Based on the image in the list
+        /// </summary>
+        /// <returns></returns>
+        public bool EnableImageArrowButtons()
+        {
+            LeftArrowButton.IsEnabled = true;
+            RightArrowButton.IsEnabled = true;
+
+            var ImageIndexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(ViewModel.Data.ImageURI);
+
+            if (ImageIndexCurrent < 1)
+            {
+                LeftArrowButton.IsEnabled = false;
+            }
+
+            if (ImageIndexCurrent >= ImageListCount-1)
+            {
+                RightArrowButton.IsEnabled = false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Shift Image to the Left
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void LeftArrow_Clicked(object sender, EventArgs e)
         {
-            ChangeImageByIncrement(-1);
+            _ = ChangeImageByIncrement(-1);
         }
 
         /// <summary>
@@ -158,7 +188,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void RightArrow_Clicked(object sender, EventArgs e)
         {
-            ChangeImageByIncrement(1);
+            _ = ChangeImageByIncrement(1);
         }
 
         /// <summary>
@@ -168,17 +198,14 @@ namespace Game.Views
         public int ChangeImageByIncrement(int increment)
         {
             // Find the Index for the current Image
-            var indexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(ViewModel.Data.ImageURI);
-
-            // Current count
-            var count = RandomPlayerHelper.CharacterImageList.Count;
+            var ImageIndexCurrent = RandomPlayerHelper.CharacterImageList.IndexOf(ViewModel.Data.ImageURI);
 
             // Amount to move
-            var indexNew = indexCurrent + increment;
+            var indexNew = ImageIndexCurrent + increment;
 
-            if (indexNew >= count)
+            if (indexNew >= ImageListCount)
             {
-                indexNew = count - 1;
+                indexNew = ImageListCount - 1;
             }
 
             if (indexNew <= 0)
