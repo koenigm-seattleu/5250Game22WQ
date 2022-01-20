@@ -398,5 +398,36 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(6, result);
         }
+
+        [Test]
+        public void CharacterCreatePage_Level_Changed_Invalid_NegOne_Should_Skip()
+        {
+            // Arrange
+            var item = (Picker)page.FindByName("LevelPicker");
+
+            // Act
+            item.SelectedIndex = -1;
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got here
+        }
+
+        [Test]
+        public void CharacterCreatePage_Level_Changed_Invalid_Same_Should_Skip()
+        {
+            // Arrange
+            var item = (Picker)page.FindByName("LevelPicker");
+
+            // Act
+            item.SelectedIndex = 1;
+            item.SelectedIndex = 1;
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got here
+        }
     }
 }
