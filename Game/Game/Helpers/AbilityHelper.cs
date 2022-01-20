@@ -1,5 +1,4 @@
 ﻿using Game.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Game.Helpers
@@ -11,10 +10,16 @@ namespace Game.Helpers
     {
         public static void AddAbilitiesBasedOnJob(Dictionary<AbilityEnum, int> AbilityTracker, CharacterJobEnum job, int level)
         {
-            if(AbilityTracker == null || level < 1)
+            if (AbilityTracker == null)
             {
                 return;
             }
+
+            if (level < 1)
+            {
+                return;
+            }
+
             switch (job)
             {
                 case CharacterJobEnum.Cleric:
@@ -46,10 +51,11 @@ namespace Game.Helpers
                     }
                     break;
 
+                case CharacterJobEnum.Unknown:
                 default:
                     foreach (var item in AbilityEnumHelper.GetListOthers)
                     {
-                        if(AbilityTracker.ContainsKey(AbilityEnumHelper.ConvertStringToEnum(item)))
+                        if (AbilityTracker.ContainsKey(AbilityEnumHelper.ConvertStringToEnum(item)))
                         {
                             AbilityTracker[AbilityEnumHelper.ConvertStringToEnum(item)] += level;
                         }
