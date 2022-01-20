@@ -186,7 +186,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense},
 
                 new ItemModel {
-                    Name = "Fast Necklass",
+                    Name = "Fast Necklace",
                     Description = "And Tasty",
                     ImageURI = "neck1.png",
                     Range = 0,
