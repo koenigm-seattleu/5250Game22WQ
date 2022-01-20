@@ -8,16 +8,16 @@ namespace Game.Helpers
     /// </summary>
     public static class AbilityHelper
     {
-        public static void AddAbilitiesBasedOnJob(Dictionary<AbilityEnum, int> AbilityTracker, CharacterJobEnum job, int level)
+        public static bool AddAbilitiesBasedOnJob(Dictionary<AbilityEnum, int> AbilityTracker, CharacterJobEnum job, int level)
         {
             if (AbilityTracker == null)
             {
-                return;
+                return false;
             }
 
             if (level < 1)
             {
-                return;
+                return false;
             }
 
             switch (job)
@@ -66,6 +66,8 @@ namespace Game.Helpers
                     }
                     break;
             }
+
+            return true;
         }
     }
 }
