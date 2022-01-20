@@ -67,5 +67,21 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterIndexLargePage_OnCharacterSelected_Clicked_InValid_Default_Should_Pass()
+        {
+            // Arrange
+
+            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs((CharacterModel)null, 0);
+
+            // Act
+            page.OnItemSelected(null, selectedCharacterChangedEventArgs);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
