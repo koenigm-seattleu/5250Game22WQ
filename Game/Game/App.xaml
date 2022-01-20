@@ -23,7 +23,7 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">Pink</Color>
+            <!--<Color x:Key="PageBackgroundColor">Pink</Color>
             <Color x:Key="ViewBackgroundColor">green</Color>
             <Color x:Key="NavigationBarColor">orange</Color>
 
@@ -42,9 +42,9 @@
             <Color x:Key="BattleMapDeathColor">lightgreen</Color>
             <Color x:Key="BattleMapHitColor">darkorange</Color>
             <Color x:Key="BattleMapMissColor">darkred</Color>
-            <Color x:Key="BattleMapLevelColor">skyblue</Color>
+            <Color x:Key="BattleMapLevelColor">skyblue</Color>-->
 
-            <!--
+            
             <Color x:Key="PageBackgroundColor">#D9C6B0</Color>
             <Color x:Key="ViewBackgroundColor">#BF895A</Color>
             <Color x:Key="NavigationBarColor">#D9C6B0</Color>
@@ -65,7 +65,7 @@
             <Color x:Key="BattleMapHitColor">#BF895A</Color>
             <Color x:Key="BattleMapMissColor">#BF895A</Color>
             <Color x:Key="BattleMapLevelColor">#BF895A</Color>
-            -->
+            
             
             <Color x:Key="BlockingColor">
                 <x:Arguments>
