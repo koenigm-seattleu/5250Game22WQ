@@ -7,22 +7,26 @@
         <ScrollView
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
-            
+
             <StackLayout
                 VerticalOptions="Center"
                 HorizontalOptions="Center">
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     <Image
-                         Source="item.png"
+                         Source="knight.png"
                          Style="{StaticResource ImageLargeStyle}"/>
-                
+
+                    <Image
+                         Source="troll.png"
+                         Style="{StaticResource ImageLargeStyle}"/>
+
                 </StackLayout>
-                
-                <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
-               
+
+                <StackLayout HorizontalOptions="Center" Padding="70,5,70,0">
+
                     <Label 
-                        Text="Your Game Information"
+                        Text="In a far away land there was a tribe of warrior elves. The elves entered the woods to eraticate the monsters that threatened their villages."
                         Style="{StaticResource CenterMessageStyle}"
                         FontSize="Micro"
                         LineBreakMode="WordWrap"
