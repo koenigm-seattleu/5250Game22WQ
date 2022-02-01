@@ -188,6 +188,24 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void AddAbilitiesBasedOnJob_Valid_Unknown_Repeat_Should_Increment()
+        {
+            //Arrange
+            var AbTracker = new Dictionary<AbilityEnum, int>();
+
+            // First time
+            _ = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Unknown, 1);
+
+            //Act
+            var result = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Unknown, 2);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(true, result); //Getting here without exception means pass                
+        }
+
+        [Test]
         public void AddAbilitiesBasedOnJob_Valid_Cleric_Should_Pass()
         {
             //Arrange
@@ -203,6 +221,24 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void AddAbilitiesBasedOnJob_Valid_Cleric_Repeat_Should_Increment()
+        {
+            //Arrange
+            var AbTracker = new Dictionary<AbilityEnum, int>();
+
+            // First time
+            _ = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Cleric, 1);
+
+            //Act
+            var result = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Cleric, 2);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(true, result); //Getting here without exception means pass                
+        }
+
+        [Test]
         public void AddAbilitiesBasedOnJob_Valid_Fighter_Should_Pass()
         {
             //Arrange
@@ -215,6 +251,24 @@ namespace UnitTests.Helpers
 
             //Assert
             Assert.AreEqual(true, result); //Getting here without exception means pass
+        }
+
+        [Test]
+        public void AddAbilitiesBasedOnJob_Valid_Fighter_Repeat_Should_Increment()
+        {
+            //Arrange
+            var AbTracker = new Dictionary<AbilityEnum, int>();
+
+            // First time
+            _ = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Fighter, 1);
+
+            //Act
+            var result = AbilityHelper.AddAbilitiesBasedOnJob(AbTracker, CharacterJobEnum.Fighter, 2);
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(true, result); //Getting here without exception means pass                
         }
         #endregion AddAbilitiesBasedOnJob
     }
