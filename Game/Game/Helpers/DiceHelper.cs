@@ -58,7 +58,19 @@ namespace Game.Helpers
         /// <returns></returns>
         public static int RollDice(int rolls, int dice)
         {
+            //// ForceRolls check after the rolls check, that prevents the bug of negative rolls
+            //if (ForceRollsToNotRandom)
+            //{
+            //    return rolls * _ForcedRandomValue;
+            //}
+
             if (rolls < 1)
+            {
+                return 0;
+            }
+
+            // Dice check is after Rolls number check to allow for force roll value even if dice it 0
+            if (dice < 1)
             {
                 return 0;
             }
@@ -67,12 +79,6 @@ namespace Game.Helpers
             if (ForceRollsToNotRandom)
             {
                 return rolls * _ForcedRandomValue;
-            }
-
-            // Dice check is after Rolls number check to allow for force roll value even if dice it 0
-            if (dice < 1)
-            {
-                return 0;
             }
 
             var myReturn = 0;
