@@ -39,9 +39,9 @@ namespace Game.Views
 
             // CharacterCopy = new CharacterModel(data.Data);
 
-            BindingContext = this.ViewModel = data;
+            BindingContext = ViewModel = data;
 
-            this.ViewModel.Title = "Update " + data.Title;
+            ViewModel.Title = "Update " + data.Title;
 
             // Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
@@ -59,11 +59,11 @@ namespace Game.Views
         public bool UpdatePageBindingContext()
         {
             // Temp store off the Level
-            var level = this.ViewModel.Data.Level;
+            var level = ViewModel.Data.Level;
 
             // Clear the Binding and reset it
             BindingContext = null;
-            BindingContext = this.ViewModel;
+            BindingContext = ViewModel;
 
             // This resets the Picker to -1 index, need to reset it back
             ViewModel.Data.Level = level;
