@@ -38,7 +38,7 @@ namespace Game.Views
         public async void FlexCharacter_Clicked(object sender, EventArgs args)
         {
             var button = sender as ImageButton;
-            var id = button.CommandParameter as String ;
+            var id = button.CommandParameter as string;
             var data = ViewModel.Dataset.FirstOrDefault(m => m.Id.Equals(id));
 
             await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
