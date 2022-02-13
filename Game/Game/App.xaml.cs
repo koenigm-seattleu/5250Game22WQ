@@ -3,6 +3,15 @@ using Xamarin.Forms.Xaml;
 
 using Game.Views;
 
+/*
+    Listing the Fonts out
+    Custom Fonts are ttf files placed in the Resources Fonts Folder of the Shared Code
+    Make sure each font is set with properties to be an embeded resource, and always copy as the build action
+    Also list each font below, if multiple fonts, ensure unique alias
+    Set the FontFamily property to the Alias in the xaml
+ */
+[assembly: ExportFont("blackcastlemf_bg5n.ttf", Alias = "CustomFont")]
+
 namespace Game
 {
     /// <summary>
