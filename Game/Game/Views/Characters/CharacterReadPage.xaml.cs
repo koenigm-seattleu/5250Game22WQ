@@ -19,7 +19,10 @@ namespace Game.Views
         // View Model for Character
         public readonly GenericViewModel<CharacterModel> ViewModel;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public CharacterReadPage(bool UnitTest) { }
 
         /// <summary>
