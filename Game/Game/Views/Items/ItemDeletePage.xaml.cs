@@ -24,7 +24,10 @@ namespace Game.Views
         /// <param name="UnitTest"></param>
         public ItemDeletePage(bool UnitTest) { }
 
-        // Constructor for Delete takes a view model of what to delete
+        /// <summary>
+        /// Constructor for Delete takes a view model of what to delete
+        /// </summary>
+        /// <param name="data"></param>
         public ItemDeletePage(GenericViewModel<ItemModel> data)
         {
             InitializeComponent();
