@@ -29,7 +29,10 @@ namespace Game.Views
         // Current count of the Images in the Character Image List
         public int ImageListCount = RandomPlayerHelper.CharacterImageList.Count;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public CharacterCreatePage(bool UnitTest) { }
 
         /// <summary>
