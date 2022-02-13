@@ -8,15 +8,15 @@
              x:Class="Game.Views.CharacterIndexPage"
              >
 
-    <!--NavigationPage with Text-->
+    <!--NavigationPage with Text, showing this example to set the font in the Navigation Bar, will impact the layout of the Navigation, Toolbar area-->
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-            <Label Text="Character Index" Style="{StaticResource HeaderStyle}"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="Character Index" Style="{StaticResource FontExample}"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
-                <Button Clicked="Add_Clicked" Text="Add" />
-                <Button Clicked="ListLarge_Clicked" Text="Large" />
-                <Button Clicked="ListFlex_Clicked" Text="Flex" />
-                <Button Clicked="ListCollection_Clicked" Text="Collection" />
+                <Button Clicked="Add_Clicked" Text="A" Style="{StaticResource ToolbarButton}"/>
+                <Button Clicked="ListLarge_Clicked" Text="L" Style="{StaticResource ToolbarButton}"/>
+                <Button Clicked="ListFlex_Clicked" Text="F" Style="{StaticResource ToolbarButton}"/>
+                <Button Clicked="ListCollection_Clicked" Text="C" Style="{StaticResource ToolbarButton}"/>
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>
