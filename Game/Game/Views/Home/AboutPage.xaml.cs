@@ -19,7 +19,10 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
     {
-        // Constructor for UnitTests
+        /// <summary>
+        /// Constructor for UnitTests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public AboutPage(bool UnitTest) { }
 
         /// <summary>
