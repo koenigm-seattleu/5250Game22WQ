@@ -6,14 +6,27 @@
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.CharacterIndexPage"
-             Title="{Binding Title}">
+             >
 
-    <ContentPage.ToolbarItems>
+    <!--NavigationPage with Text-->
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <Label Text="Character Index" Style="{StaticResource HeaderStyle}"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                <Button Clicked="Add_Clicked" Text="Add" />
+                <Button Clicked="ListLarge_Clicked" Text="Large" />
+                <Button Clicked="ListFlex_Clicked" Text="Flex" />
+                <Button Clicked="ListCollection_Clicked" Text="Collection" />
+            </StackLayout>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="icon_add.png"/>
         <ToolbarItem Text="Large" Clicked="ListLarge_Clicked" />
         <ToolbarItem Text="Flex" Clicked="ListFlex_Clicked" />
         <ToolbarItem Text="Collection" Clicked="ListCollection_Clicked" />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
