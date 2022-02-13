@@ -92,6 +92,9 @@ namespace Game.Views
             RunWipeData();
         }
 
+        /// <summary>
+        /// Wipe the Databases
+        /// </summary>
         public void RunWipeData()
         {
             _ = Task.Run(async () => { _ = await DataSetsHelper.WipeDataInSequence(); });
