@@ -120,6 +120,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="FontExample"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontFamily" Value="CustomFont"/>
+            </Style>
+            
+            <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
@@ -307,6 +313,14 @@
                 <Setter Property="HeightRequest" Value="30"/>
             </Style>
 
+            <Style TargetType="Button"
+                   x:Key="ToolbarButton"
+                   >
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="WidthRequest" Value="15"/>
+            </Style>
+            
             <!-- Stack Layouts -->
             <Style TargetType="StackLayout"
                 x:Key="HorizontalStack">
