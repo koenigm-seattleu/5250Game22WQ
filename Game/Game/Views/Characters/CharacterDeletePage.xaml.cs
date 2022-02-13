@@ -19,7 +19,10 @@ namespace Game.Views
         // View Model for Character
         readonly GenericViewModel<CharacterModel> viewModel;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public CharacterDeletePage(bool UnitTest) { }
 
         // Constructor for Delete takes a view model of what to delete
