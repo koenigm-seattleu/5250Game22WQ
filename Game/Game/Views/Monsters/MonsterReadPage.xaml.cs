@@ -18,7 +18,10 @@ namespace Game.Views
         // View Model for Monster
         public readonly GenericViewModel<MonsterModel> ViewModel;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public MonsterReadPage(bool UnitTest) { }
 
         /// <summary>
