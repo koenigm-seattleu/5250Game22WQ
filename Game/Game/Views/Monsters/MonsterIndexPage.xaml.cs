@@ -20,7 +20,10 @@ namespace Game.Views
         // The view model, used for data binding
         readonly MonsterIndexViewModel ViewModel = MonsterIndexViewModel.Instance;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public MonsterIndexPage(bool UnitTest) { }
 
         /// <summary>
