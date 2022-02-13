@@ -8,19 +8,21 @@ namespace UnitTests.Helpers
     public class RollDiceHelperTests
     {
         #region UTDiceLecture
-        [Test]
-        public void RollDiceHelper_RollDice_Valid_1Time_6sided_Should_Return_1()
-        {
-            // Arrange
 
-            // Act
-            var result = DiceHelper.RollDice(1, 6);
+        // TODO: Example for UT Lecture
+        //[Test]
+        //public void RollDiceHelper_RollDice_Valid_1Time_6sided_Should_Return_1()
+        //{
+        //    // Arrange
 
-            // Reset
+        //    // Act
+        //    var result = DiceHelper.RollDice(1, 6);
 
-            // Assert
-            Assert.AreEqual(1, result);
-        }
+        //    // Reset
+
+        //    // Assert
+        //    Assert.AreEqual(1, result);
+        //}
 
         [Test]
         public void RollDiceHelper_RollDice_Valid_1Time_6sided_Should_Between_1_and_6()
@@ -118,22 +120,23 @@ namespace UnitTests.Helpers
             Assert.AreEqual(1, result);
         }
 
-        [Test]
-        public void RollDiceHelper_SetForcedRollValue_InValid_Forced_neg1_Should_Return_0()
-        {
-            // Arrange
-            _ = DiceHelper.EnableForcedRolls();
-            _ = DiceHelper.SetForcedRollValue(-1);
+        //// Example for UT Lecture
+        //[Test]
+        //public void RollDiceHelper_SetForcedRollValue_InValid_Forced_neg1_Should_Return_0()
+        //{
+        //    // Arrange
+        //    _ = DiceHelper.EnableForcedRolls();
+        //    _ = DiceHelper.SetForcedRollValue(-1);
 
-            // Act
-            var result = DiceHelper.RollDice(1, 6);
+        //    // Act
+        //    var result = DiceHelper.RollDice(1, 6);
 
-            // Reset
-            _ = DiceHelper.DisableForcedRolls();
+        //    // Reset
+        //    _ = DiceHelper.DisableForcedRolls();
 
-            // Assert
-            Assert.AreEqual(0, result);
-        }
+        //    // Assert
+        //    Assert.AreEqual(0, result);
+        //}
 
         [Test]
         public void RollDiceHelper_SetForcedRollValue_InValid_Forced_neg1_Should_Return_neg1()
