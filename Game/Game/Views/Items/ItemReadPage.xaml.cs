@@ -18,7 +18,10 @@ namespace Game.Views
         // View Model for Item
         public readonly GenericViewModel<ItemModel> ViewModel;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Constructor for Unit Tests
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public ItemReadPage(bool UnitTest) { }
 
         /// <summary>
