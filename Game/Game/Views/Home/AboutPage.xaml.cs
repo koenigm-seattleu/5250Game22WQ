@@ -132,7 +132,12 @@ namespace Game.Views
             // The ServerItemValue Code stands for the batch of items to get
             // as the group to request.  1, 2, 3, 100 (All), or if not specified All
 
-            var value = Convert.ToInt32(ServerItemValue.Text);
+            //var number = Convert.ToInt32(ServerItemValue.Text);
+            if (int.TryParse(ServerItemValue.Text, out var value) == false)
+            {
+                return false;
+            }
+
             var dataList = await ItemService.GetItemsFromServerGetAsync(value);
 
             _ = DisplayServerResults(dataList);
@@ -188,7 +193,12 @@ namespace Game.Views
         /// <returns></returns>
         public async Task<bool> GetItemsPost()
         {
-            var number = Convert.ToInt32(ServerItemValue.Text);
+            //var number = Convert.ToInt32(ServerItemValue.Text);
+            if (int.TryParse(ServerItemValue.Text, out var number) == false)
+            {
+                return false;
+            }
+
             var level = 6;  // Max Value of 6
             var attribute = AttributeEnum.Unknown;  // Any Attribute
             var location = ItemLocationEnum.Unknown;    // Any Location
@@ -199,6 +209,7 @@ namespace Game.Views
             // will return shoes value 10 of speed.
             // Example  result = await ItemsController.Instance.GetItemsFromGame(1, 10, AttributeEnum.Speed, ItemLocationEnum.Feet, false, true);
             var dataList = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
+            _ = DisplayServerResults(dataList);
 
             return true;
         }
