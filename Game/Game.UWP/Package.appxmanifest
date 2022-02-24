@@ -9,12 +9,12 @@
   <Identity
     Name="cf590357-2672-4b48-9b7c-1ee78ec090d6"
     Publisher="CN=478e2de8-9f41-45ea-9c5c-185091c91d80"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Game.UWP</DisplayName>
+    <DisplayName>ElvesVsTrolls</DisplayName>
     <PublisherDisplayName>478e2de8-9f41-45ea-9c5c-185091c91d80</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -32,10 +32,10 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="Game.UWP.App">
       <uap:VisualElements
-        DisplayName="Game.UWP"
+        DisplayName="Elves vs Trolls"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Game.UWP"
+        Description="Excellent Game"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
