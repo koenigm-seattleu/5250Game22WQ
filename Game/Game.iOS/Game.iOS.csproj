@@ -65,6 +65,9 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>game_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -315,5 +318,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\game_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="game_icon.ico" />
   </ItemGroup>
 </Project>
