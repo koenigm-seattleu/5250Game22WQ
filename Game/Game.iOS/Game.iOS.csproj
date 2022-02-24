@@ -313,4 +313,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iichan_award.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\game_icon.ico" />
+  </ItemGroup>
 </Project>
