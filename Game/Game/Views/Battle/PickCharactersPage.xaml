@@ -21,8 +21,8 @@
                         <Label Text="Characters" Style="{StaticResource CenterMessageStyle}"/>
 
                         <ListView 
-                                x:Name="CharactersListView" 
-                                ItemsSource="{Binding DatabaseCharacterList}"
+                                x:Name="CharacterSourceList" 
+                                ItemsSource="{Binding PossibleCharacters}"
                                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                                 RefreshCommand="{Binding LoadItemsCommand}"
                                 CachingStrategy="RecycleElement"
@@ -36,6 +36,12 @@
                                     <ViewCell>
                                         <Grid>
 
+                                            <Frame 
+                                                Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                                Style="{Binding FrameStyle, Mode=TwoWay}"
+                                                IsVisible="{Binding IsSelected, Mode=TwoWay}"
+                                            />
+                                            
                                             <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                                     Source="{Binding ImageURI}"
                                                     Style="{StaticResource ImageMediumStyle}"/>
@@ -50,8 +56,16 @@
                                                    Style="{StaticResource ListStyle}"/>
 
                                             <Label Grid.Column="1" Grid.Row="2"
-                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                                    Style="{StaticResource ListStyle}"/>
+                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}"
+                                                    Style="{StaticResource ListStyle}"
+                                                    IsVisible="{Binding IsSelected}"
+                                                   />
+
+                                            <Image  Grid.Column="1" Grid.Row="2"
+                                                    Source="action_attack.png"
+                                                    Style="{StaticResource ImageSmallStyle}"
+                                                    IsVisible="{Binding IsSelected}"
+                                                    />
 
                                         </Grid>
                                     </ViewCell>
