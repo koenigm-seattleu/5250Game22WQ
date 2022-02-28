@@ -1,7 +1,11 @@
-﻿using Game.Models;
-using Game.ViewModels;
-using System;
+﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Game.Helpers;
+using Game.Models;
+using Game.Services;
+using Game.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,25 +38,7 @@ namespace Game.Views
             DrawItemLists();
         }
 
-        /// <summary>
-        /// Clear and Add the Characters that survived
-        /// </summary>
-        public void DrawCharacterList()
-        {
-            // Clear and Populate the Characters Remaining
-            var FlexList = CharacterListFrame.Children.ToList();
-            foreach (var data in FlexList)
-            {
-                _ = CharacterListFrame.Children.Remove(data);
-            }
-
-            // Draw the Characters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
-            {
-                CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
-            }
-        }
-
+        #region ManageItems
         /// <summary>
         /// Draw the List of Items
         /// 
@@ -161,6 +147,48 @@ namespace Game.Views
             };
 
             return ItemStack;
+        }
+
+        /// <summary>
+        /// Get Items using the HTTP Post command
+        /// </summary>
+        /// <returns></returns>
+        public async void AmazonInstantDelivery_Clicked(object sender, EventArgs e)
+        {
+            var number = DiceHelper.RollDice(1, 6); // Get up to 6 random items
+            var level = BattleEngineViewModel.Instance.PartyCharacterList.Min(m => m.Level); // The Min level of character
+            var attribute = AttributeEnum.Unknown;  // Any Attribute
+            var location = ItemLocationEnum.Unknown;    // Any Location
+            var random = true;  // Random between 1 and Level
+            var updateDataBase = true;  // Add them to the DB
+
+            var category = 0;   // What category to filter down to, 0 is all, what team is your team?
+
+            var dataList = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.AddRange(dataList);
+
+            // Redraw items
+            DrawItemLists();
+        }
+        #endregion ManageItems
+
+        /// <summary>
+        /// Clear and Add the Characters that survived
+        /// </summary>
+        public void DrawCharacterList()
+        {
+            // Clear and Populate the Characters Remaining
+            var FlexList = CharacterListFrame.Children.ToList();
+            foreach (var data in FlexList)
+            {
+                _ = CharacterListFrame.Children.Remove(data);
+            }
+
+            // Draw the Characters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+            {
+                CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+            }
         }
 
         /// <summary>
@@ -312,6 +340,5 @@ namespace Game.Views
         {
             _ = await Navigation.PopModalAsync();
         }
-
     }
 }

@@ -43,6 +43,8 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
+                        <Button Clicked="AmazonInstantDelivery_Clicked" Text="Item Delivery"/>
+
                         <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
 
                         <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
