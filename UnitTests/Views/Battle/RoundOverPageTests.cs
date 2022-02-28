@@ -8,6 +8,7 @@ using Game.Models;
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
 using Game.ViewModels;
+using UnitTests.TestHelpers;
 
 namespace UnitTests.Views
 {
@@ -257,5 +258,46 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        #region AmazonInstantDelivery_Clicked
+        [Test]
+        public void RoundOverPage_AmazonInstantDelivery_Clicked_Click_Default_Valid_Should_Pass()
+        {
+            // Arrange
+            _ = TestBaseHelper.SetHttpClientToMock();
+            ResponseMessage.SetHttpStatusCode(ResponseMessage.HttpStatusCodeSuccess);
+            ResponseMessage.SetResponseMessageStringContent(JsonSampleData.StringContentItemPostDefault);
+
+            _ = BattleEngineViewModel.Instance.Engine.Round.ClearLists();
+
+            //Start the Engine in AutoBattle Mode
+            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = -1, // Will go last...
+                                Level = 1,
+                                CurrentHealth = 1,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                            });
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
+            // Act
+            page.AmazonInstantDelivery_Clicked(null, null);
+
+            // Reset
+            ResponseMessage.SetResponseMessageStringContent(ResponseMessage.NullStringContent);
+            _ = TestBaseHelper.SetHttpClientToReal();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Remove(CharacterPlayerMike);
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+        #endregion AmazonInstantDelivery_Clicked
     }
 }
